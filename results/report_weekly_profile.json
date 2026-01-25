@@ -1,0 +1,20 @@
+{
+  "initial_capital": 10000.0,
+  "final_equity": 10612.962915087704,
+  "trades": 29,
+  "win_rate": 0.8275862068965517,
+  "gross_profit": 1131.567415066169,
+  "gross_loss": -518.6044999784629,
+  "profit_factor": 2.1819467727587436,
+  "max_drawdown": 0.022615574605303317,
+  "sharpe": 0.025649034569277182,
+  "sortino": 0.0065085780140797175,
+  "cagr": 0.09476308984331783,
+  "ulcer_index": 0.008884967680745499,
+  "recovery_factor": 27103.574673002873,
+  "monthly_win_rate": 0.5,
+  "daily_avg_return": 0.00027298889916224276,
+  "weekly_avg_return": 0.001673570815673858,
+  "max_consecutive_losses": 2,
+  "average_trade_duration_seconds": 53255.1724137931
+}

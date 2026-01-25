@@ -1,0 +1,16 @@
+{
+  "dataset": "data\\processed\\eurusd_m30_bid_formatted.csv",
+  "dataset_md5": "0bc9dcb23d464880a5edf5d646333460",
+  "timeframe_base": "M30",
+  "resampled_timeframes": [
+    "H1",
+    "H4",
+    "D"
+  ],
+  "symbol": "EURUSD",
+  "volume_included": false,
+  "backtest_window": {
+    "start": "2003-05-04T00:00:00Z",
+    "end": "2003-12-31T00:00:00Z"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "parameter_sensitivity": [
+    {
+      "initial_capital": 10000.0,
+      "final_equity": 10708.799171997203,
+      "trades": 150,
+      "win_rate": 0.7066666666666667,
+      "gross_profit": 2689.1744845995095,
+      "gross_loss": -1991.7268320886851,
+      "profit_factor": 1.3501723435534705,
+      "max_drawdown": 0.04371543448017355,
+      "sharpe": 0.010214862038773665,
+      "sortino": 0.003965186882004924,
+      "cagr": 0.026094235808883814,
+      "ulcer_index": 0.01693639903861151,
+      "recovery_factor": 15954.265599879624,
+      "monthly_win_rate": 0.5625,
+      "daily_avg_return": 7.691203457166927e-05,
+      "weekly_avg_return": 0.0004942608250886022,
+      "max_consecutive_losses": 5,
+      "average_trade_duration_seconds": 177384.0,
+      "params": {
+        "risk_per_trade": 0.005,
+        "partial_exit_enabled": true
+      }
+    },
+    {
+      "initial_capital": 10000.0,
+      "final_equity": 11551.780880293583,
+      "trades": 94,
+      "win_rate": 0.43617021276595747,
+      "gross_profit": 4395.533564791549,
+      "gross_loss": -2855.9523632896544,
+      "profit_factor": 1.5390780397080972,
+      "max_drawdown": 0.052446486938624436,
+      "sharpe": 0.014416235664725502,
+      "sortino": 0.008432704169234225,
+      "cagr": 0.05576178612994731,
+      "ulcer_index": 0.02382909125777989,
+      "recovery_factor": 29355.277948427534,
+      "monthly_win_rate": 0.5625,
+      "daily_avg_return": 0.00013974143661868075,
+      "weekly_avg_return": 0.0010342294006025555,
+      "max_consecutive_losses": 5,
+      "average_trade_duration_seconds": 507293.6170212766,
+      "params": {
+        "risk_per_trade": 0.005,
+        "partial_exit_enabled": false
+      }
+    },
+    {
+      "initial_capital": 10000.0,
+      "final_equity": 11443.385523697483,
+      "trades": 150,
+      "win_rate": 0.7066666666666667,
+      "gross_profit": 5591.5166552737055,
+      "gross_loss": -4172.216548743859,
+      "profit_factor": 1.3401789168774472,
+      "max_drawdown": 0.08605142959478242,
+      "sharpe": 0.010212336657076757,
+      "sortino": 0.003964004120898837,
+      "cagr": 0.05202434448446458,
+      "ulcer_index": 0.03370022968313093,
+      "recovery_factor": 16493.626116536976,
+      "monthly_win_rate": 0.5625,
+      "daily_avg_return": 0.0001537676597920472,
+      "weekly_avg_return": 0.0009876357489533919,
+      "max_consecutive_losses": 5,
+      "average_trade_duration_seconds": 177384.0,
+      "params": {
+        "risk_per_trade": 0.01,
+        "partial_exit_enabled": true
+      }
+    },
+    {
+      "initial_capital": 10000.0,
+      "final_equity": 13296.607766922481,
+      "trades": 94,
+      "win_rate": 0.43617021276595747,
+      "gross_profit": 9419.139667037725,
+      "gross_loss": -6150.312529621648,
+      "profit_factor": 1.531489598564704,
+      "max_drawdown": 0.10245813645294298,
+      "sharpe": 0.014493312251285787,
+      "sortino": 0.0084804375151513,
+      "cagr": 0.11313076935149047,
+      "ulcer_index": 0.04689872590901673,
+      "recovery_factor": 31904.0268599594,
+      "monthly_win_rate": 0.5625,
+      "daily_avg_return": 0.0002814381480816187,
+      "weekly_avg_return": 0.0020732257600319486,
+      "max_consecutive_losses": 5,
+      "average_trade_duration_seconds": 507293.6170212766,
+      "params": {
+        "risk_per_trade": 0.01,
+        "partial_exit_enabled": false
+      }
+    },
+    {
+      "initial_capital": 10000.0,
+      "final_equity": 12984.251817352391,
+      "trades": 150,
+      "win_rate": 0.7066666666666667,
+      "gross_profit": 12060.757377361932,
+      "gross_loss": -9130.38547039476,
+      "profit_factor": 1.3209472279641306,
+      "max_drawdown": 0.1666354638782275,
+      "sharpe": 0.01020735229022096,
+      "sortino": 0.0039616676209491275,
+      "cagr": 0.10322159259427188,
+      "ulcer_index": 0.0666902618137046,
+      "recovery_factor": 17585.523746065275,
+      "monthly_win_rate": 0.5625,
+      "daily_avg_return": 0.0003073408251912223,
+      "weekly_avg_return": 0.001971857625612038,
+      "max_consecutive_losses": 5,
+      "average_trade_duration_seconds": 177384.0,
+      "params": {
+        "risk_per_trade": 0.02,
+        "partial_exit_enabled": true
+      }
+    },
+    {
+      "initial_capital": 10000.0,
+      "final_equity": 17432.432273853978,
+      "trades": 94,
+      "win_rate": 0.43617021276595747,
+      "gross_profit": 21582.559689325313,
+      "gross_loss": -14221.426580070136,
+      "profit_factor": 1.5176086286287935,
+      "max_drawdown": 0.19555700908139437,
+      "sharpe": 0.014645090831643637,
+      "sortino": 0.008574406593272674,
+      "cagr": 0.23250554603919205,
+      "ulcer_index": 0.090916617472545,
+      "recovery_factor": 37641.8781604056,
+      "monthly_win_rate": 0.5625,
+      "daily_avg_return": 0.0005706545895110565,
+      "weekly_avg_return": 0.004165584694362706,
+      "max_consecutive_losses": 5,
+      "average_trade_duration_seconds": 507293.6170212766,
+      "params": {
+        "risk_per_trade": 0.02,
+        "partial_exit_enabled": false
+      }
+    }
+  ]
+}

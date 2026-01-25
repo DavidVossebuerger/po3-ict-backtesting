@@ -1,0 +1,294 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from typing import Dict, List, Optional
+
+from backtesting_system.core.strategy_base import Strategy
+from backtesting_system.models.market import Candle
+
+
+@dataclass
+class WeeklyProfileContext:
+    profile_type: Optional[str]
+    confidence: float | None
+    mon_tue_low: Optional[float]
+    mon_tue_high: Optional[float]
+    week_key: Optional[tuple]
+
+
+class WeeklyProfileStrategy(Strategy):
+    def __init__(self, params: dict):
+        super().__init__(params)
+        self.profile_type = None
+        self.dol = None
+        self.doh = None
+        self._last_signal_week = None
+        self._daily_cache: Dict[datetime, List[Candle]] = {}
+        self._daily_series: List[Candle] = []
+        self._last_hist_len: int = 0
+        self.detector = WeeklyProfileDetector()
+
+    def identify_weekly_profile(self, weekly_data, daily_data) -> str | None:
+        profile_type, confidence, _details = self.detector.detect_profile(daily_data, weekly_data, {})
+        return profile_type
+
+    def analyze_mon_tue(self, daily_candles: List[Candle]) -> Dict[str, float]:
+        mon_tue = [c for c in daily_candles if c.time.weekday() in (0, 1)]
+        if len(mon_tue) < 2:
+            return {}
+        low = min(c.low for c in mon_tue)
+        high = max(c.high for c in mon_tue)
+        direction = "long" if mon_tue[-1].close >= mon_tue[0].open else "short"
+        return {"low": low, "high": high}
+
+    def identify_setup(self, data) -> bool:
+        bar = data["bar"]
+        history = data.get("history", [])
+        ctx = self._build_context(history)
+        if ctx.profile_type is None:
+            return False
+        if bar.time.weekday() != 2:
+            return False
+        if not self._is_day_open(bar.time):
+            return False
+        return ctx.week_key != self._last_signal_week
+
+    def generate_signals(self, data) -> dict:
+        bar = data["bar"]
+        history = data.get("history", [])
+        ctx = self._build_context(history)
+        if ctx.profile_type is None:
+            return {}
+        if not self._is_day_open(bar.time):
+            return {}
+        if ctx.week_key == self._last_signal_week:
+            return {}
+
+        day = bar.time.weekday()
+        allowed_days = {
+            "classic_expansion_long": {2, 3},
+            "classic_expansion_short": {2, 3},
+            "midweek_reversal_long": {2},
+            "midweek_reversal_short": {2},
+            "consolidation_reversal_long": {3, 4},
+            "consolidation_reversal_short": {3, 4},
+        }
+        if day not in allowed_days.get(ctx.profile_type, set()):
+            return {}
+
+        direction = "long" if ctx.profile_type.endswith("long") else "short"
+        entry = bar.close
+        if direction == "long":
+            stop = ctx.mon_tue_low if ctx.mon_tue_low is not None else bar.close * 0.99
+            risk = max(entry - stop, 0.00001)
+            target = entry + 2 * risk
+        else:
+            stop = ctx.mon_tue_high if ctx.mon_tue_high is not None else bar.close * 1.01
+            risk = max(stop - entry, 0.00001)
+            target = entry - 2 * risk
+
+        self._last_signal_week = ctx.week_key
+        return {
+            "direction": direction,
+            "entry": entry,
+            "stop": stop,
+            "target": target,
+            "confluence": ctx.confidence,
+            "profile_type": ctx.profile_type,
+        }
+
+    def validate_pda_array(self, price, h1_pda) -> bool:
+        return True
+
+    def validate_context(self, data) -> bool:
+        return True
+
+    def calculate_dol_doh(self, daily_data) -> tuple:
+        if not daily_data:
+            return None, None
+        dol = min(daily_data, key=lambda c: c.low).time.date()
+        doh = max(daily_data, key=lambda c: c.high).time.date()
+        return dol, doh
+
+    def check_negative_conditions(self, daily_data) -> bool:
+        return False
+
+    def _build_context(self, history: List[Candle]) -> WeeklyProfileContext:
+        daily = self._aggregate_daily(history)
+        if len(daily) < 10:
+            return WeeklyProfileContext(None, None, None, None, None)
+
+        current_week = self._current_week_key(daily[-1].time)
+        prev_week_key = self._previous_week_key(current_week)
+
+        prev_week = [c for c in daily if self._current_week_key(c.time) == prev_week_key]
+        this_week = [c for c in daily if self._current_week_key(c.time) == current_week]
+        mon_tue = [c for c in this_week if c.time.weekday() in (0, 1)]
+        wed = [c for c in this_week if c.time.weekday() == 2]
+        thu_fri = [c for c in this_week if c.time.weekday() in (3, 4)]
+        if not prev_week or len(mon_tue) < 2:
+            return WeeklyProfileContext(None, None, None, None, current_week)
+
+        prev_low = min(c.low for c in prev_week)
+        prev_high = max(c.high for c in prev_week)
+        mid = (prev_low + prev_high) / 2
+        weekly_ohlc = {
+            "open": prev_week[0].open,
+            "high": max(c.high for c in prev_week),
+            "low": min(c.low for c in prev_week),
+            "close": prev_week[-1].close,
+        }
+        profile_type, confidence, _details = self.detector.detect_profile(this_week, weekly_ohlc, {})
+
+        mon_tue_low = min(c.low for c in mon_tue)
+        mon_tue_high = max(c.high for c in mon_tue)
+
+        return WeeklyProfileContext(profile_type, confidence, mon_tue_low, mon_tue_high, current_week)
+
+    def _aggregate_daily(self, history: List[Candle]) -> List[Candle]:
+        if not history:
+            return []
+        if len(history) == self._last_hist_len:
+            return self._daily_series
+
+        for candle in history[self._last_hist_len :]:
+            day_key = datetime(
+                candle.time.year,
+                candle.time.month,
+                candle.time.day,
+                tzinfo=timezone.utc,
+            )
+            self._daily_cache.setdefault(day_key, []).append(candle)
+        self._last_hist_len = len(history)
+
+        result: List[Candle] = []
+        for day in sorted(self._daily_cache.keys()):
+            chunk = self._daily_cache[day]
+            result.append(
+                Candle(
+                    time=day,
+                    open=chunk[0].open,
+                    high=max(c.high for c in chunk),
+                    low=min(c.low for c in chunk),
+                    close=chunk[-1].close,
+                    volume=None,
+                )
+            )
+        self._daily_series = result
+        return result
+
+    def _current_week_key(self, dt: datetime) -> tuple:
+        iso = dt.isocalendar()
+        return iso.year, iso.week
+
+    def _previous_week_key(self, week_key: tuple) -> tuple:
+        year, week = week_key
+        if week > 1:
+            return year, week - 1
+        return year - 1, 52
+
+    def _is_day_open(self, dt: datetime) -> bool:
+        return dt.hour == 0 and dt.minute == 0
+
+class WeeklyProfileDetector:
+    def __init__(self):
+        self.profiles = {
+            0: "Seek & Destroy",
+            1: "Classic Bullish Expansion",
+            2: "Classic Bearish Expansion",
+            3: "Midweek Reversal Up",
+            4: "Midweek Reversal Down",
+            5: "Consolidation Reversal",
+        }
+
+    def detect_profile(self, daily_candles: list[Candle], weekly_ohlc: dict, htf_array: dict) -> tuple[str | None, float, dict]:
+        if len(daily_candles) < 5:
+            return None, 0.0, {}
+
+        mon_tue = daily_candles[0:2]
+        wed = daily_candles[2]
+        thu_fri = daily_candles[3:5]
+
+        mon_tue_engagement = self._analyze_engagement(mon_tue)
+        wed_behavior = self._analyze_wednesday(wed)
+        thu_fri_expected = self._analyze_expectation(thu_fri, weekly_ohlc)
+
+        if (
+            mon_tue_engagement["type"] == "discount_engagement"
+            and wed_behavior["direction"] == "higher"
+            and thu_fri_expected["expected_move"] == "expansion_higher"
+        ):
+            return "classic_expansion_long", 0.85, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
+        if (
+            mon_tue_engagement["type"] == "premium_engagement"
+            and wed_behavior["direction"] == "lower"
+            and thu_fri_expected["expected_move"] == "expansion_lower"
+        ):
+            return "classic_expansion_short", 0.85, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
+        if (
+            mon_tue_engagement["type"] in {"consolidation", "retracement"}
+            and wed_behavior["direction"] == "reversal_up"
+            and thu_fri_expected["expected_move"] == "bullish_expansion"
+        ):
+            return "midweek_reversal_long", 0.75, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
+        if (
+            mon_tue_engagement["type"] in {"consolidation", "retracement"}
+            and wed_behavior["direction"] == "reversal_down"
+            and thu_fri_expected["expected_move"] == "bearish_expansion"
+        ):
+            return "midweek_reversal_short", 0.75, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
+        if (
+            mon_tue_engagement["type"] == "internal_range"
+            and wed_behavior["type"] == "external_range_test"
+        ):
+            return "consolidation_reversal_long", 0.70, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
+
+        return None, 0.30, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
+
+    def _details(self, engagement: dict, wed: dict, expectation: dict) -> dict:
+        return {"engagement": engagement, "wednesday": wed, "expectation": expectation}
+
+    def _analyze_engagement(self, mon_tue_candles: list[Candle]) -> dict:
+        mon, tue = mon_tue_candles
+        avg_price = (mon.close + tue.close) / 2
+        price_range = max(mon.high, tue.high) - min(mon.low, tue.low)
+
+        if avg_price and price_range < avg_price * 0.005:
+            engagement_type = "consolidation"
+        elif mon.close < mon.open and tue.close > tue.open:
+            engagement_type = "discount_engagement"
+        elif mon.close > mon.open and tue.close < tue.open:
+            engagement_type = "premium_engagement"
+        elif mon.close < mon.open and tue.close < tue.open:
+            engagement_type = "retracement"
+        else:
+            engagement_type = "choppy"
+
+        return {
+            "type": engagement_type,
+            "range_pips": price_range * 10000,
+            "avg_price": avg_price,
+        }
+
+    def _analyze_wednesday(self, wed_candle: Candle) -> dict:
+        if wed_candle.close > wed_candle.open:
+            direction = "higher"
+        elif wed_candle.close < wed_candle.open:
+            direction = "lower"
+        else:
+            direction = "neutral"
+        return {
+            "direction": direction,
+            "body_size": abs(wed_candle.close - wed_candle.open),
+            "wick_ratio": (wed_candle.high - wed_candle.low) / max(abs(wed_candle.close - wed_candle.open), 0.0001),
+            "type": "external_range_test" if abs(wed_candle.close - wed_candle.open) < (wed_candle.high - wed_candle.low) * 0.25 else "normal",
+        }
+
+    def _analyze_expectation(self, thu_fri_candles: list[Candle], weekly_ohlc: dict) -> dict:
+        weekly_range = weekly_ohlc["high"] - weekly_ohlc["low"]
+        return {
+            "expected_move": "expansion_higher" if thu_fri_candles[-1].close >= thu_fri_candles[0].open else "expansion_lower",
+            "weekly_target": weekly_ohlc["high"] + weekly_range * 0.1,
+            "confidence": 0.7,
+        }

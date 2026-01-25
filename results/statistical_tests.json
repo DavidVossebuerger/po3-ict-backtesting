@@ -1,0 +1,192 @@
+{
+  "buy_hold": {
+    "report": {
+      "initial_capital": 10000.0,
+      "final_equity": 10000.055939375,
+      "trades": 2,
+      "win_rate": 1.0,
+      "gross_profit": 0.05593937500000001,
+      "gross_loss": 0,
+      "profit_factor": 0.0,
+      "max_drawdown": 2.2769914566862613e-06,
+      "sharpe": 0.025069078342910823,
+      "sortino": 0.007614630559152106,
+      "cagr": 8.513286059441683e-06,
+      "ulcer_index": 2.1625554771840348e-07,
+      "recovery_factor": 24567.230955450927,
+      "monthly_win_rate": 0.125,
+      "daily_avg_return": 2.6059849516294776e-08,
+      "weekly_avg_return": 1.526091362366035e-07,
+      "max_consecutive_losses": 0,
+      "average_trade_duration_seconds": 1603800.0
+    }
+  },
+  "weekly_profile": {
+    "t_test_vs_buy_hold": {
+      "t_stat": 1.8383474420077999,
+      "p_value": 0.06606891430951532
+    },
+    "binomial_winrate": {
+      "wins": 24,
+      "trades": 29,
+      "p_value": 0.0002730563282966614
+    },
+    "report": {
+      "initial_capital": 10000.0,
+      "final_equity": 10612.962915087704,
+      "trades": 29,
+      "win_rate": 0.8275862068965517,
+      "gross_profit": 1131.567415066169,
+      "gross_loss": -518.6044999784629,
+      "profit_factor": 2.1819467727587436,
+      "max_drawdown": 0.022615574605303317,
+      "sharpe": 0.025649034569277182,
+      "sortino": 0.0065085780140797175,
+      "cagr": 0.09476308984331783,
+      "ulcer_index": 0.008884967680745499,
+      "recovery_factor": 27103.574673002873,
+      "monthly_win_rate": 0.5,
+      "daily_avg_return": 0.00027298889916224276,
+      "weekly_avg_return": 0.001673570815673858,
+      "max_consecutive_losses": 2,
+      "average_trade_duration_seconds": 53255.1724137931
+    }
+  },
+  "weekly_profile_fixed_exit": {
+    "t_test_vs_buy_hold": {
+      "t_stat": 2.2556821176380217,
+      "p_value": 0.02413243390518633
+    },
+    "binomial_winrate": {
+      "wins": 10,
+      "trades": 17,
+      "p_value": 0.3145294189453125
+    },
+    "report": {
+      "initial_capital": 10000.0,
+      "final_equity": 11366.325651105713,
+      "trades": 17,
+      "win_rate": 0.5882352941176471,
+      "gross_profit": 2104.2224221601628,
+      "gross_loss": -737.8967710544513,
+      "profit_factor": 2.851648773517789,
+      "max_drawdown": 0.03071655294793933,
+      "sharpe": 0.03147020526252953,
+      "sortino": 0.013701239221034297,
+      "cagr": 0.21519739969431417,
+      "ulcer_index": 0.00987546176217388,
+      "recovery_factor": 44481.73769437803,
+      "monthly_win_rate": 0.875,
+      "daily_avg_return": 0.0004648664395242538,
+      "weekly_avg_return": 0.003482020228754065,
+      "max_consecutive_losses": 2,
+      "average_trade_duration_seconds": 260047.0588235294
+    }
+  },
+  "ict_framework": {
+    "t_test_vs_buy_hold": {
+      "t_stat": 0.8533618819260845,
+      "p_value": 0.3934984334286438
+    },
+    "binomial_winrate": {
+      "wins": 1842,
+      "trades": 2892,
+      "p_value": 7.043755894311473e-50
+    },
+    "report": {
+      "initial_capital": 10000.0,
+      "final_equity": 14379.71852657438,
+      "trades": 2892,
+      "win_rate": 0.6369294605809128,
+      "gross_profit": 122709.47360803418,
+      "gross_loss": -118279.85910766784,
+      "profit_factor": 1.037450285566659,
+      "max_drawdown": 0.6465661972281405,
+      "sharpe": 0.011905271202428853,
+      "sortino": 0.010623792705219936,
+      "cagr": 0.7381064344734691,
+      "ulcer_index": 0.32397652743588407,
+      "recovery_factor": 6850.9837343125855,
+      "monthly_win_rate": 0.875,
+      "daily_avg_return": 0.0025709555012534387,
+      "weekly_avg_return": 0.02378241989107956,
+      "max_consecutive_losses": 19,
+      "average_trade_duration_seconds": 128895.43568464731
+    }
+  },
+  "price_action": {
+    "t_test_vs_buy_hold": {
+      "t_stat": -0.15685234192757763,
+      "p_value": 0.8753673832749559
+    },
+    "binomial_winrate": {
+      "wins": 1259,
+      "trades": 2239,
+      "p_value": 2.0205300862529314e-09
+    },
+    "report": {
+      "initial_capital": 10000.0,
+      "final_equity": 8551.885034839803,
+      "trades": 2239,
+      "win_rate": 0.5623046002679768,
+      "gross_profit": 59539.07616988031,
+      "gross_loss": -60942.221687187455,
+      "profit_factor": 0.9769758062889567,
+      "max_drawdown": 0.34494545017317096,
+      "sharpe": -0.0021880509400267647,
+      "sortino": -0.0018474672020777564,
+      "cagr": -0.2118540759431613,
+      "ulcer_index": 0.19718264443145017,
+      "recovery_factor": -4067.731627139108,
+      "monthly_win_rate": 0.5,
+      "daily_avg_return": -0.0004288664442569731,
+      "weekly_avg_return": -0.00319333488990717,
+      "max_consecutive_losses": 9,
+      "average_trade_duration_seconds": 62103.61768646717
+    }
+  },
+  "composite": {
+    "t_test_vs_buy_hold": {
+      "t_stat": 2.82627070144997,
+      "p_value": 0.004727534623761897
+    },
+    "binomial_winrate": {
+      "wins": 16,
+      "trades": 17,
+      "p_value": 0.0001373291015625
+    },
+    "report": {
+      "initial_capital": 10000.0,
+      "final_equity": 10642.059901411658,
+      "trades": 17,
+      "win_rate": 0.9411764705882353,
+      "gross_profit": 745.7882332935067,
+      "gross_loss": -103.7283318818496,
+      "profit_factor": 7.189821910401364,
+      "max_drawdown": 0.010552523874488441,
+      "sharpe": 0.03943261692431622,
+      "sortino": 0.00935371467461612,
+      "cagr": 0.09933419213188976,
+      "ulcer_index": 0.004273046569566493,
+      "recovery_factor": 60844.202680639035,
+      "monthly_win_rate": 0.625,
+      "daily_avg_return": 0.0002870326739931246,
+      "weekly_avg_return": 0.0017391113010483208,
+      "max_consecutive_losses": 1,
+      "average_trade_duration_seconds": 56117.64705882353
+    }
+  },
+  "confluence_anova": {
+    "error": "Not enough trades in one or more confluence groups."
+  },
+  "partial_exit_comparison": {
+    "strategy": "weekly_profile",
+    "partial_exit_recovery_factor": 27103.574673002873,
+    "fixed_exit_recovery_factor": 44481.73769437803
+  },
+  "walk_forward_correlation": {
+    "metric": "sharpe",
+    "r_value": 0.0346080337342117,
+    "p_value": 0.935161731375707
+  }
+}
