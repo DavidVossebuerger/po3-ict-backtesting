@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2023-05-18T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.08422,
+    "stop": 1.09046,
+    "target": 1.07174,
+    "mon_tue_low": 1.0848,
+    "mon_tue_high": 1.09046,
+    "week_key": [
+      2023,
+      20
+    ]
+  },
+  {
+    "time": "2023-05-24T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.07724,
+    "stop": 1.07601,
+    "target": 1.0797,
+    "mon_tue_low": 1.07601,
+    "mon_tue_high": 1.08313,
+    "week_key": [
+      2023,
+      21
+    ]
+  },
+  {
+    "time": "2023-05-31T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.0735,
+    "stop": 1.06725,
+    "target": 1.0859999999999996,
+    "mon_tue_low": 1.06725,
+    "mon_tue_high": 1.07465,
+    "week_key": [
+      2023,
+      22
+    ]
+  },
+  {
+    "time": "2023-06-21T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.09159,
+    "stop": 1.09462,
+    "target": 1.0855300000000003,
+    "mon_tue_low": 1.08921,
+    "mon_tue_high": 1.09462,
+    "week_key": [
+      2023,
+      25
+    ]
+  },
+  {
+    "time": "2023-07-06T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.08489,
+    "stop": 1.09339,
+    "target": 1.0678899999999996,
+    "mon_tue_low": 1.08702,
+    "mon_tue_high": 1.09339,
+    "week_key": [
+      2023,
+      27
+    ]
+  },
+  {
+    "time": "2023-07-20T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.1218,
+    "stop": 1.12756,
+    "target": 1.11028,
+    "mon_tue_low": 1.12033,
+    "mon_tue_high": 1.12756,
+    "week_key": [
+      2023,
+      29
+    ]
+  },
+  {
+    "time": "2023-07-26T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.10456,
+    "stop": 1.11469,
+    "target": 1.0843,
+    "mon_tue_low": 1.10207,
+    "mon_tue_high": 1.11469,
+    "week_key": [
+      2023,
+      30
+    ]
+  }
+]

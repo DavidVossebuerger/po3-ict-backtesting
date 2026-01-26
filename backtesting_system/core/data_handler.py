@@ -17,7 +17,7 @@ class DataHandler:
     def load_ohlcv(self, symbol: str, timeframe: str, start_date, end_date):
         candles = self.data_source.load_ohlcv(symbol, timeframe, start_date, end_date)
         if self.validator:
-            candles, report = self.validator.validate_candles(list(candles), symbol=symbol)
+            candles, report = self.validator.validate_candles(list(candles), symbol=symbol, timeframe=timeframe)
         return candles
 
     def get_volume_profile(self, symbol: str, date):

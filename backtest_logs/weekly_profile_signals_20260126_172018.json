@@ -1,0 +1,122 @@
+[
+  {
+    "time": "2020-08-27T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.18393,
+    "stop": 1.17841,
+    "target": 1.1949699999999999,
+    "mon_tue_low": 1.17841,
+    "mon_tue_high": 1.18495,
+    "week_key": [
+      2020,
+      35
+    ]
+  },
+  {
+    "time": "2020-09-02T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.19073,
+    "stop": 1.20113,
+    "target": 1.1699300000000001,
+    "mon_tue_low": 1.1884,
+    "mon_tue_high": 1.20113,
+    "week_key": [
+      2020,
+      36
+    ]
+  },
+  {
+    "time": "2020-09-09T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.17756,
+    "stop": 1.1757,
+    "target": 1.1812799999999999,
+    "mon_tue_low": 1.1757,
+    "mon_tue_high": 1.18486,
+    "week_key": [
+      2020,
+      37
+    ]
+  },
+  {
+    "time": "2020-09-16T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.18342,
+    "stop": 1.19005,
+    "target": 1.1701599999999996,
+    "mon_tue_low": 1.18319,
+    "mon_tue_high": 1.19005,
+    "week_key": [
+      2020,
+      38
+    ]
+  },
+  {
+    "time": "2020-09-23T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.16803,
+    "stop": 1.18717,
+    "target": 1.1297499999999996,
+    "mon_tue_low": 1.16916,
+    "mon_tue_high": 1.18717,
+    "week_key": [
+      2020,
+      39
+    ]
+  },
+  {
+    "time": "2020-10-07T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.17353,
+    "stop": 1.18077,
+    "target": 1.1590499999999997,
+    "mon_tue_low": 1.17176,
+    "mon_tue_high": 1.18077,
+    "week_key": [
+      2020,
+      41
+    ]
+  },
+  {
+    "time": "2020-10-14T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.17453,
+    "stop": 1.17304,
+    "target": 1.17751,
+    "mon_tue_low": 1.17304,
+    "mon_tue_high": 1.18266,
+    "week_key": [
+      2020,
+      42
+    ]
+  },
+  {
+    "time": "2020-10-28T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.1779,
+    "stop": 1.18504,
+    "target": 1.1636199999999997,
+    "mon_tue_low": 1.17695,
+    "mon_tue_high": 1.18504,
+    "week_key": [
+      2020,
+      44
+    ]
+  }
+]

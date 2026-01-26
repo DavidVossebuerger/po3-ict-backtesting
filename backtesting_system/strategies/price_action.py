@@ -81,21 +81,21 @@ class PriceActionStrategy(Strategy):
         intraday = self.identify_intraday_reversal_setup(history[-24:])
         if intraday.get("direction") == "long":
             stop = min(c.low for c in history[-10:])
-            risk = max(curr.close - stop, 0.00001)
-            return {"direction": "long", "entry": curr.close, "stop": stop, "target": curr.close + 2 * risk}
+            target = self.project_target(curr.close, stop, "long")
+            return {"direction": "long", "entry": curr.close, "stop": stop, "target": target}
         if intraday.get("direction") == "short":
             stop = max(c.high for c in history[-10:])
-            risk = max(stop - curr.close, 0.00001)
-            return {"direction": "short", "entry": curr.close, "stop": stop, "target": curr.close - 2 * risk}
+            target = self.project_target(curr.close, stop, "short")
+            return {"direction": "short", "entry": curr.close, "stop": stop, "target": target}
 
         if bullish_engulf:
             stop = min(prev.low, curr.low)
-            risk = max(curr.close - stop, 0.00001)
-            return {"direction": "long", "entry": curr.close, "stop": stop, "target": curr.close + 2 * risk}
+            target = self.project_target(curr.close, stop, "long")
+            return {"direction": "long", "entry": curr.close, "stop": stop, "target": target}
         if bearish_engulf:
             stop = max(prev.high, curr.high)
-            risk = max(stop - curr.close, 0.00001)
-            return {"direction": "short", "entry": curr.close, "stop": stop, "target": curr.close - 2 * risk}
+            target = self.project_target(curr.close, stop, "short")
+            return {"direction": "short", "entry": curr.close, "stop": stop, "target": target}
         return {}
 
     def validate_context(self, data) -> bool:

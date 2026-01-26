@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
+import json
+from pathlib import Path
 from typing import Dict, List, Optional
 
 from backtesting_system.core.strategy_base import Strategy
@@ -28,6 +30,8 @@ class WeeklyProfileStrategy(Strategy):
         self._daily_series: List[Candle] = []
         self._last_hist_len: int = 0
         self.detector = WeeklyProfileDetector()
+        self._signal_log: List[Dict[str, object]] = []
+        self._signal_log_path: Path | None = None
 
     def identify_weekly_profile(self, weekly_data, daily_data) -> str | None:
         profile_type, confidence, _details = self.detector.detect_profile(daily_data, weekly_data, {})
@@ -81,15 +85,13 @@ class WeeklyProfileStrategy(Strategy):
         entry = bar.close
         if direction == "long":
             stop = ctx.mon_tue_low if ctx.mon_tue_low is not None else bar.close * 0.99
-            risk = max(entry - stop, 0.00001)
-            target = entry + 2 * risk
+            target = self.project_target(entry, stop, direction)
         else:
             stop = ctx.mon_tue_high if ctx.mon_tue_high is not None else bar.close * 1.01
-            risk = max(stop - entry, 0.00001)
-            target = entry - 2 * risk
+            target = self.project_target(entry, stop, direction)
 
         self._last_signal_week = ctx.week_key
-        return {
+        signal = {
             "direction": direction,
             "entry": entry,
             "stop": stop,
@@ -97,6 +99,8 @@ class WeeklyProfileStrategy(Strategy):
             "confluence": ctx.confidence,
             "profile_type": ctx.profile_type,
         }
+        self._record_signal(bar.time, signal, ctx)
+        return signal
 
     def validate_pda_array(self, price, h1_pda) -> bool:
         return True
@@ -191,6 +195,27 @@ class WeeklyProfileStrategy(Strategy):
     def _is_day_open(self, dt: datetime) -> bool:
         return dt.hour == 0 and dt.minute == 0
 
+    def _record_signal(self, timestamp: datetime, signal: dict, ctx: WeeklyProfileContext) -> None:
+        entry = {
+            "time": timestamp.isoformat(),
+            "profile_type": ctx.profile_type,
+            "confidence": ctx.confidence,
+            "direction": signal.get("direction"),
+            "entry": signal.get("entry"),
+            "stop": signal.get("stop"),
+            "target": signal.get("target"),
+            "mon_tue_low": ctx.mon_tue_low,
+            "mon_tue_high": ctx.mon_tue_high,
+            "week_key": ctx.week_key,
+        }
+        self._signal_log.append(entry)
+        if self._signal_log_path is None:
+            Path("backtest_logs").mkdir(parents=True, exist_ok=True)
+            stamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+            self._signal_log_path = Path("backtest_logs") / f"weekly_profile_signals_{stamp}.json"
+        with self._signal_log_path.open("w", encoding="utf-8") as handle:
+            json.dump(self._signal_log, handle, indent=2, default=str)
+
 class WeeklyProfileDetector:
     def __init__(self):
         self.profiles = {
@@ -203,16 +228,28 @@ class WeeklyProfileDetector:
         }
 
     def detect_profile(self, daily_candles: list[Candle], weekly_ohlc: dict, htf_array: dict) -> tuple[str | None, float, dict]:
-        if len(daily_candles) < 5:
+        if len(daily_candles) < 3:
             return None, 0.0, {}
 
         mon_tue = daily_candles[0:2]
         wed = daily_candles[2]
-        thu_fri = daily_candles[3:5]
+        thu_fri = daily_candles[3:5] if len(daily_candles) >= 5 else []
 
-        mon_tue_engagement = self._analyze_engagement(mon_tue)
+        mon_tue_engagement = self._analyze_engagement(mon_tue) if len(mon_tue) == 2 else {"type": "insufficient"}
         wed_behavior = self._analyze_wednesday(wed)
-        thu_fri_expected = self._analyze_expectation(thu_fri, weekly_ohlc)
+        if len(thu_fri) == 2:
+            thu_fri_expected = self._analyze_expectation(thu_fri, weekly_ohlc)
+        else:
+            expected_move = "neutral"
+            if wed_behavior["direction"] == "higher":
+                expected_move = "expansion_higher"
+            elif wed_behavior["direction"] == "lower":
+                expected_move = "expansion_lower"
+            thu_fri_expected = {
+                "expected_move": expected_move,
+                "weekly_target": weekly_ohlc.get("high", 0.0),
+                "confidence": 0.5,
+            }
 
         if (
             mon_tue_engagement["type"] == "discount_engagement"
@@ -228,18 +265,18 @@ class WeeklyProfileDetector:
             return "classic_expansion_short", 0.85, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
             mon_tue_engagement["type"] in {"consolidation", "retracement"}
-            and wed_behavior["direction"] == "reversal_up"
-            and thu_fri_expected["expected_move"] == "bullish_expansion"
+            and wed_behavior["direction"] == "higher"
+            and thu_fri_expected["expected_move"] == "expansion_higher"
         ):
             return "midweek_reversal_long", 0.75, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
             mon_tue_engagement["type"] in {"consolidation", "retracement"}
-            and wed_behavior["direction"] == "reversal_down"
-            and thu_fri_expected["expected_move"] == "bearish_expansion"
+            and wed_behavior["direction"] == "lower"
+            and thu_fri_expected["expected_move"] == "expansion_lower"
         ):
             return "midweek_reversal_short", 0.75, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
-            mon_tue_engagement["type"] == "internal_range"
+            mon_tue_engagement["type"] in {"consolidation", "choppy"}
             and wed_behavior["type"] == "external_range_test"
         ):
             return "consolidation_reversal_long", 0.70, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)

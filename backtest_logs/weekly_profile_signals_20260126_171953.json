@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2020-02-19T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.07979,
+    "stop": 1.07854,
+    "target": 1.08229,
+    "mon_tue_low": 1.07854,
+    "mon_tue_high": 1.08509,
+    "week_key": [
+      2020,
+      8
+    ]
+  },
+  {
+    "time": "2020-02-27T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.08979,
+    "stop": 1.0805,
+    "target": 1.10837,
+    "mon_tue_low": 1.0805,
+    "mon_tue_high": 1.08902,
+    "week_key": [
+      2020,
+      9
+    ]
+  },
+  {
+    "time": "2020-03-12T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.12714,
+    "stop": 1.14954,
+    "target": 1.08234,
+    "mon_tue_low": 1.12749,
+    "mon_tue_high": 1.14954,
+    "week_key": [
+      2020,
+      11
+    ]
+  },
+  {
+    "time": "2020-03-18T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.09923,
+    "stop": 1.12366,
+    "target": 1.0503699999999996,
+    "mon_tue_low": 1.0955,
+    "mon_tue_high": 1.12366,
+    "week_key": [
+      2020,
+      12
+    ]
+  },
+  {
+    "time": "2020-04-01T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.10312,
+    "stop": 1.09265,
+    "target": 1.1240600000000005,
+    "mon_tue_low": 1.09265,
+    "mon_tue_high": 1.11383,
+    "week_key": [
+      2020,
+      14
+    ]
+  },
+  {
+    "time": "2020-04-15T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.09859,
+    "stop": 1.08926,
+    "target": 1.11725,
+    "mon_tue_low": 1.08926,
+    "mon_tue_high": 1.09907,
+    "week_key": [
+      2020,
+      16
+    ]
+  },
+  {
+    "time": "2020-04-22T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.08549,
+    "stop": 1.08967,
+    "target": 1.0771300000000004,
+    "mon_tue_low": 1.08165,
+    "mon_tue_high": 1.08967,
+    "week_key": [
+      2020,
+      17
+    ]
+  }
+]

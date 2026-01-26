@@ -27,3 +27,13 @@ class Strategy(ABC):
 
     def get_confluences(self, data) -> dict:
         return {}
+
+    def calculate_manipulation_leg(self, entry: float, stop: float) -> float:
+        return max(abs(entry - stop), 0.00001)
+
+    def project_target(self, entry: float, stop: float, direction: str, multiple: float | None = None) -> float:
+        leg = self.calculate_manipulation_leg(entry, stop)
+        mult = float(multiple if multiple is not None else self.params.get("target_multiple", 2.0))
+        if direction == "long":
+            return entry + mult * leg
+        return entry - mult * leg

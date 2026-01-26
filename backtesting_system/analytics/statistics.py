@@ -48,5 +48,7 @@ def pearson_correlation(a: Iterable[float], b: Iterable[float]) -> Tuple[float, 
     b_list = [x for x in b if x is not None]
     if len(a_list) < 2 or len(b_list) < 2:
         return 0.0, 1.0
+    if min(a_list) == max(a_list) or min(b_list) == max(b_list):
+        return 0.0, 1.0
     r_val, p_value = stats.pearsonr(a_list, b_list)
     return float(r_val), float(p_value)

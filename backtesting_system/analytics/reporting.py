@@ -43,6 +43,8 @@ def _max_consecutive_losses(pnls: Iterable[float]) -> int:
 
 
 def build_report(engine: BacktestEngine) -> Dict[str, Any]:
+    equity_curve = [point.equity for point in engine.equity_curve]
+    equity_points = [(point.time, point.equity) for point in engine.equity_curve]
     daily_returns_series = list(daily_returns(equity_points).values())
     returns = daily_returns_series
     gross_profit = sum(trade.pnl for trade in engine.trades if trade.pnl > 0)
@@ -50,8 +52,6 @@ def build_report(engine: BacktestEngine) -> Dict[str, Any]:
     wins = sum(1 for trade in engine.trades if trade.pnl > 0)
     total = len(engine.trades)
     win_rate = wins / total if total else 0.0
-    equity_curve = [point.equity for point in engine.equity_curve]
-    equity_points = [(point.time, point.equity) for point in engine.equity_curve]
     month_returns = monthly_returns(equity_points)
     week_returns = weekly_returns(equity_points)
     day_returns = daily_returns(equity_points)
@@ -280,3 +280,65 @@ def write_monte_carlo_csv(results: list[dict], output_path: Path) -> None:
         writer.writerow(headers)
         for idx, row in enumerate(results, start=1):
             writer.writerow([idx, row.get("max_drawdown"), row.get("final_equity")])
+
+
+def write_pdf_report(report: Dict[str, Any], output_dir: Path, title: str) -> Path:
+    try:
+        from reportlab.lib.pagesizes import A4
+        from reportlab.lib.units import cm
+        from reportlab.pdfgen import canvas
+    except Exception as exc:  # pragma: no cover
+        raise ImportError("reportlab is required for PDF reporting. Install with: pip install reportlab") from exc
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    safe_title = title.lower().replace(" ", "_")
+    output_path = output_dir / f"{safe_title}_{timestamp}.pdf"
+
+    pdf = canvas.Canvas(str(output_path), pagesize=A4)
+    width, height = A4
+    x = 2.0 * cm
+    y = height - 2.0 * cm
+
+    pdf.setFont("Helvetica-Bold", 14)
+    pdf.drawString(x, y, f"Backtest Report: {title}")
+    y -= 0.8 * cm
+    pdf.setFont("Helvetica", 10)
+    pdf.drawString(x, y, f"Generated: {datetime.utcnow().isoformat()}Z")
+    y -= 1.0 * cm
+
+    pdf.setFont("Helvetica-Bold", 11)
+    pdf.drawString(x, y, "Summary")
+    y -= 0.6 * cm
+    pdf.setFont("Helvetica", 10)
+
+    ordered_keys = [
+        "initial_capital",
+        "final_equity",
+        "trades",
+        "win_rate",
+        "profit_factor",
+        "max_drawdown",
+        "sharpe",
+        "sortino",
+        "cagr",
+        "calmar",
+        "k_ratio",
+        "ulcer_index",
+        "recovery_factor",
+        "avg_trade_pnl",
+    ]
+    for key in ordered_keys:
+        if key not in report:
+            continue
+        value = report.get(key)
+        pdf.drawString(x, y, f"{key}: {value}")
+        y -= 0.5 * cm
+        if y < 3.0 * cm:
+            pdf.showPage()
+            y = height - 2.0 * cm
+            pdf.setFont("Helvetica", 10)
+
+    pdf.showPage()
+    pdf.save()
+    return output_path

@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2005-02-17T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.30352,
+    "stop": 1.28776,
+    "target": 1.33504,
+    "mon_tue_low": 1.28776,
+    "mon_tue_high": 1.3048,
+    "week_key": [
+      2005,
+      7
+    ]
+  },
+  {
+    "time": "2005-03-02T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.31559,
+    "stop": 1.32777,
+    "target": 1.2912300000000003,
+    "mon_tue_low": 1.31622,
+    "mon_tue_high": 1.32777,
+    "week_key": [
+      2005,
+      9
+    ]
+  },
+  {
+    "time": "2005-03-10T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.33843,
+    "stop": 1.31763,
+    "target": 1.3800299999999999,
+    "mon_tue_low": 1.31763,
+    "mon_tue_high": 1.33602,
+    "week_key": [
+      2005,
+      10
+    ]
+  },
+  {
+    "time": "2005-03-16T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.33091,
+    "stop": 1.329,
+    "target": 1.3347300000000002,
+    "mon_tue_low": 1.329,
+    "mon_tue_high": 1.34759,
+    "week_key": [
+      2005,
+      11
+    ]
+  },
+  {
+    "time": "2005-03-23T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.30797,
+    "stop": 1.30322,
+    "target": 1.3174700000000001,
+    "mon_tue_low": 1.30322,
+    "mon_tue_high": 1.33159,
+    "week_key": [
+      2005,
+      12
+    ]
+  },
+  {
+    "time": "2005-04-06T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.28465,
+    "stop": 1.27977,
+    "target": 1.29441,
+    "mon_tue_low": 1.27977,
+    "mon_tue_high": 1.29022,
+    "week_key": [
+      2005,
+      14
+    ]
+  },
+  {
+    "time": "2005-04-27T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.29676,
+    "stop": 1.30448,
+    "target": 1.2813199999999996,
+    "mon_tue_low": 1.29454,
+    "mon_tue_high": 1.30448,
+    "week_key": [
+      2005,
+      17
+    ]
+  }
+]

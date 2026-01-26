@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2006-02-22T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.19146,
+    "stop": 1.19726,
+    "target": 1.17986,
+    "mon_tue_low": 1.18907,
+    "mon_tue_high": 1.19726,
+    "week_key": [
+      2006,
+      8
+    ]
+  },
+  {
+    "time": "2006-03-02T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.19144,
+    "stop": 1.18254,
+    "target": 1.2092400000000003,
+    "mon_tue_low": 1.18254,
+    "mon_tue_high": 1.19399,
+    "week_key": [
+      2006,
+      9
+    ]
+  },
+  {
+    "time": "2006-03-08T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.18727,
+    "stop": 1.2091,
+    "target": 1.14361,
+    "mon_tue_low": 1.18669,
+    "mon_tue_high": 1.2091,
+    "week_key": [
+      2006,
+      10
+    ]
+  },
+  {
+    "time": "2006-03-22T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.20922,
+    "stop": 1.21948,
+    "target": 1.1887,
+    "mon_tue_low": 1.20749,
+    "mon_tue_high": 1.21948,
+    "week_key": [
+      2006,
+      12
+    ]
+  },
+  {
+    "time": "2006-03-29T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.1996,
+    "stop": 1.21046,
+    "target": 1.1778799999999998,
+    "mon_tue_low": 1.19905,
+    "mon_tue_high": 1.21046,
+    "week_key": [
+      2006,
+      13
+    ]
+  },
+  {
+    "time": "2006-04-20T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.23533,
+    "stop": 1.21325,
+    "target": 1.2794900000000002,
+    "mon_tue_low": 1.21325,
+    "mon_tue_high": 1.23666,
+    "week_key": [
+      2006,
+      16
+    ]
+  },
+  {
+    "time": "2006-05-03T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.26153,
+    "stop": 1.25545,
+    "target": 1.2736900000000002,
+    "mon_tue_low": 1.25545,
+    "mon_tue_high": 1.26873,
+    "week_key": [
+      2006,
+      18
+    ]
+  }
+]

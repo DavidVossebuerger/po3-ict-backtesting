@@ -139,21 +139,21 @@ class ICTFramework(Strategy):
             direction = ny_rev["direction"]
             if direction == "long":
                 stop = min(c.low for c in history[-10:])
-                risk = max(bar.close - stop, 0.00001)
-                return {"direction": "long", "entry": bar.close, "stop": stop, "target": bar.close + 2 * risk}
+                target = self.project_target(bar.close, stop, "long")
+                return {"direction": "long", "entry": bar.close, "stop": stop, "target": target}
             stop = max(c.high for c in history[-10:])
-            risk = max(stop - bar.close, 0.00001)
-            return {"direction": "short", "entry": bar.close, "stop": stop, "target": bar.close - 2 * risk}
+            target = self.project_target(bar.close, stop, "short")
+            return {"direction": "short", "entry": bar.close, "stop": stop, "target": target}
 
         last_fvg = fvg_list[-1]
         if last_fvg["type"] == "bullish" and bar.close > bar.open:
             stop = min(c.low for c in history[-10:])
-            risk = max(bar.close - stop, 0.00001)
-            return {"direction": "long", "entry": bar.close, "stop": stop, "target": bar.close + 2 * risk}
+            target = self.project_target(bar.close, stop, "long")
+            return {"direction": "long", "entry": bar.close, "stop": stop, "target": target}
         if last_fvg["type"] == "bearish" and bar.close < bar.open:
             stop = max(c.high for c in history[-10:])
-            risk = max(stop - bar.close, 0.00001)
-            return {"direction": "short", "entry": bar.close, "stop": stop, "target": bar.close - 2 * risk}
+            target = self.project_target(bar.close, stop, "short")
+            return {"direction": "short", "entry": bar.close, "stop": stop, "target": target}
         return {}
 
     def validate_context(self, data) -> bool:
