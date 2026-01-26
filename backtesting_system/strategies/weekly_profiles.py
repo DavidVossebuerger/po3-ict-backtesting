@@ -128,10 +128,11 @@ class WeeklyProfileStrategy(Strategy):
 
         prev_week = [c for c in daily if self._current_week_key(c.time) == prev_week_key]
         this_week = [c for c in daily if self._current_week_key(c.time) == current_week]
+        this_week = [c for c in this_week if c.time.weekday() != 0]
         mon_tue = [c for c in this_week if c.time.weekday() in (0, 1)]
         wed = [c for c in this_week if c.time.weekday() == 2]
         thu_fri = [c for c in this_week if c.time.weekday() in (3, 4)]
-        if not prev_week or len(mon_tue) < 2:
+        if not prev_week or len(this_week) < 2:
             return WeeklyProfileContext(None, None, None, None, current_week)
 
         prev_low = min(c.low for c in prev_week)
@@ -143,10 +144,14 @@ class WeeklyProfileStrategy(Strategy):
             "low": min(c.low for c in prev_week),
             "close": prev_week[-1].close,
         }
-        profile_type, confidence, _details = self.detector.detect_profile(this_week, weekly_ohlc, {})
+        profile_type, confidence, _details = self.detector.detect_profile(prev_week, weekly_ohlc, {})
 
-        mon_tue_low = min(c.low for c in mon_tue)
-        mon_tue_high = max(c.high for c in mon_tue)
+        if mon_tue:
+            mon_tue_low = min(c.low for c in mon_tue)
+            mon_tue_high = max(c.high for c in mon_tue)
+        else:
+            mon_tue_low = this_week[0].low
+            mon_tue_high = this_week[0].high
 
         return WeeklyProfileContext(profile_type, confidence, mon_tue_low, mon_tue_high, current_week)
 

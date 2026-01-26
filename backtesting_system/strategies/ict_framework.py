@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime
 from typing import List
 
 from backtesting_system.core.strategy_base import Strategy
@@ -7,9 +8,192 @@ from backtesting_system.models.market import Candle
 from backtesting_system.utils.timezones import ASIA, LONDON, NY
 
 
+class KillzoneValidator:
+    KILLZONES = {
+        "london_open": (2, 5),
+        "ny_am": (8, 11),
+        "ny_pm": (13, 16),
+    }
+
+    def is_valid_killzone(self, dt: datetime, timezone_offset: int = -5) -> bool:
+        est_hour = (dt.hour + timezone_offset) % 24
+        if dt.weekday() == 0:
+            return False
+        for _zone, (start, end) in self.KILLZONES.items():
+            if start <= est_hour < end:
+                return True
+        return False
+
+
+class PDAArrayDetector:
+    def identify_fair_value_gaps(self, candles: List[Candle]) -> List[dict]:
+        fvgs: List[dict] = []
+        if len(candles) < 3:
+            return fvgs
+        for i in range(2, len(candles)):
+            c1 = candles[i - 2]
+            c3 = candles[i]
+            if c1.high < c3.low:
+                fvgs.append({
+                    "type": "bullish",
+                    "low": c1.high,
+                    "high": c3.low,
+                    "mid": (c1.high + c3.low) / 2,
+                    "size_pips": (c3.low - c1.high) * 10000,
+                    "index": i,
+                })
+            elif c1.low > c3.high:
+                fvgs.append({
+                    "type": "bearish",
+                    "low": c3.high,
+                    "high": c1.low,
+                    "mid": (c3.high + c1.low) / 2,
+                    "size_pips": (c1.low - c3.high) * 10000,
+                    "index": i,
+                })
+        return fvgs
+
+    def identify_order_blocks(self, candles: List[Candle]) -> List[dict]:
+        obs: List[dict] = []
+        if len(candles) < 2:
+            return obs
+        for i in range(1, len(candles)):
+            prev = candles[i - 1]
+            curr = candles[i]
+            if prev.close < prev.open and curr.close > curr.open:
+                obs.append({
+                    "type": "bullish",
+                    "low": prev.low,
+                    "high": prev.close,
+                    "reversal_index": i,
+                    "liquidity_level": prev.close,
+                })
+            elif prev.close > prev.open and curr.close < curr.open:
+                obs.append({
+                    "type": "bearish",
+                    "low": prev.close,
+                    "high": prev.high,
+                    "reversal_index": i,
+                    "liquidity_level": prev.close,
+                })
+        return obs
+
+    def validate_entry_at_pda(self, entry_price: float, arrays: dict, tolerance_pips: float = 5.0) -> tuple[bool, str | None]:
+        tolerance = tolerance_pips / 10000
+        for fvg in arrays.get("fvgs", []):
+            if fvg["low"] - tolerance <= entry_price <= fvg["high"] + tolerance:
+                return True, "fvg"
+        for ob in arrays.get("order_blocks", []):
+            if ob["low"] - tolerance <= entry_price <= ob["high"] + tolerance:
+                return True, "order_block"
+        return False, None
+
+
+class CISDValidator:
+    def detect_cisd(self, daily_candles: List[Candle], h1_candles: List[Candle]) -> dict:
+        if len(daily_candles) < 2 or len(h1_candles) < 5:
+            return {"detected": False}
+        prev_daily = daily_candles[-2]
+        curr_daily = daily_candles[-1]
+        swing_high_prev = prev_daily.high
+        swing_low_prev = prev_daily.low
+        broke_above = curr_daily.high > swing_high_prev
+        broke_below = curr_daily.low < swing_low_prev
+        if not (broke_above or broke_below):
+            return {"detected": False, "reason": "no_range_break"}
+        latest_h1 = h1_candles[-1]
+        if broke_above and latest_h1.close > swing_high_prev:
+            return {
+                "detected": True,
+                "type": "bullish",
+                "breaker_level": swing_high_prev,
+                "strength": "strong" if latest_h1.close > swing_high_prev * 1.001 else "weak",
+            }
+        if broke_below and latest_h1.close < swing_low_prev:
+            return {
+                "detected": True,
+                "type": "bearish",
+                "breaker_level": swing_low_prev,
+                "strength": "strong" if latest_h1.close < swing_low_prev * 0.999 else "weak",
+            }
+        return {"detected": False, "reason": "h1_no_confirmation"}
+
+
+class StopHuntDetector:
+    def detect_stop_hunt(self, lower_tf_candles: List[Candle], swing_level: float, lookback: int = 20) -> dict:
+        recent = lower_tf_candles[-lookback:]
+        for candle in recent:
+            body = abs(candle.close - candle.open)
+            if candle.low < swing_level < candle.high:
+                lower_wick = swing_level - candle.low
+                if lower_wick > body * 1.5 and candle.close > candle.open:
+                    return {
+                        "detected": True,
+                        "type": "bullish",
+                        "level_swept": swing_level,
+                        "wick_size": lower_wick,
+                        "body_size": body,
+                        "wick_ratio": lower_wick / body if body > 0 else 0,
+                        "strength": "strong" if (lower_wick / body) > 2.0 else "medium",
+                    }
+                upper_wick = candle.high - swing_level
+                if upper_wick > body * 1.5 and candle.close < candle.open:
+                    return {
+                        "detected": True,
+                        "type": "bearish",
+                        "level_swept": swing_level,
+                        "wick_size": upper_wick,
+                        "body_size": body,
+                        "wick_ratio": upper_wick / body if body > 0 else 0,
+                        "strength": "strong" if (upper_wick / body) > 2.0 else "medium",
+                    }
+        return {"detected": False}
+
+
+class OpeningRangeFramework:
+    def calculate_opening_range(self, daily_candle: Candle, day_low_so_far: float, day_high_so_far: float) -> dict:
+        opening_price = daily_candle.open
+        distance_to_low = opening_price - day_low_so_far
+        distance_to_high = day_high_so_far - opening_price
+        if distance_to_low > distance_to_high:
+            expected_high = opening_price + distance_to_low
+            return {
+                "opening_price": opening_price,
+                "current_low": day_low_so_far,
+                "current_high": day_high_so_far,
+                "initial_direction": "down",
+                "expected_reversal": "up",
+                "expected_target": expected_high,
+                "range_size": distance_to_low * 2,
+                "entry_zone": (day_low_so_far, opening_price),
+                "stop_zone": (opening_price, expected_high),
+            }
+        expected_low = opening_price - distance_to_high
+        return {
+            "opening_price": opening_price,
+            "current_low": day_low_so_far,
+            "current_high": day_high_so_far,
+            "initial_direction": "up",
+            "expected_reversal": "down",
+            "expected_target": expected_low,
+            "range_size": distance_to_high * 2,
+            "entry_zone": (opening_price, day_high_so_far),
+            "stop_zone": (expected_low, opening_price),
+        }
+
+    def is_entry_in_zone(self, entry_price: float, or_framework: dict) -> bool:
+        zone = or_framework.get("entry_zone", (0, 0))
+        return zone[0] <= entry_price <= zone[1]
+
+
 class ICTFramework(Strategy):
     def __init__(self, params: dict):
         super().__init__(params)
+        self.killzone = KillzoneValidator()
+        self.pda_detector = PDAArrayDetector()
+        self.cisd_validator = CISDValidator()
+        self.stop_hunt_detector = StopHuntDetector()
+        self.opening_range = OpeningRangeFramework()
 
     def identify_fvg(self, candles: List[Candle]) -> List[dict]:
         gaps: List[dict] = []
@@ -121,6 +305,8 @@ class ICTFramework(Strategy):
         history = data.get("history", [])
         if len(history) < 50:
             return False
+        if not self.killzone.is_valid_killzone(data["bar"].time):
+            return False
         fvg = self.identify_fvg(history[-50:])
         ny_rev = self.identify_ny_reversal(data)
         return len(fvg) > 0 or bool(ny_rev)
@@ -130,6 +316,26 @@ class ICTFramework(Strategy):
         history: List[Candle] = data.get("history", [])
         if len(history) < 20:
             return {}
+        if not self.killzone.is_valid_killzone(bar.time):
+            return {}
+
+        daily = self._daily_from_history(history)
+        cisd = self.cisd_validator.detect_cisd(daily, history)
+        if not cisd.get("detected"):
+            return {}
+
+        day_candles = [c for c in history if c.time.date() == bar.time.date()]
+        if day_candles:
+            day_low = min(c.low for c in day_candles)
+            day_high = max(c.high for c in day_candles)
+            opening_range = self.opening_range.calculate_opening_range(day_candles[0], day_low, day_high)
+        else:
+            opening_range = {}
+
+        h1_arrays = {
+            "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
+            "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
+        }
 
         fvg_list = self.identify_fvg(history[-50:])
         if not fvg_list:
@@ -140,21 +346,79 @@ class ICTFramework(Strategy):
             if direction == "long":
                 stop = min(c.low for c in history[-10:])
                 target = self.project_target(bar.close, stop, "long")
+                entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
+                if not entry_ok:
+                    return {}
+                if opening_range and not self.opening_range.is_entry_in_zone(bar.close, opening_range):
+                    return {}
+                swing_level = daily[-2].low if len(daily) >= 2 else stop
+                stop_hunt = self.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
+                if not stop_hunt.get("detected"):
+                    return {}
                 return {"direction": "long", "entry": bar.close, "stop": stop, "target": target}
             stop = max(c.high for c in history[-10:])
             target = self.project_target(bar.close, stop, "short")
+            entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
+            if not entry_ok:
+                return {}
+            if opening_range and not self.opening_range.is_entry_in_zone(bar.close, opening_range):
+                return {}
+            swing_level = daily[-2].high if len(daily) >= 2 else stop
+            stop_hunt = self.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
+            if not stop_hunt.get("detected"):
+                return {}
             return {"direction": "short", "entry": bar.close, "stop": stop, "target": target}
 
         last_fvg = fvg_list[-1]
         if last_fvg["type"] == "bullish" and bar.close > bar.open:
             stop = min(c.low for c in history[-10:])
             target = self.project_target(bar.close, stop, "long")
+            entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
+            if not entry_ok:
+                return {}
+            if opening_range and not self.opening_range.is_entry_in_zone(bar.close, opening_range):
+                return {}
+            swing_level = daily[-2].low if len(daily) >= 2 else stop
+            stop_hunt = self.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
+            if not stop_hunt.get("detected"):
+                return {}
             return {"direction": "long", "entry": bar.close, "stop": stop, "target": target}
         if last_fvg["type"] == "bearish" and bar.close < bar.open:
             stop = max(c.high for c in history[-10:])
             target = self.project_target(bar.close, stop, "short")
+            entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
+            if not entry_ok:
+                return {}
+            if opening_range and not self.opening_range.is_entry_in_zone(bar.close, opening_range):
+                return {}
+            swing_level = daily[-2].high if len(daily) >= 2 else stop
+            stop_hunt = self.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
+            if not stop_hunt.get("detected"):
+                return {}
             return {"direction": "short", "entry": bar.close, "stop": stop, "target": target}
         return {}
+
+    def _daily_from_history(self, history: List[Candle]) -> List[Candle]:
+        if not history:
+            return []
+        daily = {}
+        for c in history:
+            key = (c.time.year, c.time.month, c.time.day)
+            daily.setdefault(key, []).append(c)
+        result = []
+        for key in sorted(daily.keys()):
+            chunk = daily[key]
+            result.append(
+                Candle(
+                    time=chunk[0].time.replace(hour=0, minute=0, second=0, microsecond=0),
+                    open=chunk[0].open,
+                    high=max(x.high for x in chunk),
+                    low=min(x.low for x in chunk),
+                    close=chunk[-1].close,
+                    volume=None,
+                )
+            )
+        return result
 
     def validate_context(self, data) -> bool:
         return True

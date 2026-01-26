@@ -144,6 +144,21 @@ class DataValidator:
             json.dump(asdict(report), handle, indent=2, default=str)
         return str(path)
 
+    def validate_timeframe_conversion(self, source_tf: str, target_tf: str) -> bool:
+        tf_minutes = {
+            "M5": 5,
+            "M15": 15,
+            "M30": 30,
+            "H1": 60,
+            "H4": 240,
+            "D": 1440,
+        }
+        source_mins = tf_minutes.get(source_tf)
+        target_mins = tf_minutes.get(target_tf)
+        if not source_mins or not target_mins:
+            return False
+        return target_mins % source_mins == 0
+
 
 def summarize_validation_reports(report_dir: str, output_path: str | Path) -> dict:
     report_path = Path(report_dir)
