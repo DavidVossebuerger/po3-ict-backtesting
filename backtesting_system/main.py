@@ -105,7 +105,11 @@ def main() -> None:
                 end_date=datetime(2025, 9, 7, tzinfo=timezone.utc),
                 show_progress=True,
             )
-            report = build_report(engine)
+            try:
+                report = build_report(engine)
+            except Exception as exc:
+                logger.error("%s report failed: %s", label, exc)
+                report = {}
             logger.info("%s report: %s", label, report)
             write_report(report, results_dir / f"report_{label}.json")
             try:
