@@ -44,7 +44,7 @@ def _max_consecutive_losses(pnls: Iterable[float]) -> int:
 
 def build_report(engine: BacktestEngine) -> Dict[str, Any]:
     equity_curve = [point.equity for point in engine.equity_curve]
-    equity_points = [(point.time, point.equity) for point in engine.equity_curve]
+    equity_points = [(point.time, point.equity) for point in engine.equity_curve] if engine.equity_curve else []
     daily_returns_series = list(daily_returns(equity_points).values())
     returns = daily_returns_series
     gross_profit = sum(trade.pnl for trade in engine.trades if trade.pnl > 0)
