@@ -8,7 +8,12 @@ from typing import Dict, List, Optional
 
 from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.models.market import Candle
-from backtesting_system.strategies.ict_framework import OpeningRangeFramework, PDAArrayDetector
+from backtesting_system.strategies.ict_framework import (
+    CISDValidator,
+    OpeningRangeFramework,
+    PDAArrayDetector,
+    StopHuntDetector,
+)
 
 
 @dataclass
@@ -32,6 +37,8 @@ class WeeklyProfileStrategy(Strategy):
         self._last_hist_len: int = 0
         self.detector = WeeklyProfileDetector()
         self.pda_detector = PDAArrayDetector()
+        self.cisd_validator = CISDValidator()
+        self.stop_hunt_detector = StopHuntDetector()
         self.opening_range = OpeningRangeFramework()
         self._signal_log: List[Dict[str, object]] = []
         self._signal_log_path: Path | None = None
@@ -88,20 +95,46 @@ class WeeklyProfileStrategy(Strategy):
         if day not in allowed_days.get(ctx.profile_type, set()):
             return {}
 
+        daily_candles = self._aggregate_daily(history)
+        cisd = self.cisd_validator.detect_cisd(daily_candles, history[-20:])
+        if not cisd.get("detected"):
+            return {}
+
+        signal_direction = "long" if ctx.profile_type.endswith("long") else "short"
+        cisd_direction = "long" if cisd.get("type", "").lower() == "bullish" else "short"
+        if signal_direction != cisd_direction:
+            return {}
+
+        if signal_direction == "long":
+            swing_level = ctx.mon_tue_low if ctx.mon_tue_low is not None else min(c.low for c in history[-20:])
+        else:
+            swing_level = ctx.mon_tue_high if ctx.mon_tue_high is not None else max(c.high for c in history[-20:])
+        stop_hunt = self.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
+        if not stop_hunt.get("detected"):
+            return {}
+
         day_candles = [c for c in history if c.time.date() == bar.time.date()]
         if day_candles:
             day_low = min(c.low for c in day_candles)
             day_high = max(c.high for c in day_candles)
             opening_range = self.opening_range.calculate_opening_range(day_candles[0], day_low, day_high)
-            if opening_range and not self.opening_range.is_entry_in_zone(bar.close, opening_range):
-                return {}
+        else:
+            opening_range = {}
 
         h1_arrays = {
             "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
             "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
         }
 
-        direction = "long" if ctx.profile_type.endswith("long") else "short"
+        confluence_score = ctx.confidence if ctx.confidence else 0.5
+        if opening_range and self.opening_range.is_entry_in_zone(bar.close, opening_range):
+            confluence_score += 0.15
+        elif opening_range:
+            confluence_score -= 0.10
+        if confluence_score < 0.40:
+            return {}
+
+        direction = signal_direction
         entry = bar.close
         if direction == "long":
             stop = ctx.mon_tue_low if ctx.mon_tue_low is not None else bar.close * 0.99
@@ -119,7 +152,7 @@ class WeeklyProfileStrategy(Strategy):
             "entry": entry,
             "stop": stop,
             "target": target,
-            "confluence": ctx.confidence,
+            "confluence": confluence_score,
             "profile_type": ctx.profile_type,
         }
         self._record_signal(bar.time, signal, ctx)
