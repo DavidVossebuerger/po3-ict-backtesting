@@ -149,10 +149,13 @@ def write_trades(engine: BacktestEngine, output_path: Path) -> None:
         writer = csv.writer(outfile)
         writer.writerow([
             "symbol",
+            "side",
             "entry_time",
             "exit_time",
             "entry_price",
             "exit_price",
+            "stop",
+            "target",
             "size",
             "pnl",
             "confluence",
@@ -160,10 +163,13 @@ def write_trades(engine: BacktestEngine, output_path: Path) -> None:
         for trade in engine.trades:
             writer.writerow([
                 trade.symbol,
+                trade.side,
                 trade.entry_time.isoformat(),
                 trade.exit_time.isoformat(),
                 f"{trade.entry_price:.5f}",
                 f"{trade.exit_price:.5f}",
+                "" if trade.stop is None else f"{trade.stop:.5f}",
+                "" if trade.target is None else f"{trade.target:.5f}",
                 f"{trade.size:.4f}",
                 f"{trade.pnl:.5f}",
                 trade.confluence,

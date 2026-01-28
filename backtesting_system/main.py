@@ -21,6 +21,7 @@ from backtesting_system.analytics.visualizations import (
     plot_drawdown,
     plot_equity_curve,
     plot_pnl_distribution,
+    plot_trades_with_levels,
 )
 from backtesting_system.analytics.statistics import (
     anova_oneway,
@@ -127,6 +128,7 @@ def main() -> None:
             plot_equity_curve(equity_values, charts_dir / "equity_curve.png")
             plot_drawdown(drawdowns, charts_dir / "drawdown.png")
             plot_pnl_distribution([t.pnl for t in engine.trades], charts_dir / "pnl_distribution.png")
+            plot_trades_with_levels(engine.history, engine.trades, charts_dir / "trades_plotly.html")
             return engine, report
         except Exception as exc:
             logger.error("%s failed: %s", label, exc)

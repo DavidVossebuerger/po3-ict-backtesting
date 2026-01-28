@@ -8,6 +8,7 @@ from typing import Dict, List, Optional
 
 from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.models.market import Candle
+from backtesting_system.strategies.ict_framework import OpeningRangeFramework, PDAArrayDetector
 
 
 @dataclass
@@ -30,6 +31,8 @@ class WeeklyProfileStrategy(Strategy):
         self._daily_series: List[Candle] = []
         self._last_hist_len: int = 0
         self.detector = WeeklyProfileDetector()
+        self.pda_detector = PDAArrayDetector()
+        self.opening_range = OpeningRangeFramework()
         self._signal_log: List[Dict[str, object]] = []
         self._signal_log_path: Path | None = None
 
@@ -52,9 +55,15 @@ class WeeklyProfileStrategy(Strategy):
         ctx = self._build_context(history)
         if ctx.profile_type is None:
             return False
-        if bar.time.weekday() != 2:
-            return False
-        if not self._is_day_open(bar.time):
+        allowed_days = {
+            "classic_expansion_long": {2, 3},
+            "classic_expansion_short": {2, 3},
+            "midweek_reversal_long": {2},
+            "midweek_reversal_short": {2},
+            "consolidation_reversal_long": {3, 4},
+            "consolidation_reversal_short": {3, 4},
+        }
+        if bar.time.weekday() not in allowed_days.get(ctx.profile_type, set()):
             return False
         return ctx.week_key != self._last_signal_week
 
@@ -63,8 +72,6 @@ class WeeklyProfileStrategy(Strategy):
         history = data.get("history", [])
         ctx = self._build_context(history)
         if ctx.profile_type is None:
-            return {}
-        if not self._is_day_open(bar.time):
             return {}
         if ctx.week_key == self._last_signal_week:
             return {}
@@ -81,6 +88,19 @@ class WeeklyProfileStrategy(Strategy):
         if day not in allowed_days.get(ctx.profile_type, set()):
             return {}
 
+        day_candles = [c for c in history if c.time.date() == bar.time.date()]
+        if day_candles:
+            day_low = min(c.low for c in day_candles)
+            day_high = max(c.high for c in day_candles)
+            opening_range = self.opening_range.calculate_opening_range(day_candles[0], day_low, day_high)
+            if opening_range and not self.opening_range.is_entry_in_zone(bar.close, opening_range):
+                return {}
+
+        h1_arrays = {
+            "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
+            "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
+        }
+
         direction = "long" if ctx.profile_type.endswith("long") else "short"
         entry = bar.close
         if direction == "long":
@@ -89,6 +109,9 @@ class WeeklyProfileStrategy(Strategy):
         else:
             stop = ctx.mon_tue_high if ctx.mon_tue_high is not None else bar.close * 1.01
             target = self.project_target(entry, stop, direction)
+
+        if not self.validate_pda_array(entry, h1_arrays):
+            return {}
 
         self._last_signal_week = ctx.week_key
         signal = {
@@ -103,7 +126,10 @@ class WeeklyProfileStrategy(Strategy):
         return signal
 
     def validate_pda_array(self, price, h1_pda) -> bool:
-        return True
+        if not h1_pda:
+            return True
+        entry_ok, _source = self.pda_detector.validate_entry_at_pda(price, h1_pda)
+        return entry_ok
 
     def validate_context(self, data) -> bool:
         return True
@@ -127,12 +153,12 @@ class WeeklyProfileStrategy(Strategy):
         prev_week_key = self._previous_week_key(current_week)
 
         prev_week = [c for c in daily if self._current_week_key(c.time) == prev_week_key]
+        prev_week = sorted([c for c in prev_week if c.time.weekday() <= 4], key=lambda c: c.time)
         this_week = [c for c in daily if self._current_week_key(c.time) == current_week]
-        this_week = [c for c in this_week if c.time.weekday() != 0]
-        mon_tue = [c for c in this_week if c.time.weekday() in (0, 1)]
-        wed = [c for c in this_week if c.time.weekday() == 2]
-        thu_fri = [c for c in this_week if c.time.weekday() in (3, 4)]
-        if not prev_week or len(this_week) < 2:
+        this_week = sorted([c for c in this_week if c.time.weekday() <= 4], key=lambda c: c.time)
+        this_week_no_mon = [c for c in this_week if c.time.weekday() != 0]
+        mon_tue_current = [c for c in this_week if c.time.weekday() in (0, 1)]
+        if not prev_week or len(this_week_no_mon) < 2:
             return WeeklyProfileContext(None, None, None, None, current_week)
 
         prev_low = min(c.low for c in prev_week)
@@ -146,12 +172,12 @@ class WeeklyProfileStrategy(Strategy):
         }
         profile_type, confidence, _details = self.detector.detect_profile(prev_week, weekly_ohlc, {})
 
-        if mon_tue:
-            mon_tue_low = min(c.low for c in mon_tue)
-            mon_tue_high = max(c.high for c in mon_tue)
+        if mon_tue_current:
+            mon_tue_low = min(c.low for c in mon_tue_current)
+            mon_tue_high = max(c.high for c in mon_tue_current)
         else:
-            mon_tue_low = this_week[0].low
-            mon_tue_high = this_week[0].high
+            mon_tue_low = min(c.low for c in prev_week)
+            mon_tue_high = max(c.high for c in prev_week)
 
         return WeeklyProfileContext(profile_type, confidence, mon_tue_low, mon_tue_high, current_week)
 

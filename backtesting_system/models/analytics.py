@@ -21,5 +21,8 @@ class TradeRecord:
     exit_price: float
     size: float
     pnl: float
+    side: Optional[str] = None
+    stop: Optional[float] = None
+    target: Optional[float] = None
     r_multiple: Optional[float] = None
     confluence: Optional[float] = None

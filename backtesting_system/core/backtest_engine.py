@@ -172,6 +172,9 @@ class BacktestEngine:
                     exit_price=exit_price,
                     size=position.remaining_size or position.size,
                     pnl=pnl,
+                    side=position.side.value,
+                    stop=position.stop,
+                    target=position.target,
                     confluence=getattr(position, "confluence", None),
                 )
             )
@@ -277,6 +280,9 @@ class BacktestEngine:
                 exit_price=one_r_target,
                 size=partial_size,
                 pnl=pnl,
+                side=position.side.value,
+                stop=position.stop,
+                target=position.target,
                 confluence=getattr(position, "confluence", None),
             )
         )

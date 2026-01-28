@@ -101,20 +101,27 @@ class CISDValidator:
         broke_below = curr_daily.low < swing_low_prev
         if not (broke_above or broke_below):
             return {"detected": False, "reason": "no_range_break"}
-        latest_h1 = h1_candles[-1]
-        if broke_above and latest_h1.close > swing_high_prev:
+        recent_h1 = h1_candles[-3:]
+        closes_above = sum(1 for c in recent_h1 if c.close > swing_high_prev)
+        closes_below = sum(1 for c in recent_h1 if c.close < swing_low_prev)
+        latest_h1 = recent_h1[-1]
+        if broke_above and closes_above >= 2:
+            wick_rejection = latest_h1.low <= swing_high_prev < latest_h1.close
             return {
                 "detected": True,
                 "type": "bullish",
                 "breaker_level": swing_high_prev,
-                "strength": "strong" if latest_h1.close > swing_high_prev * 1.001 else "weak",
+                "strength": "strong" if wick_rejection or closes_above == 3 else "weak",
+                "closes_confirmed": closes_above,
             }
-        if broke_below and latest_h1.close < swing_low_prev:
+        if broke_below and closes_below >= 2:
+            wick_rejection = latest_h1.high >= swing_low_prev > latest_h1.close
             return {
                 "detected": True,
                 "type": "bearish",
                 "breaker_level": swing_low_prev,
-                "strength": "strong" if latest_h1.close < swing_low_prev * 0.999 else "weak",
+                "strength": "strong" if wick_rejection or closes_below == 3 else "weak",
+                "closes_confirmed": closes_below,
             }
         return {"detected": False, "reason": "h1_no_confirmation"}
 
@@ -122,11 +129,14 @@ class CISDValidator:
 class StopHuntDetector:
     def detect_stop_hunt(self, lower_tf_candles: List[Candle], swing_level: float, lookback: int = 20) -> dict:
         recent = lower_tf_candles[-lookback:]
+        if not recent:
+            return {"detected": False}
+        avg_range = sum(c.high - c.low for c in recent) / len(recent)
         for candle in recent:
             body = abs(candle.close - candle.open)
             if candle.low < swing_level < candle.high:
                 lower_wick = swing_level - candle.low
-                if lower_wick > body * 1.5 and candle.close > candle.open:
+                if lower_wick > 0 and body > 0 and lower_wick >= body * 2.5 and lower_wick >= avg_range * 0.5 and candle.close > candle.open:
                     return {
                         "detected": True,
                         "type": "bullish",
@@ -134,10 +144,10 @@ class StopHuntDetector:
                         "wick_size": lower_wick,
                         "body_size": body,
                         "wick_ratio": lower_wick / body if body > 0 else 0,
-                        "strength": "strong" if (lower_wick / body) > 2.0 else "medium",
+                        "strength": "strong" if (lower_wick / body) > 3.0 else "medium",
                     }
                 upper_wick = candle.high - swing_level
-                if upper_wick > body * 1.5 and candle.close < candle.open:
+                if upper_wick > 0 and body > 0 and upper_wick >= body * 2.5 and upper_wick >= avg_range * 0.5 and candle.close < candle.open:
                     return {
                         "detected": True,
                         "type": "bearish",
@@ -145,7 +155,7 @@ class StopHuntDetector:
                         "wick_size": upper_wick,
                         "body_size": body,
                         "wick_ratio": upper_wick / body if body > 0 else 0,
-                        "strength": "strong" if (upper_wick / body) > 2.0 else "medium",
+                        "strength": "strong" if (upper_wick / body) > 3.0 else "medium",
                     }
         return {"detected": False}
 
