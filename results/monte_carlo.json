@@ -1,4004 +1,4004 @@
 {
   "monte_carlo": [
     {
-      "max_drawdown": 0.010191563170149482,
-      "final_equity": 11317.44934085592
+      "max_drawdown": 0.06470903928284402,
+      "final_equity": 9344.06084277873
     },
     {
-      "max_drawdown": 0.012969542203640128,
-      "final_equity": 10744.771642628108
+      "max_drawdown": 0.03954247524056401,
+      "final_equity": 9874.010709258317
     },
     {
-      "max_drawdown": 0.010333699309973179,
-      "final_equity": 10889.168479305119
+      "max_drawdown": 0.05236417624066936,
+      "final_equity": 9767.952801598973
     },
     {
-      "max_drawdown": 0.0206085753492669,
-      "final_equity": 10638.452382800351
+      "max_drawdown": 0.017791322709494035,
+      "final_equity": 10406.738483397285
     },
     {
-      "max_drawdown": 0.009728776400288568,
-      "final_equity": 11266.745114796055
+      "max_drawdown": 0.05142167544943095,
+      "final_equity": 9802.437357184419
     },
     {
-      "max_drawdown": 0.010307765809901892,
-      "final_equity": 10930.927817924803
+      "max_drawdown": 0.029255959154466524,
+      "final_equity": 10195.427260988581
     },
     {
-      "max_drawdown": 0.014789457109690637,
-      "final_equity": 10684.328631461945
+      "max_drawdown": 0.054006471347353244,
+      "final_equity": 9669.34760630596
     },
     {
-      "max_drawdown": 0.010366952869628424,
-      "final_equity": 11131.515523738693
+      "max_drawdown": 0.03312915740813238,
+      "final_equity": 9854.015714194711
     },
     {
-      "max_drawdown": 0.013365087809803387,
-      "final_equity": 10873.422606226382
+      "max_drawdown": 0.040870661604272523,
+      "final_equity": 9862.37874806977
     },
     {
-      "max_drawdown": 0.009798881972108124,
-      "final_equity": 11013.944449745022
+      "max_drawdown": 0.04531849065631278,
+      "final_equity": 9856.337069998646
     },
     {
-      "max_drawdown": 0.01822407667654483,
-      "final_equity": 10886.144832758426
+      "max_drawdown": 0.06908934845177693,
+      "final_equity": 9650.5091951679
     },
     {
-      "max_drawdown": 0.010137643519455947,
-      "final_equity": 10817.737937022159
+      "max_drawdown": 0.048826987703735045,
+      "final_equity": 9983.022163340822
     },
     {
-      "max_drawdown": 0.020666520232521305,
-      "final_equity": 10432.344683957104
+      "max_drawdown": 0.067816835767675,
+      "final_equity": 9604.770499123577
     },
     {
-      "max_drawdown": 0.024824266410580925,
-      "final_equity": 10645.490076474327
+      "max_drawdown": 0.01822130661220601,
+      "final_equity": 10375.848605466794
     },
     {
-      "max_drawdown": 0.01005006988873134,
-      "final_equity": 11177.663101187189
+      "max_drawdown": 0.07915461876723781,
+      "final_equity": 9365.626002831223
     },
     {
-      "max_drawdown": 0.019237979385483325,
-      "final_equity": 10800.685678185051
+      "max_drawdown": 0.03091246195818393,
+      "final_equity": 9857.481858332387
     },
     {
-      "max_drawdown": 0.016876767744494092,
-      "final_equity": 10945.823110539577
+      "max_drawdown": 0.05937342395222317,
+      "final_equity": 9840.9493255707
     },
     {
-      "max_drawdown": 0.022267311832204487,
-      "final_equity": 10376.279811766966
+      "max_drawdown": 0.05224626452466561,
+      "final_equity": 9640.056947401486
     },
     {
-      "max_drawdown": 0.015285172883020729,
-      "final_equity": 11220.696512701945
+      "max_drawdown": 0.034733336848671664,
+      "final_equity": 10107.347016467173
     },
     {
-      "max_drawdown": 0.009946348941792266,
-      "final_equity": 11037.516792605542
+      "max_drawdown": 0.04429593076166824,
+      "final_equity": 9819.781919613033
     },
     {
-      "max_drawdown": 0.009768826485351297,
-      "final_equity": 10744.73469115507
+      "max_drawdown": 0.01849109041516845,
+      "final_equity": 10124.847731319333
     },
     {
-      "max_drawdown": 0.017824346194727857,
-      "final_equity": 10658.781149194012
+      "max_drawdown": 0.01534472252651138,
+      "final_equity": 10309.915338519486
     },
     {
-      "max_drawdown": 0.010012148277504181,
-      "final_equity": 10940.299975920982
+      "max_drawdown": 0.044283366903032036,
+      "final_equity": 9623.76941627053
     },
     {
-      "max_drawdown": 0.011819397909011086,
-      "final_equity": 10781.893939792446
+      "max_drawdown": 0.04003241640400099,
+      "final_equity": 9899.46251728539
     },
     {
-      "max_drawdown": 0.01900892611839583,
-      "final_equity": 10975.57906211503
+      "max_drawdown": 0.02056841075033661,
+      "final_equity": 9966.097788387508
     },
     {
-      "max_drawdown": 0.020979582254168832,
-      "final_equity": 10473.444277932309
+      "max_drawdown": 0.027829446783010494,
+      "final_equity": 10054.733697562615
     },
     {
-      "max_drawdown": 0.01017292149553669,
-      "final_equity": 11321.886392258888
+      "max_drawdown": 0.020053688438806703,
+      "final_equity": 10152.750915728828
     },
     {
-      "max_drawdown": 0.011315137652394303,
-      "final_equity": 10688.121646515867
+      "max_drawdown": 0.03801993863493011,
+      "final_equity": 9752.70616052792
     },
     {
-      "max_drawdown": 0.03019599069593724,
-      "final_equity": 10184.28835099833
+      "max_drawdown": 0.03936317927128763,
+      "final_equity": 10074.119436871784
     },
     {
-      "max_drawdown": 0.009421684465400497,
-      "final_equity": 11533.430946593691
+      "max_drawdown": 0.020380350820315713,
+      "final_equity": 10134.476752144645
     },
     {
-      "max_drawdown": 0.025559544974346943,
-      "final_equity": 10691.488986273882
+      "max_drawdown": 0.02023781343855184,
+      "final_equity": 10126.118808490633
     },
     {
-      "max_drawdown": 0.013847123081004314,
-      "final_equity": 10973.447390677147
+      "max_drawdown": 0.04090489888091466,
+      "final_equity": 9852.479641245933
     },
     {
-      "max_drawdown": 0.010146795168475718,
-      "final_equity": 11221.545770835524
+      "max_drawdown": 0.05022352092628639,
+      "final_equity": 9619.330439145475
     },
     {
-      "max_drawdown": 0.01230003575303381,
-      "final_equity": 10835.260285395772
+      "max_drawdown": 0.02582115845580478,
+      "final_equity": 10099.536284399317
     },
     {
-      "max_drawdown": 0.010182904326210437,
-      "final_equity": 11130.37501242875
+      "max_drawdown": 0.04607056591151055,
+      "final_equity": 9763.913715423116
     },
     {
-      "max_drawdown": 0.009696656481912052,
-      "final_equity": 11001.802795935406
+      "max_drawdown": 0.01726618580906849,
+      "final_equity": 10398.187542438724
     },
     {
-      "max_drawdown": 0.020380564951827298,
-      "final_equity": 10421.278665788175
+      "max_drawdown": 0.023121487043407368,
+      "final_equity": 10033.717057728652
     },
     {
-      "max_drawdown": 0.012985829549850572,
-      "final_equity": 10678.365026820518
+      "max_drawdown": 0.02013793466929068,
+      "final_equity": 10124.60732162938
     },
     {
-      "max_drawdown": 0.04012166054159071,
-      "final_equity": 9941.938606909855
+      "max_drawdown": 0.02209946848307791,
+      "final_equity": 10179.27592488409
     },
     {
-      "max_drawdown": 0.019488552584201298,
-      "final_equity": 10748.843860833691
+      "max_drawdown": 0.01991580328752786,
+      "final_equity": 10277.196709440583
     },
     {
-      "max_drawdown": 0.04462553714507552,
-      "final_equity": 10129.307466224145
+      "max_drawdown": 0.03372805603671756,
+      "final_equity": 9897.361231212384
     },
     {
-      "max_drawdown": 0.026290513334681877,
-      "final_equity": 10644.71426216777
+      "max_drawdown": 0.03471011757049395,
+      "final_equity": 9675.36328541745
     },
     {
-      "max_drawdown": 0.019767909716911183,
-      "final_equity": 10574.31642135787
+      "max_drawdown": 0.03299788558191349,
+      "final_equity": 9905.141137719296
     },
     {
-      "max_drawdown": 0.012809837121543004,
-      "final_equity": 10465.912310872704
+      "max_drawdown": 0.019915088258728102,
+      "final_equity": 10220.487479871805
     },
     {
-      "max_drawdown": 0.03475147245740435,
-      "final_equity": 10215.099134688408
+      "max_drawdown": 0.03137586270372104,
+      "final_equity": 9757.407890446777
     },
     {
-      "max_drawdown": 0.016942124419916296,
-      "final_equity": 10839.688213219975
+      "max_drawdown": 0.03358812916510845,
+      "final_equity": 9998.210104987553
     },
     {
-      "max_drawdown": 0.019609230087957816,
-      "final_equity": 10625.738532581929
+      "max_drawdown": 0.058851567417338095,
+      "final_equity": 9741.262406363268
     },
     {
-      "max_drawdown": 0.01915960782428072,
-      "final_equity": 10658.300474868727
+      "max_drawdown": 0.031607694141860244,
+      "final_equity": 9817.5075352381
     },
     {
-      "max_drawdown": 0.010197032328755315,
-      "final_equity": 10685.04081198376
+      "max_drawdown": 0.06255970414297794,
+      "final_equity": 9553.761013903188
     },
     {
-      "max_drawdown": 0.030067814449314556,
-      "final_equity": 10555.102737657056
+      "max_drawdown": 0.009797615962063968,
+      "final_equity": 10613.470691215627
     },
     {
-      "max_drawdown": 0.018386937344130973,
-      "final_equity": 10700.32159857972
+      "max_drawdown": 0.030102916332167978,
+      "final_equity": 9960.229411191083
     },
     {
-      "max_drawdown": 0.010020473560160214,
-      "final_equity": 10919.009940607548
+      "max_drawdown": 0.02287497289458167,
+      "final_equity": 9886.216874259706
     },
     {
-      "max_drawdown": 0.01843237537852754,
-      "final_equity": 11155.191171780218
+      "max_drawdown": 0.05066195908598552,
+      "final_equity": 9597.117222458066
     },
     {
-      "max_drawdown": 0.010116059947781475,
-      "final_equity": 10756.015948007866
+      "max_drawdown": 0.08099889054191269,
+      "final_equity": 9260.166839480582
     },
     {
-      "max_drawdown": 0.010163586538752281,
-      "final_equity": 10663.975114088726
+      "max_drawdown": 0.009659690369498274,
+      "final_equity": 10670.43567576412
     },
     {
-      "max_drawdown": 0.03222795991130675,
-      "final_equity": 9828.546585209264
+      "max_drawdown": 0.02459119213530567,
+      "final_equity": 10349.362193251813
     },
     {
-      "max_drawdown": 0.012361660638410469,
-      "final_equity": 10779.224763233704
+      "max_drawdown": 0.02299439419178751,
+      "final_equity": 10257.825810803495
     },
     {
-      "max_drawdown": 0.01768928169786842,
-      "final_equity": 10818.268983807535
+      "max_drawdown": 0.02586097946813568,
+      "final_equity": 10149.25161329355
     },
     {
-      "max_drawdown": 0.018003467707008593,
-      "final_equity": 10648.344519260869
+      "max_drawdown": 0.028456191569868974,
+      "final_equity": 9989.987568990844
     },
     {
-      "max_drawdown": 0.018173113266956746,
-      "final_equity": 10533.44251105517
+      "max_drawdown": 0.03867518795692093,
+      "final_equity": 9724.937732064976
     },
     {
-      "max_drawdown": 0.009979399594661258,
-      "final_equity": 10982.89892054852
+      "max_drawdown": 0.04107097416965076,
+      "final_equity": 9867.19800681339
     },
     {
-      "max_drawdown": 0.015657994681617587,
-      "final_equity": 10524.77925278402
+      "max_drawdown": 0.009958672845619682,
+      "final_equity": 10472.218369013917
     },
     {
-      "max_drawdown": 0.02039208726895974,
-      "final_equity": 10811.913432671277
+      "max_drawdown": 0.044419531946165214,
+      "final_equity": 9872.034063699404
     },
     {
-      "max_drawdown": 0.009109599892703308,
-      "final_equity": 11508.640524240194
+      "max_drawdown": 0.03103542006707502,
+      "final_equity": 9794.7038787213
     },
     {
-      "max_drawdown": 0.019186535027738903,
-      "final_equity": 10665.11660468038
+      "max_drawdown": 0.020054250868701985,
+      "final_equity": 9996.37537615351
     },
     {
-      "max_drawdown": 0.019931105524861457,
-      "final_equity": 10361.037000864142
+      "max_drawdown": 0.04465611433199828,
+      "final_equity": 9572.391055929182
     },
     {
-      "max_drawdown": 0.018944002133966627,
-      "final_equity": 11209.158681903793
+      "max_drawdown": 0.030167023534572464,
+      "final_equity": 10079.911827794524
     },
     {
-      "max_drawdown": 0.010122597727261946,
-      "final_equity": 10795.616239906944
+      "max_drawdown": 0.0442195037332607,
+      "final_equity": 9666.06538058723
     },
     {
-      "max_drawdown": 0.017194760995042524,
-      "final_equity": 10745.821492308956
+      "max_drawdown": 0.03097248376035748,
+      "final_equity": 9963.117289406122
     },
     {
-      "max_drawdown": 0.009916998619402493,
-      "final_equity": 10878.134573180158
+      "max_drawdown": 0.03315019039322902,
+      "final_equity": 9890.249675341229
     },
     {
-      "max_drawdown": 0.010261015206691346,
-      "final_equity": 11157.644710786324
+      "max_drawdown": 0.023262654376752668,
+      "final_equity": 9876.170083532468
     },
     {
-      "max_drawdown": 0.025403981757198907,
-      "final_equity": 10680.62875367584
+      "max_drawdown": 0.020364362154086543,
+      "final_equity": 10274.703651297783
     },
     {
-      "max_drawdown": 0.018535429974258517,
-      "final_equity": 10467.703257975123
+      "max_drawdown": 0.030234770170783933,
+      "final_equity": 9870.050652067262
     },
     {
-      "max_drawdown": 0.02050683195159219,
-      "final_equity": 10761.956627941889
+      "max_drawdown": 0.047099431582711807,
+      "final_equity": 9762.148000085184
     },
     {
-      "max_drawdown": 0.00969361159665124,
-      "final_equity": 11163.417296978794
+      "max_drawdown": 0.03023974289347722,
+      "final_equity": 9995.849567843223
     },
     {
-      "max_drawdown": 0.009953319109018035,
-      "final_equity": 11567.024617196446
+      "max_drawdown": 0.03701311235019997,
+      "final_equity": 9853.698981220052
     },
     {
-      "max_drawdown": 0.019366422226464987,
-      "final_equity": 11210.88266282927
+      "max_drawdown": 0.020623994282153647,
+      "final_equity": 10251.663017613462
     },
     {
-      "max_drawdown": 0.037183586173096396,
-      "final_equity": 10143.164065193336
+      "max_drawdown": 0.03898774695559438,
+      "final_equity": 9697.202320308184
     },
     {
-      "max_drawdown": 0.010223263546588248,
-      "final_equity": 11035.06045805017
+      "max_drawdown": 0.04689722128106669,
+      "final_equity": 9632.132592465403
     },
     {
-      "max_drawdown": 0.020317066118788977,
-      "final_equity": 10942.080894134742
+      "max_drawdown": 0.06906784375346964,
+      "final_equity": 9731.218645383131
     },
     {
-      "max_drawdown": 0.020490726200575234,
-      "final_equity": 10835.986698126819
+      "max_drawdown": 0.030949773354730658,
+      "final_equity": 9916.353356775222
     },
     {
-      "max_drawdown": 0.009339625804058338,
-      "final_equity": 11303.052670445571
+      "max_drawdown": 0.02719711738527689,
+      "final_equity": 10174.781378386122
     },
     {
-      "max_drawdown": 0.01020541228926316,
-      "final_equity": 11416.060277477785
+      "max_drawdown": 0.010341697114588724,
+      "final_equity": 10111.545291446106
     },
     {
-      "max_drawdown": 0.030436070961014115,
-      "final_equity": 9993.545054849099
+      "max_drawdown": 0.009489343790142614,
+      "final_equity": 10666.649152004024
     },
     {
-      "max_drawdown": 0.010308056895409886,
-      "final_equity": 10664.559310697776
+      "max_drawdown": 0.038114117270981206,
+      "final_equity": 9946.913447049015
     },
     {
-      "max_drawdown": 0.020396545145165167,
-      "final_equity": 11095.358850176079
+      "max_drawdown": 0.040398850877645484,
+      "final_equity": 9808.113997470813
     },
     {
-      "max_drawdown": 0.01892902866442711,
-      "final_equity": 11082.791063444361
+      "max_drawdown": 0.0303055528160189,
+      "final_equity": 9998.194993518864
     },
     {
-      "max_drawdown": 0.019015398779222134,
-      "final_equity": 10741.47570585461
+      "max_drawdown": 0.033344845244997916,
+      "final_equity": 9991.446495869166
     },
     {
-      "max_drawdown": 0.010116883936380446,
-      "final_equity": 11101.354276347567
+      "max_drawdown": 0.04361505135915202,
+      "final_equity": 9681.593200491496
     },
     {
-      "max_drawdown": 0.010281061624713386,
-      "final_equity": 11291.426974362656
+      "max_drawdown": 0.03164301161114607,
+      "final_equity": 9953.84489408239
     },
     {
-      "max_drawdown": 0.019335778413815233,
-      "final_equity": 10586.090520361191
+      "max_drawdown": 0.031234503191272047,
+      "final_equity": 9844.216745505404
     },
     {
-      "max_drawdown": 0.011877052571575694,
-      "final_equity": 10708.377666973633
+      "max_drawdown": 0.012250487636517426,
+      "final_equity": 10218.949753345098
     },
     {
-      "max_drawdown": 0.029648912910270466,
-      "final_equity": 10215.262016926752
+      "max_drawdown": 0.048460002264567904,
+      "final_equity": 9933.200712167576
     },
     {
-      "max_drawdown": 0.010271450062029293,
-      "final_equity": 10841.695778066483
+      "max_drawdown": 0.02078766665493102,
+      "final_equity": 10196.841782966116
     },
     {
-      "max_drawdown": 0.01491838288761448,
-      "final_equity": 10922.016936242037
+      "max_drawdown": 0.02016387724042244,
+      "final_equity": 10215.786397455993
     },
     {
-      "max_drawdown": 0.015926915934772003,
-      "final_equity": 10442.20289637493
+      "max_drawdown": 0.020416455507885074,
+      "final_equity": 10041.316843877472
     },
     {
-      "max_drawdown": 0.012165179711053941,
-      "final_equity": 10930.71169379143
+      "max_drawdown": 0.030772129763905125,
+      "final_equity": 9964.36921465082
     },
     {
-      "max_drawdown": 0.018637648618662843,
-      "final_equity": 10932.089518244755
+      "max_drawdown": 0.023014878939018792,
+      "final_equity": 9934.07148865389
     },
     {
-      "max_drawdown": 0.009161321974934047,
-      "final_equity": 11387.347756667921
+      "max_drawdown": 0.019675976965247338,
+      "final_equity": 10119.560767661475
     },
     {
-      "max_drawdown": 0.010538623190485097,
-      "final_equity": 11053.066988060364
+      "max_drawdown": 0.019951045740413967,
+      "final_equity": 10079.117158703139
     },
     {
-      "max_drawdown": 0.020715211136165663,
-      "final_equity": 10923.244962438652
+      "max_drawdown": 0.031085447089813072,
+      "final_equity": 9770.213711318307
     },
     {
-      "max_drawdown": 0.028546807958619417,
-      "final_equity": 10754.644102567747
+      "max_drawdown": 0.02294121933499817,
+      "final_equity": 10050.864265062704
     },
     {
-      "max_drawdown": 0.028888571017723512,
-      "final_equity": 10553.771920086923
+      "max_drawdown": 0.026689561366572852,
+      "final_equity": 9838.86433583542
     },
     {
-      "max_drawdown": 0.032969595597486176,
-      "final_equity": 10194.149001207927
+      "max_drawdown": 0.02004657561975486,
+      "final_equity": 10133.669868691202
     },
     {
-      "max_drawdown": 0.010204535992090574,
-      "final_equity": 10855.806747787767
+      "max_drawdown": 0.030314657764651427,
+      "final_equity": 10208.46036894052
     },
     {
-      "max_drawdown": 0.011608110820587159,
-      "final_equity": 11354.262357702863
+      "max_drawdown": 0.03299776926997274,
+      "final_equity": 9854.920271672036
     },
     {
-      "max_drawdown": 0.019065144069730065,
-      "final_equity": 10860.436137007957
+      "max_drawdown": 0.03332695509354035,
+      "final_equity": 9722.760212785864
     },
     {
-      "max_drawdown": 0.01989582219985007,
-      "final_equity": 11143.520512712224
+      "max_drawdown": 0.022805803730271156,
+      "final_equity": 9968.89297902155
     },
     {
-      "max_drawdown": 0.010007431329632476,
-      "final_equity": 11159.9028781457
+      "max_drawdown": 0.031206328004358,
+      "final_equity": 10153.756985719345
     },
     {
-      "max_drawdown": 0.025817464230683065,
-      "final_equity": 10400.737579677303
+      "max_drawdown": 0.049641446506079774,
+      "final_equity": 9735.978853388064
     },
     {
-      "max_drawdown": 0.02025476934809951,
-      "final_equity": 10570.921771818423
+      "max_drawdown": 0.009981621082224177,
+      "final_equity": 10547.139161155443
     },
     {
-      "max_drawdown": 0.021152283365851517,
-      "final_equity": 10336.3944691189
+      "max_drawdown": 0.01816342656683915,
+      "final_equity": 10235.475997630483
     },
     {
-      "max_drawdown": 0.018668603879060892,
-      "final_equity": 11038.825742669093
+      "max_drawdown": 0.0391978533462501,
+      "final_equity": 9653.013889923888
     },
     {
-      "max_drawdown": 0.0103100304236053,
-      "final_equity": 10986.908188790512
+      "max_drawdown": 0.04547207644641654,
+      "final_equity": 9786.015229949764
     },
     {
-      "max_drawdown": 0.020252990777181474,
-      "final_equity": 10223.239132135424
+      "max_drawdown": 0.044392814109788736,
+      "final_equity": 9912.681797813098
     },
     {
-      "max_drawdown": 0.012801038447698749,
-      "final_equity": 11153.437221226797
+      "max_drawdown": 0.02896790409591592,
+      "final_equity": 9782.66480841723
     },
     {
-      "max_drawdown": 0.016911024261014804,
-      "final_equity": 10328.53441712817
+      "max_drawdown": 0.018351758308126617,
+      "final_equity": 10108.534399630007
     },
     {
-      "max_drawdown": 0.012320485047171391,
-      "final_equity": 10626.190235671735
+      "max_drawdown": 0.012257880796462018,
+      "final_equity": 10319.268872476496
     },
     {
-      "max_drawdown": 0.01025347077685594,
-      "final_equity": 11169.70490242087
+      "max_drawdown": 0.043278015972475777,
+      "final_equity": 9642.218746416645
     },
     {
-      "max_drawdown": 0.015499706212189006,
-      "final_equity": 10696.522947140158
+      "max_drawdown": 0.021441705366257686,
+      "final_equity": 9963.646150637363
     },
     {
-      "max_drawdown": 0.016436342322007778,
-      "final_equity": 10832.014202709464
+      "max_drawdown": 0.05048974947200506,
+      "final_equity": 9436.65001437845
     },
     {
-      "max_drawdown": 0.009853767279995743,
-      "final_equity": 11323.630503521174
+      "max_drawdown": 0.019711475784969477,
+      "final_equity": 10200.227193383022
     },
     {
-      "max_drawdown": 0.019991177643556315,
-      "final_equity": 10665.91807651017
+      "max_drawdown": 0.029313474306951495,
+      "final_equity": 10206.374642759936
     },
     {
-      "max_drawdown": 0.009790802282966169,
-      "final_equity": 10986.054117979465
+      "max_drawdown": 0.056154337115399036,
+      "final_equity": 9417.547812656881
     },
     {
-      "max_drawdown": 0.018995136497633854,
-      "final_equity": 10892.33748746801
+      "max_drawdown": 0.02043943820758779,
+      "final_equity": 9941.522106458733
     },
     {
-      "max_drawdown": 0.015157520355754817,
-      "final_equity": 10644.064863181751
+      "max_drawdown": 0.012721373737677998,
+      "final_equity": 10248.75035170109
     },
     {
-      "max_drawdown": 0.010184310164904283,
-      "final_equity": 10974.050476494725
+      "max_drawdown": 0.020220991400413314,
+      "final_equity": 10140.330923083213
     },
     {
-      "max_drawdown": 0.009757170451499925,
-      "final_equity": 10860.826680513868
+      "max_drawdown": 0.028855035375518864,
+      "final_equity": 9801.807333280623
     },
     {
-      "max_drawdown": 0.021834521193775547,
-      "final_equity": 10388.562158645691
+      "max_drawdown": 0.02644734925102848,
+      "final_equity": 10234.461923071467
     },
     {
-      "max_drawdown": 0.009740462643481168,
-      "final_equity": 11102.03651487407
+      "max_drawdown": 0.015973665521087567,
+      "final_equity": 10168.663732184055
     },
     {
-      "max_drawdown": 0.020151968063285623,
-      "final_equity": 10424.931533210263
+      "max_drawdown": 0.020503570126209618,
+      "final_equity": 10278.7690469132
     },
     {
-      "max_drawdown": 0.00918317021542024,
-      "final_equity": 11398.95070863391
+      "max_drawdown": 0.051593443958126005,
+      "final_equity": 9535.731373192797
     },
     {
-      "max_drawdown": 0.019504321478660432,
-      "final_equity": 10762.059051660575
+      "max_drawdown": 0.06515319229071856,
+      "final_equity": 9491.198860520559
     },
     {
-      "max_drawdown": 0.010202017140425053,
-      "final_equity": 10941.925405609138
+      "max_drawdown": 0.009863742038945007,
+      "final_equity": 10337.576637979675
     },
     {
-      "max_drawdown": 0.01008737252318273,
-      "final_equity": 11310.472474608698
+      "max_drawdown": 0.05759763260032321,
+      "final_equity": 9351.403908610739
     },
     {
-      "max_drawdown": 0.010494449857131036,
-      "final_equity": 10947.991258920016
+      "max_drawdown": 0.05089581674638563,
+      "final_equity": 9815.065025667634
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11509.846423170236
+      "max_drawdown": 0.06316298200800247,
+      "final_equity": 9444.80363287349
     },
     {
-      "max_drawdown": 0.028432682781704143,
-      "final_equity": 10816.170687718355
+      "max_drawdown": 0.026329249235384888,
+      "final_equity": 10188.710704177302
     },
     {
-      "max_drawdown": 0.019375184936155768,
-      "final_equity": 10762.465251500882
+      "max_drawdown": 0.03069228076420234,
+      "final_equity": 9718.474128660991
     },
     {
-      "max_drawdown": 0.009711946290858788,
-      "final_equity": 11228.34213954392
+      "max_drawdown": 0.07041076858055924,
+      "final_equity": 9390.66079945592
     },
     {
-      "max_drawdown": 0.029605172155912123,
-      "final_equity": 9928.391979014097
+      "max_drawdown": 0.00977417966592657,
+      "final_equity": 10691.320311038153
     },
     {
-      "max_drawdown": 0.01016822399976876,
-      "final_equity": 10905.728876749534
+      "max_drawdown": 0.03870161913630083,
+      "final_equity": 10044.998082934868
     },
     {
-      "max_drawdown": 0.01770348145219988,
-      "final_equity": 10913.652440288062
+      "max_drawdown": 0.018618845267971793,
+      "final_equity": 9942.434575935653
     },
     {
-      "max_drawdown": 0.01935864366567281,
-      "final_equity": 10596.060447490976
+      "max_drawdown": 0.02069796128339134,
+      "final_equity": 10241.01608725052
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11301.074124459565
+      "max_drawdown": 0.04639917046472762,
+      "final_equity": 9627.7229731138
     },
     {
-      "max_drawdown": 0.017069867064803946,
-      "final_equity": 10712.081567789435
+      "max_drawdown": 0.030771575932758272,
+      "final_equity": 10030.267599859151
     },
     {
-      "max_drawdown": 0.026071974812268077,
-      "final_equity": 10371.407940591384
+      "max_drawdown": 0.02037056937277041,
+      "final_equity": 10260.903952562043
     },
     {
-      "max_drawdown": 0.009796536638322072,
-      "final_equity": 11005.436393160891
+      "max_drawdown": 0.09236941980361864,
+      "final_equity": 9171.522038547604
     },
     {
-      "max_drawdown": 0.016965058789488775,
-      "final_equity": 10909.794789215206
+      "max_drawdown": 0.019631352019975613,
+      "final_equity": 10140.722501983028
     },
     {
-      "max_drawdown": 0.010252595910730498,
-      "final_equity": 10909.458914609604
+      "max_drawdown": 0.020196331050813122,
+      "final_equity": 10139.163342131038
     },
     {
-      "max_drawdown": 0.01885282545609732,
-      "final_equity": 10803.177181721874
+      "max_drawdown": 0.028774915176194626,
+      "final_equity": 10185.596121637296
     },
     {
-      "max_drawdown": 0.01944662635859572,
-      "final_equity": 10685.256333225732
+      "max_drawdown": 0.018708181723453017,
+      "final_equity": 10146.302253615673
     },
     {
-      "max_drawdown": 0.023790752698038726,
-      "final_equity": 10562.526106315527
+      "max_drawdown": 0.02584621330306842,
+      "final_equity": 10072.845155403043
     },
     {
-      "max_drawdown": 0.02496218241370165,
-      "final_equity": 10508.150652998458
+      "max_drawdown": 0.04983604864009889,
+      "final_equity": 9683.40842199036
     },
     {
-      "max_drawdown": 0.02097923728344612,
-      "final_equity": 10844.345948095419
+      "max_drawdown": 0.018083503543470603,
+      "final_equity": 10493.548054511735
     },
     {
-      "max_drawdown": 0.009862512497938937,
-      "final_equity": 11255.957133916829
+      "max_drawdown": 0.018830218583757767,
+      "final_equity": 10173.326365980518
     },
     {
-      "max_drawdown": 0.01898754442063117,
-      "final_equity": 11028.684577128668
+      "max_drawdown": 0.01990940250403022,
+      "final_equity": 10225.849255828549
     },
     {
-      "max_drawdown": 0.019343848598164497,
-      "final_equity": 10804.65243042811
+      "max_drawdown": 0.028321239369399745,
+      "final_equity": 9966.843798903998
     },
     {
-      "max_drawdown": 0.019671238746078294,
-      "final_equity": 10827.794366946111
+      "max_drawdown": 0.05420152810349253,
+      "final_equity": 9600.131069597086
     },
     {
-      "max_drawdown": 0.010304224593271879,
-      "final_equity": 11087.278262211299
+      "max_drawdown": 0.03000156222468962,
+      "final_equity": 10081.80430809844
     },
     {
-      "max_drawdown": 0.010204150741029804,
-      "final_equity": 11113.584212805235
+      "max_drawdown": 0.06691396427573379,
+      "final_equity": 9486.686446567934
     },
     {
-      "max_drawdown": 0.009497782083497691,
-      "final_equity": 11266.843714270286
+      "max_drawdown": 0.020179487943334264,
+      "final_equity": 10357.225804973777
     },
     {
-      "max_drawdown": 0.009733066732626992,
-      "final_equity": 11023.64155997128
+      "max_drawdown": 0.02604207266558348,
+      "final_equity": 10068.327430236932
     },
     {
-      "max_drawdown": 0.01020118234733911,
-      "final_equity": 10946.715101014077
+      "max_drawdown": 0.020966642206871392,
+      "final_equity": 10091.14608548755
     },
     {
-      "max_drawdown": 0.009758527654283174,
-      "final_equity": 11235.353675725897
+      "max_drawdown": 0.04648884983303552,
+      "final_equity": 9702.540252266683
     },
     {
-      "max_drawdown": 0.012358584689010424,
-      "final_equity": 11473.641418790421
+      "max_drawdown": 0.04020675362352075,
+      "final_equity": 9621.94080087356
     },
     {
-      "max_drawdown": 0.014038210012560181,
-      "final_equity": 10671.432813984571
+      "max_drawdown": 0.04074968370663788,
+      "final_equity": 9726.857612930346
     },
     {
-      "max_drawdown": 0.010193666605850468,
-      "final_equity": 10798.387452204594
+      "max_drawdown": 0.029704046354537335,
+      "final_equity": 10289.838846215896
     },
     {
-      "max_drawdown": 0.02034545341434305,
-      "final_equity": 10692.910344498387
+      "max_drawdown": 0.055638446328272424,
+      "final_equity": 9826.579943232502
     },
     {
-      "max_drawdown": 0.010249696413173703,
-      "final_equity": 10902.912914597273
+      "max_drawdown": 0.031840934662432145,
+      "final_equity": 9810.444502789447
     },
     {
-      "max_drawdown": 0.017272252743023186,
-      "final_equity": 10562.458520785358
+      "max_drawdown": 0.053208760961264125,
+      "final_equity": 9744.240770180966
     },
     {
-      "max_drawdown": 0.010362766749853874,
-      "final_equity": 11275.221652058115
+      "max_drawdown": 0.04799049364096464,
+      "final_equity": 9773.78477124134
     },
     {
-      "max_drawdown": 0.010053323692332276,
-      "final_equity": 10741.77267770284
+      "max_drawdown": 0.0197517501383864,
+      "final_equity": 10128.67794237967
     },
     {
-      "max_drawdown": 0.018902921546139442,
-      "final_equity": 11064.031281627258
+      "max_drawdown": 0.03028085209202573,
+      "final_equity": 9926.516943598777
     },
     {
-      "max_drawdown": 0.03856673440120227,
-      "final_equity": 10498.687927484374
+      "max_drawdown": 0.029851072242044387,
+      "final_equity": 9999.607595145151
     },
     {
-      "max_drawdown": 0.01897881602427111,
-      "final_equity": 10948.984790450724
+      "max_drawdown": 0.015882202689765236,
+      "final_equity": 9828.183100228984
     },
     {
-      "max_drawdown": 0.010351382834608125,
-      "final_equity": 11294.123405590231
+      "max_drawdown": 0.0597652043544334,
+      "final_equity": 9682.063828503395
     },
     {
-      "max_drawdown": 0.010142504090971687,
-      "final_equity": 10998.535808953577
+      "max_drawdown": 0.05323675480808082,
+      "final_equity": 9438.012717233813
     },
     {
-      "max_drawdown": 0.03076293343078358,
-      "final_equity": 10389.31548886869
+      "max_drawdown": 0.021621285327634913,
+      "final_equity": 10415.408835996372
     },
     {
-      "max_drawdown": 0.015009300033995724,
-      "final_equity": 10965.083680323709
+      "max_drawdown": 0.0200825768723712,
+      "final_equity": 10295.774610981454
     },
     {
-      "max_drawdown": 0.016445571761090082,
-      "final_equity": 10676.925565579524
+      "max_drawdown": 0.031001637384744204,
+      "final_equity": 9932.01755941397
     },
     {
-      "max_drawdown": 0.0217765616905475,
-      "final_equity": 11124.998311505853
+      "max_drawdown": 0.010314611997059037,
+      "final_equity": 10356.9931882612
     },
     {
-      "max_drawdown": 0.009961479873623289,
-      "final_equity": 11273.901082335298
+      "max_drawdown": 0.06433782881468027,
+      "final_equity": 9335.163186438636
     },
     {
-      "max_drawdown": 0.009551372090205184,
-      "final_equity": 11244.682259975853
+      "max_drawdown": 0.028128412081095715,
+      "final_equity": 9874.404385498408
     },
     {
-      "max_drawdown": 0.01036392196705852,
-      "final_equity": 11112.419938518513
+      "max_drawdown": 0.03581290897815488,
+      "final_equity": 9969.650489741922
     },
     {
-      "max_drawdown": 0.01187221605460057,
-      "final_equity": 11119.825438304066
+      "max_drawdown": 0.04147629334208252,
+      "final_equity": 9620.372885495462
     },
     {
-      "max_drawdown": 0.01019417851091773,
-      "final_equity": 10762.181743626532
+      "max_drawdown": 0.02607710399257863,
+      "final_equity": 10134.776784142547
     },
     {
-      "max_drawdown": 0.010252637751517977,
-      "final_equity": 10862.02506201941
+      "max_drawdown": 0.07411268080103318,
+      "final_equity": 9334.39878940213
     },
     {
-      "max_drawdown": 0.02739163914168593,
-      "final_equity": 10842.965276255974
+      "max_drawdown": 0.04469018943755173,
+      "final_equity": 9646.293177826075
     },
     {
-      "max_drawdown": 0.018855108932090536,
-      "final_equity": 10444.086147724254
+      "max_drawdown": 0.021542821723337283,
+      "final_equity": 9934.563475960706
     },
     {
-      "max_drawdown": 0.04881131990306993,
-      "final_equity": 10269.381136408108
+      "max_drawdown": 0.020045962547954523,
+      "final_equity": 10401.545551912983
     },
     {
-      "max_drawdown": 0.018869188014095015,
-      "final_equity": 10947.083451407749
+      "max_drawdown": 0.034525286942295605,
+      "final_equity": 9850.075665704904
     },
     {
-      "max_drawdown": 0.009692036246301397,
-      "final_equity": 11452.395492576296
+      "max_drawdown": 0.022880588791673265,
+      "final_equity": 10018.349401093146
     },
     {
-      "max_drawdown": 0.01238707604927122,
-      "final_equity": 10876.552998266285
+      "max_drawdown": 0.06046004466826485,
+      "final_equity": 9755.992110695313
     },
     {
-      "max_drawdown": 0.014733568321549387,
-      "final_equity": 10768.278417640839
+      "max_drawdown": 0.03799843937142832,
+      "final_equity": 10152.985367328893
     },
     {
-      "max_drawdown": 0.03029284932130727,
-      "final_equity": 10661.32799800925
+      "max_drawdown": 0.02802301834432375,
+      "final_equity": 9947.999111163492
     },
     {
-      "max_drawdown": 0.018326435561434037,
-      "final_equity": 10668.162831713676
+      "max_drawdown": 0.010097445215348517,
+      "final_equity": 10441.499250805467
     },
     {
-      "max_drawdown": 0.009958712353257435,
-      "final_equity": 11372.139784988398
+      "max_drawdown": 0.026009613925202003,
+      "final_equity": 10060.587305256227
     },
     {
-      "max_drawdown": 0.023007287775839824,
-      "final_equity": 10475.873344011996
+      "max_drawdown": 0.020261005048204488,
+      "final_equity": 10379.211823527203
     },
     {
-      "max_drawdown": 0.010029524030290065,
-      "final_equity": 11132.49548025309
+      "max_drawdown": 0.020528043170574974,
+      "final_equity": 10036.886888988403
     },
     {
-      "max_drawdown": 0.03208684198787703,
-      "final_equity": 10351.522340059419
+      "max_drawdown": 0.019368212729618747,
+      "final_equity": 10512.959474701329
     },
     {
-      "max_drawdown": 0.026137458578577077,
-      "final_equity": 10720.910437647413
+      "max_drawdown": 0.025655752017616766,
+      "final_equity": 9929.309996236123
     },
     {
-      "max_drawdown": 0.028578227620279652,
-      "final_equity": 10764.133802943046
+      "max_drawdown": 0.020695407073096365,
+      "final_equity": 10122.74620827535
     },
     {
-      "max_drawdown": 0.017037631664129235,
-      "final_equity": 10809.17884857356
+      "max_drawdown": 0.028750300651140186,
+      "final_equity": 9947.418591041822
     },
     {
-      "max_drawdown": 0.021948006733261714,
-      "final_equity": 10442.630355099818
+      "max_drawdown": 0.022297285987785683,
+      "final_equity": 10126.06253333067
     },
     {
-      "max_drawdown": 0.010003604798564006,
-      "final_equity": 11114.92142924813
+      "max_drawdown": 0.0492530802502244,
+      "final_equity": 9883.724339802879
     },
     {
-      "max_drawdown": 0.019467996812429455,
-      "final_equity": 11051.300798953142
+      "max_drawdown": 0.03130555332337772,
+      "final_equity": 10065.796551008154
     },
     {
-      "max_drawdown": 0.00996317670584788,
-      "final_equity": 11444.073864841375
+      "max_drawdown": 0.02619817658571802,
+      "final_equity": 9900.902297583998
     },
     {
-      "max_drawdown": 0.02965405110264791,
-      "final_equity": 10740.195217023773
+      "max_drawdown": 0.010216504871911176,
+      "final_equity": 10235.334905621268
     },
     {
-      "max_drawdown": 0.009224903193519138,
-      "final_equity": 11286.173028154806
+      "max_drawdown": 0.07405719064249597,
+      "final_equity": 9289.238017695263
     },
     {
-      "max_drawdown": 0.019667853209841036,
-      "final_equity": 10732.171429810189
+      "max_drawdown": 0.027289668698580724,
+      "final_equity": 10036.73553818537
     },
     {
-      "max_drawdown": 0.01450893429208949,
-      "final_equity": 10852.324951389313
+      "max_drawdown": 0.019465884535396574,
+      "final_equity": 10450.633630048833
     },
     {
-      "max_drawdown": 0.010292930126190758,
-      "final_equity": 10850.05474989968
+      "max_drawdown": 0.04674306145851955,
+      "final_equity": 9467.846315964285
     },
     {
-      "max_drawdown": 0.042796176795673144,
-      "final_equity": 10287.488696084698
+      "max_drawdown": 0.04419442408594384,
+      "final_equity": 9834.763666703237
     },
     {
-      "max_drawdown": 0.019337510922057984,
-      "final_equity": 10801.790824624257
+      "max_drawdown": 0.021079502535078058,
+      "final_equity": 10022.68859058151
     },
     {
-      "max_drawdown": 0.009990642374583594,
-      "final_equity": 10940.619653472093
+      "max_drawdown": 0.032863598020272715,
+      "final_equity": 9960.322805106425
     },
     {
-      "max_drawdown": 0.017936225469992777,
-      "final_equity": 10895.630097109884
+      "max_drawdown": 0.030387391201756077,
+      "final_equity": 10041.362292963615
     },
     {
-      "max_drawdown": 0.009947573128616565,
-      "final_equity": 11047.037669487203
+      "max_drawdown": 0.040933942789820855,
+      "final_equity": 9566.073925854502
     },
     {
-      "max_drawdown": 0.03085314330943688,
-      "final_equity": 10349.898140355766
+      "max_drawdown": 0.08424120024971647,
+      "final_equity": 9320.165150650528
     },
     {
-      "max_drawdown": 0.010257016850193588,
-      "final_equity": 11016.230602503041
+      "max_drawdown": 0.04366262069874081,
+      "final_equity": 9732.351027587301
     },
     {
-      "max_drawdown": 0.010265844429553982,
-      "final_equity": 10738.162560924355
+      "max_drawdown": 0.020229111317964548,
+      "final_equity": 10246.785466315008
     },
     {
-      "max_drawdown": 0.010044449306975518,
-      "final_equity": 11052.182192878843
+      "max_drawdown": 0.03493133827287318,
+      "final_equity": 9723.088919705397
     },
     {
-      "max_drawdown": 0.01978296959504942,
-      "final_equity": 10934.725440968314
+      "max_drawdown": 0.0201617982075615,
+      "final_equity": 10227.602504653025
     },
     {
-      "max_drawdown": 0.01838149532455338,
-      "final_equity": 11034.902442941171
+      "max_drawdown": 0.030785480378689032,
+      "final_equity": 9947.460605068263
     },
     {
-      "max_drawdown": 0.009829371168533848,
-      "final_equity": 11176.187907887183
+      "max_drawdown": 0.043985847788141304,
+      "final_equity": 9974.119550276935
     },
     {
-      "max_drawdown": 0.009480675257898839,
-      "final_equity": 11261.274099597882
+      "max_drawdown": 0.04103090131208923,
+      "final_equity": 9584.6301432958
     },
     {
-      "max_drawdown": 0.018626204935394908,
-      "final_equity": 10751.051536368643
+      "max_drawdown": 0.040802005693990485,
+      "final_equity": 9996.202231693076
     },
     {
-      "max_drawdown": 0.009726809215071748,
-      "final_equity": 10917.644660633932
+      "max_drawdown": 0.02124537848186637,
+      "final_equity": 9968.337666151234
     },
     {
-      "max_drawdown": 0.01863635359029867,
-      "final_equity": 10881.170702859337
+      "max_drawdown": 0.03805269557769051,
+      "final_equity": 9529.773147901065
     },
     {
-      "max_drawdown": 0.016707204828774268,
-      "final_equity": 10780.25605638147
+      "max_drawdown": 0.030254523688157238,
+      "final_equity": 10044.616628879809
     },
     {
-      "max_drawdown": 0.019934302634507337,
-      "final_equity": 11130.02961613717
+      "max_drawdown": 0.04131956924850919,
+      "final_equity": 9740.883356705974
     },
     {
-      "max_drawdown": 0.00990633020306181,
-      "final_equity": 10956.121027564463
+      "max_drawdown": 0.06950050117623856,
+      "final_equity": 9446.10656900808
     },
     {
-      "max_drawdown": 0.026228704952103613,
-      "final_equity": 10806.300230572682
+      "max_drawdown": 0.06994983844388993,
+      "final_equity": 9565.310520958561
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11677.272545831585
+      "max_drawdown": 0.08579201589102027,
+      "final_equity": 9254.182924815446
     },
     {
-      "max_drawdown": 0.010121543840617338,
-      "final_equity": 10967.123040632003
+      "max_drawdown": 0.030696885276590875,
+      "final_equity": 9875.543054648848
     },
     {
-      "max_drawdown": 0.017601053779903973,
-      "final_equity": 10738.823328625183
+      "max_drawdown": 0.051910253767196504,
+      "final_equity": 9956.776189785425
     },
     {
-      "max_drawdown": 0.009959850936718697,
-      "final_equity": 10874.906561441927
+      "max_drawdown": 0.05738673760157355,
+      "final_equity": 9756.935733087186
     },
     {
-      "max_drawdown": 0.009727426583333833,
-      "final_equity": 11222.42533403762
+      "max_drawdown": 0.021424767066373026,
+      "final_equity": 9827.187715714821
     },
     {
-      "max_drawdown": 0.011518319560316945,
-      "final_equity": 10642.301207596662
+      "max_drawdown": 0.027293636530477734,
+      "final_equity": 10328.387669580463
     },
     {
-      "max_drawdown": 0.019977664275206936,
-      "final_equity": 10860.933329305295
+      "max_drawdown": 0.06622439662870848,
+      "final_equity": 9744.14375789895
     },
     {
-      "max_drawdown": 0.03927904081435365,
-      "final_equity": 10387.763706850437
+      "max_drawdown": 0.010271004570228653,
+      "final_equity": 10216.614552681242
     },
     {
-      "max_drawdown": 0.010115976993335699,
-      "final_equity": 11557.417348483705
+      "max_drawdown": 0.009913669899617433,
+      "final_equity": 10584.265848814795
     },
     {
-      "max_drawdown": 0.01233097686428398,
-      "final_equity": 11021.488342878249
+      "max_drawdown": 0.030803820007928022,
+      "final_equity": 9774.153015749549
     },
     {
-      "max_drawdown": 0.011587000691962123,
-      "final_equity": 10663.832442980658
+      "max_drawdown": 0.010041223692422274,
+      "final_equity": 10571.354339922736
     },
     {
-      "max_drawdown": 0.0181680818575278,
-      "final_equity": 11136.93540289571
+      "max_drawdown": 0.020200154748475464,
+      "final_equity": 10291.53091428453
     },
     {
-      "max_drawdown": 0.018148506410961034,
-      "final_equity": 10896.481367555702
+      "max_drawdown": 0.02022858385079762,
+      "final_equity": 10085.37136959391
     },
     {
-      "max_drawdown": 0.02835008322503432,
-      "final_equity": 10847.087814745018
+      "max_drawdown": 0.028589165166610073,
+      "final_equity": 10043.513175949838
     },
     {
-      "max_drawdown": 0.009753328422816546,
-      "final_equity": 11168.308930114435
+      "max_drawdown": 0.046522510336139265,
+      "final_equity": 9948.505246141625
     },
     {
-      "max_drawdown": 0.010358800506442927,
-      "final_equity": 10712.231569910162
+      "max_drawdown": 0.017604879609199073,
+      "final_equity": 10386.355251005498
     },
     {
-      "max_drawdown": 0.009603655941156818,
-      "final_equity": 11103.767308155973
+      "max_drawdown": 0.04384889623883786,
+      "final_equity": 9924.97846565958
     },
     {
-      "max_drawdown": 0.009402080932155839,
-      "final_equity": 11236.442656883612
+      "max_drawdown": 0.019782610844147244,
+      "final_equity": 10508.393293229214
     },
     {
-      "max_drawdown": 0.019959264745269205,
-      "final_equity": 10968.630084148097
+      "max_drawdown": 0.055859270722449374,
+      "final_equity": 9660.585858212224
     },
     {
-      "max_drawdown": 0.019374746797057984,
-      "final_equity": 10957.741653650568
+      "max_drawdown": 0.028073284245813564,
+      "final_equity": 9889.168764341923
     },
     {
-      "max_drawdown": 0.030892898080156828,
-      "final_equity": 10527.003082187275
+      "max_drawdown": 0.021022188543107837,
+      "final_equity": 10076.007103282072
     },
     {
-      "max_drawdown": 0.009485747393747518,
-      "final_equity": 11096.504088422247
+      "max_drawdown": 0.04890503783222667,
+      "final_equity": 9979.015860477795
     },
     {
-      "max_drawdown": 0.019569936984761407,
-      "final_equity": 10915.476664460337
+      "max_drawdown": 0.05097250762590508,
+      "final_equity": 9775.90001662727
     },
     {
-      "max_drawdown": 0.01000616864626918,
-      "final_equity": 11150.952793797142
+      "max_drawdown": 0.02268559431237466,
+      "final_equity": 9788.308162690151
     },
     {
-      "max_drawdown": 0.010041593515736753,
-      "final_equity": 10700.817443106951
+      "max_drawdown": 0.04159213538067097,
+      "final_equity": 10159.44788769153
     },
     {
-      "max_drawdown": 0.018763078105549377,
-      "final_equity": 10645.863235349065
+      "max_drawdown": 0.05118632684739943,
+      "final_equity": 10036.524336275908
     },
     {
-      "max_drawdown": 0.018676460267049423,
-      "final_equity": 10963.746944198523
+      "max_drawdown": 0.01953208760623941,
+      "final_equity": 10382.849496387968
     },
     {
-      "max_drawdown": 0.010225967769822054,
-      "final_equity": 10774.644256558122
+      "max_drawdown": 0.05191592223405167,
+      "final_equity": 9722.442898484172
     },
     {
-      "max_drawdown": 0.019627031264378477,
-      "final_equity": 10509.950115002697
+      "max_drawdown": 0.010082735907091385,
+      "final_equity": 10829.517390143397
     },
     {
-      "max_drawdown": 0.009907721589399421,
-      "final_equity": 11164.333521863742
+      "max_drawdown": 0.01954432601185231,
+      "final_equity": 10382.638354929091
     },
     {
-      "max_drawdown": 0.033918447434863545,
-      "final_equity": 10189.3107045588
+      "max_drawdown": 0.03856520932212678,
+      "final_equity": 9956.963938263865
     },
     {
-      "max_drawdown": 0.010093512981367412,
-      "final_equity": 10897.460695956548
+      "max_drawdown": 0.012701399510758271,
+      "final_equity": 10094.70488875451
     },
     {
-      "max_drawdown": 0.03050922768651927,
-      "final_equity": 10323.275988221274
+      "max_drawdown": 0.048908492929996925,
+      "final_equity": 9811.60636339921
     },
     {
-      "max_drawdown": 0.010313338552414945,
-      "final_equity": 10771.314611771952
+      "max_drawdown": 0.03037586753421393,
+      "final_equity": 10022.466205970228
     },
     {
-      "max_drawdown": 0.020317167675431524,
-      "final_equity": 11148.94585159815
+      "max_drawdown": 0.05079872326770182,
+      "final_equity": 9795.059522714575
     },
     {
-      "max_drawdown": 0.012686192980465067,
-      "final_equity": 10620.496882493768
+      "max_drawdown": 0.023363853750136738,
+      "final_equity": 9970.042018004011
     },
     {
-      "max_drawdown": 0.02465029340497464,
-      "final_equity": 10787.130912450886
+      "max_drawdown": 0.020178609300220418,
+      "final_equity": 10125.931929803863
     },
     {
-      "max_drawdown": 0.028007686681143423,
-      "final_equity": 10683.354597996436
+      "max_drawdown": 0.021650078309954964,
+      "final_equity": 10331.758812583348
     },
     {
-      "max_drawdown": 0.02975021863293451,
-      "final_equity": 10638.304636469979
+      "max_drawdown": 0.010095177466893703,
+      "final_equity": 10261.10850513665
     },
     {
-      "max_drawdown": 0.022670728129295558,
-      "final_equity": 10461.45258057905
+      "max_drawdown": 0.04311367247065173,
+      "final_equity": 9826.863258810585
     },
     {
-      "max_drawdown": 0.019069162493811614,
-      "final_equity": 10772.624113864682
+      "max_drawdown": 0.02121279671735327,
+      "final_equity": 10235.466893269204
     },
     {
-      "max_drawdown": 0.029976813402842358,
-      "final_equity": 10322.662815571837
+      "max_drawdown": 0.036464756184171325,
+      "final_equity": 9600.152741632968
     },
     {
-      "max_drawdown": 0.024790340001135742,
-      "final_equity": 10672.821071886567
+      "max_drawdown": 0.03862075656346014,
+      "final_equity": 9793.234777994525
     },
     {
-      "max_drawdown": 0.010774529342305179,
-      "final_equity": 10873.73618777137
+      "max_drawdown": 0.041233238888097254,
+      "final_equity": 9863.942571315736
     },
     {
-      "max_drawdown": 0.022223026830955554,
-      "final_equity": 10832.008471890642
+      "max_drawdown": 0.04107936897796259,
+      "final_equity": 10030.941499230112
     },
     {
-      "max_drawdown": 0.009915586715685782,
-      "final_equity": 10961.411945537357
+      "max_drawdown": 0.01866616599212062,
+      "final_equity": 10126.891242461337
     },
     {
-      "max_drawdown": 0.009879516362870669,
-      "final_equity": 11056.444753349306
+      "max_drawdown": 0.019292138904555174,
+      "final_equity": 9956.25215050945
     },
     {
-      "max_drawdown": 0.020463665084398477,
-      "final_equity": 10271.136221801915
+      "max_drawdown": 0.03058295495528067,
+      "final_equity": 9862.345108717756
     },
     {
-      "max_drawdown": 0.010427280941683098,
-      "final_equity": 11044.578066462576
+      "max_drawdown": 0.049935037983667864,
+      "final_equity": 9479.732761418796
     },
     {
-      "max_drawdown": 0.010073983905783129,
-      "final_equity": 11247.822335151885
+      "max_drawdown": 0.023631186338131285,
+      "final_equity": 10054.993298532017
     },
     {
-      "max_drawdown": 0.010266771320381387,
-      "final_equity": 10811.549030695272
+      "max_drawdown": 0.041070587501324425,
+      "final_equity": 9492.00319778107
     },
     {
-      "max_drawdown": 0.009965084277139147,
-      "final_equity": 11152.71477076474
+      "max_drawdown": 0.04187397837118785,
+      "final_equity": 9762.162937738845
     },
     {
-      "max_drawdown": 0.009794385548906328,
-      "final_equity": 11108.110270763373
+      "max_drawdown": 0.02075454674830422,
+      "final_equity": 10004.364234665365
     },
     {
-      "max_drawdown": 0.01640738346657675,
-      "final_equity": 10918.81941562612
+      "max_drawdown": 0.0465160425325445,
+      "final_equity": 9560.19823674166
     },
     {
-      "max_drawdown": 0.012663647433630408,
-      "final_equity": 10928.4220606013
+      "max_drawdown": 0.021872012569303167,
+      "final_equity": 10436.170953016528
     },
     {
-      "max_drawdown": 0.018564836041748762,
-      "final_equity": 10714.39520952656
+      "max_drawdown": 0.060186125948134064,
+      "final_equity": 9418.512462987152
     },
     {
-      "max_drawdown": 0.009785703447917668,
-      "final_equity": 11255.146240086675
+      "max_drawdown": 0.019005921313943644,
+      "final_equity": 9947.35718942763
     },
     {
-      "max_drawdown": 0.009603930439969962,
-      "final_equity": 11344.665900097269
+      "max_drawdown": 0.023066814003880026,
+      "final_equity": 10167.046326395903
     },
     {
-      "max_drawdown": 0.01030145958979172,
-      "final_equity": 11137.932198302513
+      "max_drawdown": 0.03055958306770601,
+      "final_equity": 10058.348953829283
     },
     {
-      "max_drawdown": 0.010119509372594855,
-      "final_equity": 10970.651611090152
+      "max_drawdown": 0.029131628580155562,
+      "final_equity": 10162.611767971059
     },
     {
-      "max_drawdown": 0.010793107498845787,
-      "final_equity": 10926.649909881678
+      "max_drawdown": 0.023724129595082955,
+      "final_equity": 9744.016436688733
     },
     {
-      "max_drawdown": 0.029370921858372326,
-      "final_equity": 10747.26797019447
+      "max_drawdown": 0.029923856898955173,
+      "final_equity": 9762.629145893392
     },
     {
-      "max_drawdown": 0.01696077977197202,
-      "final_equity": 10793.506378097385
+      "max_drawdown": 0.052663378094209054,
+      "final_equity": 9538.680788657903
     },
     {
-      "max_drawdown": 0.010376170145408337,
-      "final_equity": 10920.246084917839
+      "max_drawdown": 0.012459424429372614,
+      "final_equity": 10247.751981160036
     },
     {
-      "max_drawdown": 0.01261905422633738,
-      "final_equity": 10449.684820488948
+      "max_drawdown": 0.012996369023533964,
+      "final_equity": 10151.98168771796
     },
     {
-      "max_drawdown": 0.01004007355876281,
-      "final_equity": 11170.718784123892
+      "max_drawdown": 0.04906467197025687,
+      "final_equity": 9915.15720953247
     },
     {
-      "max_drawdown": 0.010284226580326088,
-      "final_equity": 11357.429893515391
+      "max_drawdown": 0.023511642845239572,
+      "final_equity": 10187.647277776121
     },
     {
-      "max_drawdown": 0.018789337860292972,
-      "final_equity": 11084.503040390224
+      "max_drawdown": 0.010379026878014055,
+      "final_equity": 10656.105303879332
     },
     {
-      "max_drawdown": 0.009921339657263658,
-      "final_equity": 10934.165052589058
+      "max_drawdown": 0.010452102208637017,
+      "final_equity": 10125.19154345819
     },
     {
-      "max_drawdown": 0.020089593521604807,
-      "final_equity": 10694.457566672925
+      "max_drawdown": 0.07543897785267091,
+      "final_equity": 9245.610221473291
     },
     {
-      "max_drawdown": 0.01030262121377956,
-      "final_equity": 11228.060435436988
+      "max_drawdown": 0.010145786117058924,
+      "final_equity": 10104.0041741373
     },
     {
-      "max_drawdown": 0.020721246162007087,
-      "final_equity": 10595.861274260995
+      "max_drawdown": 0.02226349624062477,
+      "final_equity": 9798.922760490399
     },
     {
-      "max_drawdown": 0.010260165795377571,
-      "final_equity": 11064.946426628254
+      "max_drawdown": 0.0445681713199212,
+      "final_equity": 9548.852474246063
     },
     {
-      "max_drawdown": 0.012721871907471245,
-      "final_equity": 11211.186194650672
+      "max_drawdown": 0.012930519410317712,
+      "final_equity": 10256.687995703267
     },
     {
-      "max_drawdown": 0.01844933224953602,
-      "final_equity": 11039.53087908682
+      "max_drawdown": 0.033458141618770816,
+      "final_equity": 9837.435823897567
     },
     {
-      "max_drawdown": 0.03044860501828851,
-      "final_equity": 10115.501960217995
+      "max_drawdown": 0.0510181781993193,
+      "final_equity": 9641.580641140956
     },
     {
-      "max_drawdown": 0.010177964290540697,
-      "final_equity": 10961.449599562138
+      "max_drawdown": 0.0393749078684383,
+      "final_equity": 9761.802459997798
     },
     {
-      "max_drawdown": 0.009976246904372132,
-      "final_equity": 10780.398101949262
+      "max_drawdown": 0.029778403546425164,
+      "final_equity": 10336.43603262453
     },
     {
-      "max_drawdown": 0.01939213989422632,
-      "final_equity": 11291.598053025318
+      "max_drawdown": 0.0379874458057983,
+      "final_equity": 9936.283185101156
     },
     {
-      "max_drawdown": 0.019391100229036923,
-      "final_equity": 10435.276390647155
+      "max_drawdown": 0.0767458118531235,
+      "final_equity": 9382.071709850707
     },
     {
-      "max_drawdown": 0.010095912177194426,
-      "final_equity": 11094.501111401238
+      "max_drawdown": 0.028585234899599878,
+      "final_equity": 9873.564294908527
     },
     {
-      "max_drawdown": 0.031992029011058985,
-      "final_equity": 10891.370888500362
+      "max_drawdown": 0.045181155718668355,
+      "final_equity": 9471.4468259897
     },
     {
-      "max_drawdown": 0.01025347077685594,
-      "final_equity": 10707.294854640733
+      "max_drawdown": 0.010250720409519925,
+      "final_equity": 10205.749081610318
     },
     {
-      "max_drawdown": 0.00974471676445504,
-      "final_equity": 11354.365577472412
+      "max_drawdown": 0.013382611027486996,
+      "final_equity": 10051.548600470918
     },
     {
-      "max_drawdown": 0.01240956989477778,
-      "final_equity": 10454.376781551606
+      "max_drawdown": 0.07609845462588503,
+      "final_equity": 9259.787304208061
     },
     {
-      "max_drawdown": 0.010109044856862075,
-      "final_equity": 11081.755984137259
+      "max_drawdown": 0.0445777957470012,
+      "final_equity": 9692.517712526158
     },
     {
-      "max_drawdown": 0.010008453912648745,
-      "final_equity": 10917.080094563864
+      "max_drawdown": 0.03944557035488058,
+      "final_equity": 9695.682075891391
     },
     {
-      "max_drawdown": 0.020202933552146557,
-      "final_equity": 10589.836968272928
+      "max_drawdown": 0.04029024841258649,
+      "final_equity": 9782.761263789189
     },
     {
-      "max_drawdown": 0.010195170611578357,
-      "final_equity": 10935.414726158207
+      "max_drawdown": 0.019908841057313654,
+      "final_equity": 10175.086548500689
     },
     {
-      "max_drawdown": 0.016942520111039697,
-      "final_equity": 10911.188499173271
+      "max_drawdown": 0.04991498079472759,
+      "final_equity": 9699.66017156142
     },
     {
-      "max_drawdown": 0.020367099148811064,
-      "final_equity": 10527.230856004118
+      "max_drawdown": 0.02121289737685889,
+      "final_equity": 9871.68034089665
     },
     {
-      "max_drawdown": 0.0260152308459099,
-      "final_equity": 10584.384604876008
+      "max_drawdown": 0.06570166781823866,
+      "final_equity": 9457.29125262256
     },
     {
-      "max_drawdown": 0.010156988954620019,
-      "final_equity": 11147.141686447292
+      "max_drawdown": 0.010484907206564881,
+      "final_equity": 10112.697915396062
     },
     {
-      "max_drawdown": 0.017499052542778906,
-      "final_equity": 10789.987564079362
+      "max_drawdown": 0.057023871660792924,
+      "final_equity": 9561.798556394264
     },
     {
-      "max_drawdown": 0.015767714931539573,
-      "final_equity": 11186.129867923139
+      "max_drawdown": 0.012725185801564173,
+      "final_equity": 10428.677682054838
     },
     {
-      "max_drawdown": 0.010272408443954205,
-      "final_equity": 11051.903487889005
+      "max_drawdown": 0.030536127154256146,
+      "final_equity": 10341.843282697948
     },
     {
-      "max_drawdown": 0.009433871650191312,
-      "final_equity": 11361.261851562123
+      "max_drawdown": 0.019532298054740806,
+      "final_equity": 10185.811798224562
     },
     {
-      "max_drawdown": 0.009729282972158826,
-      "final_equity": 11008.047392806406
+      "max_drawdown": 0.030255919517442168,
+      "final_equity": 9947.00530311112
     },
     {
-      "max_drawdown": 0.010353083421472661,
-      "final_equity": 10674.522220749364
+      "max_drawdown": 0.031288702707807835,
+      "final_equity": 9808.023383029364
     },
     {
-      "max_drawdown": 0.01973475485507772,
-      "final_equity": 10817.74282809813
+      "max_drawdown": 0.021449207617608476,
+      "final_equity": 10228.847092177319
     },
     {
-      "max_drawdown": 0.019676217206779846,
-      "final_equity": 10530.231877954717
+      "max_drawdown": 0.029584382921110493,
+      "final_equity": 10331.252357368878
     },
     {
-      "max_drawdown": 0.02019074232210468,
-      "final_equity": 10112.589777233436
+      "max_drawdown": 0.022200577560795392,
+      "final_equity": 10154.802759001052
     },
     {
-      "max_drawdown": 0.028502567753224118,
-      "final_equity": 10196.531125422405
+      "max_drawdown": 0.045687701361878795,
+      "final_equity": 10025.561303135952
     },
     {
-      "max_drawdown": 0.009783759179793983,
-      "final_equity": 11154.777777853313
+      "max_drawdown": 0.05877703220052563,
+      "final_equity": 9618.934697628047
     },
     {
-      "max_drawdown": 0.033327857355893574,
-      "final_equity": 10187.19042322571
+      "max_drawdown": 0.053141851311471554,
+      "final_equity": 9565.020608073997
     },
     {
-      "max_drawdown": 0.029134977266519976,
-      "final_equity": 10441.02921121525
+      "max_drawdown": 0.010922561540146116,
+      "final_equity": 10061.3236994219
     },
     {
-      "max_drawdown": 0.023032948621542607,
-      "final_equity": 11007.947007226257
+      "max_drawdown": 0.020591475288749987,
+      "final_equity": 9897.222823781343
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11513.436853455321
+      "max_drawdown": 0.04681199206185876,
+      "final_equity": 9752.924158442556
     },
     {
-      "max_drawdown": 0.0208805065859182,
-      "final_equity": 10429.654737412868
+      "max_drawdown": 0.0410183527697641,
+      "final_equity": 9798.211221774409
     },
     {
-      "max_drawdown": 0.020618342018362112,
-      "final_equity": 10583.556260886147
+      "max_drawdown": 0.04698796226182375,
+      "final_equity": 9549.403023853818
     },
     {
-      "max_drawdown": 0.018458382054395324,
-      "final_equity": 10951.86833085242
+      "max_drawdown": 0.02332861404923369,
+      "final_equity": 10017.800754769989
     },
     {
-      "max_drawdown": 0.009573302300995762,
-      "final_equity": 11189.766528528033
+      "max_drawdown": 0.08371362172806955,
+      "final_equity": 9086.592893316252
     },
     {
-      "max_drawdown": 0.010122528245785342,
-      "final_equity": 10994.168058736184
+      "max_drawdown": 0.05587072253797297,
+      "final_equity": 9659.072748796214
     },
     {
-      "max_drawdown": 0.019371027355001593,
-      "final_equity": 10869.186744375436
+      "max_drawdown": 0.07471037280338813,
+      "final_equity": 9396.627703474973
     },
     {
-      "max_drawdown": 0.010121401429872615,
-      "final_equity": 10849.763992681119
+      "max_drawdown": 0.047886987011466105,
+      "final_equity": 9791.495750567048
     },
     {
-      "max_drawdown": 0.010007618794706259,
-      "final_equity": 10964.600949773892
+      "max_drawdown": 0.010397547915632337,
+      "final_equity": 10417.014571770102
     },
     {
-      "max_drawdown": 0.009339135501399894,
-      "final_equity": 11360.187830765633
+      "max_drawdown": 0.030546996125272417,
+      "final_equity": 10007.372745191571
     },
     {
-      "max_drawdown": 0.010353083421472661,
-      "final_equity": 11107.909888308151
+      "max_drawdown": 0.02741789626408714,
+      "final_equity": 10112.324613634853
     },
     {
-      "max_drawdown": 0.012473601914617634,
-      "final_equity": 10727.565689424211
+      "max_drawdown": 0.04944468550926495,
+      "final_equity": 9409.111835774784
     },
     {
-      "max_drawdown": 0.0097938189003267,
-      "final_equity": 10804.535723911838
+      "max_drawdown": 0.010085541393743732,
+      "final_equity": 10447.15749740926
     },
     {
-      "max_drawdown": 0.010595409186296048,
-      "final_equity": 10385.920978013442
+      "max_drawdown": 0.022216134926072065,
+      "final_equity": 10283.55402250486
     },
     {
-      "max_drawdown": 0.010097909646118163,
-      "final_equity": 11221.241418001657
+      "max_drawdown": 0.01806138068993075,
+      "final_equity": 10317.497872618445
     },
     {
-      "max_drawdown": 0.01274369587792972,
-      "final_equity": 10699.848098780147
+      "max_drawdown": 0.02532853109960507,
+      "final_equity": 9964.857115885987
     },
     {
-      "max_drawdown": 0.020515737439573734,
-      "final_equity": 10641.614636096974
+      "max_drawdown": 0.03086103474512857,
+      "final_equity": 9943.996465981305
     },
     {
-      "max_drawdown": 0.02276900558574217,
-      "final_equity": 10787.6107719491
+      "max_drawdown": 0.04002060784027464,
+      "final_equity": 9881.133185734114
     },
     {
-      "max_drawdown": 0.019745577588605706,
-      "final_equity": 10961.746586737258
+      "max_drawdown": 0.030837009250333787,
+      "final_equity": 9832.04600130284
     },
     {
-      "max_drawdown": 0.020600831772125912,
-      "final_equity": 10679.096016468151
+      "max_drawdown": 0.02057980433278244,
+      "final_equity": 10181.323356907345
     },
     {
-      "max_drawdown": 0.010125023088447668,
-      "final_equity": 11167.061351839002
+      "max_drawdown": 0.02831727761817325,
+      "final_equity": 9830.327580046342
     },
     {
-      "max_drawdown": 0.01022854896906432,
-      "final_equity": 11170.262082233523
+      "max_drawdown": 0.010921039332118243,
+      "final_equity": 10321.91545177354
     },
     {
-      "max_drawdown": 0.01967351184548406,
-      "final_equity": 10759.453229847686
+      "max_drawdown": 0.04470792653055673,
+      "final_equity": 9633.226554047465
     },
     {
-      "max_drawdown": 0.010488750685693932,
-      "final_equity": 10665.548272426988
+      "max_drawdown": 0.009733143038636675,
+      "final_equity": 10526.579187386078
     },
     {
-      "max_drawdown": 0.01533778503545372,
-      "final_equity": 10964.331342595293
+      "max_drawdown": 0.030094777075982276,
+      "final_equity": 10086.57485773307
     },
     {
-      "max_drawdown": 0.037777898197889105,
-      "final_equity": 10305.973075529182
+      "max_drawdown": 0.053391277412895136,
+      "final_equity": 9594.329108208254
     },
     {
-      "max_drawdown": 0.020454957474665508,
-      "final_equity": 10599.867012508568
+      "max_drawdown": 0.04326402081194881,
+      "final_equity": 9929.619641235093
     },
     {
-      "max_drawdown": 0.010717878203347282,
-      "final_equity": 10815.617417120005
+      "max_drawdown": 0.0393715749509246,
+      "final_equity": 9599.64747980474
     },
     {
-      "max_drawdown": 0.02216191657005289,
-      "final_equity": 10611.096992345458
+      "max_drawdown": 0.019369532083751608,
+      "final_equity": 10455.786425751825
     },
     {
-      "max_drawdown": 0.01011985795825623,
-      "final_equity": 11061.872022627253
+      "max_drawdown": 0.02909523051645741,
+      "final_equity": 10221.800782496168
     },
     {
-      "max_drawdown": 0.02390976545059043,
-      "final_equity": 10778.152150281103
+      "max_drawdown": 0.012509011116846422,
+      "final_equity": 10239.789175839984
     },
     {
-      "max_drawdown": 0.025332440992973878,
-      "final_equity": 10735.03386420072
+      "max_drawdown": 0.020979910401749482,
+      "final_equity": 9965.00108601525
     },
     {
-      "max_drawdown": 0.015757222194890872,
-      "final_equity": 10966.904781958247
+      "max_drawdown": 0.013499683126523696,
+      "final_equity": 10363.639255558237
     },
     {
-      "max_drawdown": 0.020683883923677513,
-      "final_equity": 10232.016875115023
+      "max_drawdown": 0.02442699299575288,
+      "final_equity": 10162.291907981018
     },
     {
-      "max_drawdown": 0.020501233525274474,
-      "final_equity": 10567.41050811255
+      "max_drawdown": 0.02039806981589289,
+      "final_equity": 10169.30370153142
     },
     {
-      "max_drawdown": 0.019806082090941566,
-      "final_equity": 10965.466066612382
+      "max_drawdown": 0.05393414955262299,
+      "final_equity": 9673.593298267775
     },
     {
-      "max_drawdown": 0.01994217395966245,
-      "final_equity": 10888.43233741889
+      "max_drawdown": 0.02594170593913024,
+      "final_equity": 10440.447056622617
     },
     {
-      "max_drawdown": 0.00922523107209771,
-      "final_equity": 11267.280687445606
+      "max_drawdown": 0.055519730710211,
+      "final_equity": 9514.195317972577
     },
     {
-      "max_drawdown": 0.01756048932676021,
-      "final_equity": 11098.021146507408
+      "max_drawdown": 0.03089227839234463,
+      "final_equity": 10111.121818546064
     },
     {
-      "max_drawdown": 0.014899389240028421,
-      "final_equity": 10845.402974203935
+      "max_drawdown": 0.04274352372318444,
+      "final_equity": 9876.525456010168
     },
     {
-      "max_drawdown": 0.010178415038899309,
-      "final_equity": 11054.224354293476
+      "max_drawdown": 0.03751336230575048,
+      "final_equity": 10163.767925350328
     },
     {
-      "max_drawdown": 0.009352148772937528,
-      "final_equity": 11528.428999468635
+      "max_drawdown": 0.04326881694121121,
+      "final_equity": 9841.604178710222
     },
     {
-      "max_drawdown": 0.010272745314473145,
-      "final_equity": 10688.841640319912
+      "max_drawdown": 0.04196688807690912,
+      "final_equity": 9683.459001229581
     },
     {
-      "max_drawdown": 0.03240106205296582,
-      "final_equity": 10203.517629205977
+      "max_drawdown": 0.01265468828566122,
+      "final_equity": 10735.345629544812
     },
     {
-      "max_drawdown": 0.010236145278807736,
-      "final_equity": 11134.630592203172
+      "max_drawdown": 0.05103790575805498,
+      "final_equity": 9695.27339539857
     },
     {
-      "max_drawdown": 0.020160286033608886,
-      "final_equity": 10646.714033861272
+      "max_drawdown": 0.05001833951339327,
+      "final_equity": 9797.69015035023
     },
     {
-      "max_drawdown": 0.031142174991295405,
-      "final_equity": 10458.269038092729
+      "max_drawdown": 0.043333998230700506,
+      "final_equity": 9809.807874538961
     },
     {
-      "max_drawdown": 0.04297269975608324,
-      "final_equity": 10396.413222533443
+      "max_drawdown": 0.026254164064054335,
+      "final_equity": 10101.31214505053
     },
     {
-      "max_drawdown": 0.020554192287992004,
-      "final_equity": 10286.111287882737
+      "max_drawdown": 0.04116355941509849,
+      "final_equity": 10009.024737758953
     },
     {
-      "max_drawdown": 0.0203285600824369,
-      "final_equity": 10670.060724125522
+      "max_drawdown": 0.07722514772875641,
+      "final_equity": 9485.66797339213
     },
     {
-      "max_drawdown": 0.009499710280579948,
-      "final_equity": 11095.485321060592
+      "max_drawdown": 0.05127422499477768,
+      "final_equity": 9599.095079787854
     },
     {
-      "max_drawdown": 0.010165470684620818,
-      "final_equity": 11019.490053636744
+      "max_drawdown": 0.04062336134505989,
+      "final_equity": 9923.493298822865
     },
     {
-      "max_drawdown": 0.0264857186535721,
-      "final_equity": 10562.897482300828
+      "max_drawdown": 0.01982622881868052,
+      "final_equity": 10404.82023571243
     },
     {
-      "max_drawdown": 0.010513779613130768,
-      "final_equity": 10834.654384883253
+      "max_drawdown": 0.01263759754770118,
+      "final_equity": 10254.175521115769
     },
     {
-      "max_drawdown": 0.019072418346298366,
-      "final_equity": 10815.813628199492
+      "max_drawdown": 0.019936724850625243,
+      "final_equity": 10482.00611399121
     },
     {
-      "max_drawdown": 0.009808542922992897,
-      "final_equity": 10993.18179580786
+      "max_drawdown": 0.01027015230780192,
+      "final_equity": 10191.68679757698
     },
     {
-      "max_drawdown": 0.029334030233547637,
-      "final_equity": 10473.938415966979
+      "max_drawdown": 0.05064733559829231,
+      "final_equity": 9469.680109379768
     },
     {
-      "max_drawdown": 0.017628010346703256,
-      "final_equity": 10580.670054149128
+      "max_drawdown": 0.03790132865976669,
+      "final_equity": 10103.478441442874
     },
     {
-      "max_drawdown": 0.018284121102740837,
-      "final_equity": 11250.50498462944
+      "max_drawdown": 0.03142628033339168,
+      "final_equity": 10490.29359987578
     },
     {
-      "max_drawdown": 0.026495583898135,
-      "final_equity": 10663.574444534392
+      "max_drawdown": 0.033837756219980565,
+      "final_equity": 9658.994950249667
     },
     {
-      "max_drawdown": 0.018236140728518105,
-      "final_equity": 10698.397440592049
+      "max_drawdown": 0.015132921214689472,
+      "final_equity": 10023.814384087333
     },
     {
-      "max_drawdown": 0.019396202628152625,
-      "final_equity": 10449.685874834351
+      "max_drawdown": 0.03848928298835355,
+      "final_equity": 9776.473033796705
     },
     {
-      "max_drawdown": 0.018834422614096222,
-      "final_equity": 10748.492297614182
+      "max_drawdown": 0.010656795534625261,
+      "final_equity": 10118.666051805014
     },
     {
-      "max_drawdown": 0.009738475966924108,
-      "final_equity": 11318.383295156465
+      "max_drawdown": 0.03845830972867848,
+      "final_equity": 10006.286826092795
     },
     {
-      "max_drawdown": 0.010273319675949605,
-      "final_equity": 11370.129252198685
+      "max_drawdown": 0.02032255537603988,
+      "final_equity": 10318.173060708701
     },
     {
-      "max_drawdown": 0.010478032268551563,
-      "final_equity": 10981.41557519442
+      "max_drawdown": 0.009798292089597494,
+      "final_equity": 10836.550460311193
     },
     {
-      "max_drawdown": 0.012782403468779626,
-      "final_equity": 10938.591882736493
+      "max_drawdown": 0.06072123588799504,
+      "final_equity": 9557.256794427005
     },
     {
-      "max_drawdown": 0.02831109801483577,
-      "final_equity": 10474.16030601072
+      "max_drawdown": 0.02033736962135816,
+      "final_equity": 10078.290904734178
     },
     {
-      "max_drawdown": 0.0278679404965151,
-      "final_equity": 10746.2213384861
+      "max_drawdown": 0.030141401354871512,
+      "final_equity": 10328.373656672935
     },
     {
-      "max_drawdown": 0.010348721813778352,
-      "final_equity": 10494.639509713663
+      "max_drawdown": 0.019671110012997546,
+      "final_equity": 9993.702967936313
     },
     {
-      "max_drawdown": 0.010038723438962983,
-      "final_equity": 10897.617586216242
+      "max_drawdown": 0.01253212881846226,
+      "final_equity": 10154.793660064295
     },
     {
-      "max_drawdown": 0.010342432614393654,
-      "final_equity": 10647.431197305577
+      "max_drawdown": 0.031099420535783885,
+      "final_equity": 9984.3065376342
     },
     {
-      "max_drawdown": 0.04051248304632968,
-      "final_equity": 9840.357342482697
+      "max_drawdown": 0.05336236756517628,
+      "final_equity": 9553.621331127955
     },
     {
-      "max_drawdown": 0.00998469880267686,
-      "final_equity": 11342.995416224408
+      "max_drawdown": 0.06747757692680559,
+      "final_equity": 9486.845526005414
     },
     {
-      "max_drawdown": 0.021608274402256853,
-      "final_equity": 10559.295238641938
+      "max_drawdown": 0.010013454214191836,
+      "final_equity": 10565.307163051737
     },
     {
-      "max_drawdown": 0.010104465179013653,
-      "final_equity": 10981.420462847129
+      "max_drawdown": 0.029143528290342717,
+      "final_equity": 10379.763787328375
     },
     {
-      "max_drawdown": 0.019727432836988128,
-      "final_equity": 10847.949204799696
+      "max_drawdown": 0.029748746275064738,
+      "final_equity": 9996.789545505386
     },
     {
-      "max_drawdown": 0.024652947189433314,
-      "final_equity": 10813.969051544525
+      "max_drawdown": 0.030311284346184256,
+      "final_equity": 9886.927596597277
     },
     {
-      "max_drawdown": 0.026307683031408634,
-      "final_equity": 10491.315736261517
+      "max_drawdown": 0.023587450301640275,
+      "final_equity": 9764.125496983597
     },
     {
-      "max_drawdown": 0.017223390338395074,
-      "final_equity": 10818.87146807313
+      "max_drawdown": 0.031288487363140764,
+      "final_equity": 9875.96541911995
     },
     {
-      "max_drawdown": 0.018161853730398726,
-      "final_equity": 10561.03982562127
+      "max_drawdown": 0.023338174086891244,
+      "final_equity": 10301.887027987115
     },
     {
-      "max_drawdown": 0.019591723149263645,
-      "final_equity": 10491.71440993544
+      "max_drawdown": 0.040540925790242356,
+      "final_equity": 9761.053104290188
     },
     {
-      "max_drawdown": 0.009989129699448299,
-      "final_equity": 11419.105011207552
+      "max_drawdown": 0.04264380044001634,
+      "final_equity": 9786.769848972572
     },
     {
-      "max_drawdown": 0.03008917668548894,
-      "final_equity": 10426.49064739248
+      "max_drawdown": 0.0100084835422995,
+      "final_equity": 10685.280911568143
     },
     {
-      "max_drawdown": 0.019319688183927222,
-      "final_equity": 10765.195940183186
+      "max_drawdown": 0.009809423558198135,
+      "final_equity": 10629.598063335228
     },
     {
-      "max_drawdown": 0.01749785244934725,
-      "final_equity": 10578.072130233624
+      "max_drawdown": 0.03035919112908761,
+      "final_equity": 9900.030168312183
     },
     {
-      "max_drawdown": 0.0179654685549751,
-      "final_equity": 10768.096068293898
+      "max_drawdown": 0.03477116824679367,
+      "final_equity": 9746.65228509479
     },
     {
-      "max_drawdown": 0.024591610642158403,
-      "final_equity": 10268.630144262424
+      "max_drawdown": 0.06909565110350882,
+      "final_equity": 9552.062688466807
     },
     {
-      "max_drawdown": 0.019404257784082706,
-      "final_equity": 10823.59686084548
+      "max_drawdown": 0.016612199775122304,
+      "final_equity": 10252.792524811253
     },
     {
-      "max_drawdown": 0.018486321513054873,
-      "final_equity": 10716.331766677684
+      "max_drawdown": 0.010639362097045342,
+      "final_equity": 10714.871854011444
     },
     {
-      "max_drawdown": 0.012300417098101183,
-      "final_equity": 10833.12428196457
+      "max_drawdown": 0.05489207263038097,
+      "final_equity": 9451.07927369619
     },
     {
-      "max_drawdown": 0.012478400138334704,
-      "final_equity": 11065.670712088311
+      "max_drawdown": 0.019744062354435127,
+      "final_equity": 10100.070749685268
     },
     {
-      "max_drawdown": 0.010194232649633799,
-      "final_equity": 11214.932516432493
+      "max_drawdown": 0.062191279755120885,
+      "final_equity": 9281.420476789861
     },
     {
-      "max_drawdown": 0.009508050552651016,
-      "final_equity": 11172.269697589558
+      "max_drawdown": 0.03555920652330281,
+      "final_equity": 9956.933633678915
     },
     {
-      "max_drawdown": 0.01030494067919208,
-      "final_equity": 11094.618534407124
+      "max_drawdown": 0.020152037701365852,
+      "final_equity": 10001.438512445025
     },
     {
-      "max_drawdown": 0.009687906174869875,
-      "final_equity": 11260.870124729778
+      "max_drawdown": 0.029860322476668262,
+      "final_equity": 10154.43089400381
     },
     {
-      "max_drawdown": 0.01939847520616615,
-      "final_equity": 10612.282118711528
+      "max_drawdown": 0.009414324418732608,
+      "final_equity": 10730.860713950267
     },
     {
-      "max_drawdown": 0.019531384298167562,
-      "final_equity": 11180.138802872714
+      "max_drawdown": 0.029505262545926343,
+      "final_equity": 10040.228534425572
     },
     {
-      "max_drawdown": 0.011961519488208694,
-      "final_equity": 11292.540713168668
+      "max_drawdown": 0.02980030123330856,
+      "final_equity": 10055.196935619857
     },
     {
-      "max_drawdown": 0.019403408183835208,
-      "final_equity": 10439.996338135488
+      "max_drawdown": 0.019748026063726408,
+      "final_equity": 10220.377048009153
     },
     {
-      "max_drawdown": 0.036726301393527463,
-      "final_equity": 10372.979889518272
+      "max_drawdown": 0.08134727065850605,
+      "final_equity": 9207.651127902773
     },
     {
-      "max_drawdown": 0.01476714429608438,
-      "final_equity": 10597.407535392518
+      "max_drawdown": 0.050620762288016014,
+      "final_equity": 9540.675842769535
     },
     {
-      "max_drawdown": 0.021197443717500063,
-      "final_equity": 10929.682608024377
+      "max_drawdown": 0.05734389817284966,
+      "final_equity": 9442.205635637187
     },
     {
-      "max_drawdown": 0.018592637386908275,
-      "final_equity": 11147.631744774013
+      "max_drawdown": 0.05593863547706738,
+      "final_equity": 9755.368423197613
     },
     {
-      "max_drawdown": 0.009941622679672529,
-      "final_equity": 11159.555106189116
+      "max_drawdown": 0.025813595948815073,
+      "final_equity": 9836.919627411382
     },
     {
-      "max_drawdown": 0.010094402505157585,
-      "final_equity": 10773.813250415744
+      "max_drawdown": 0.03426665958911987,
+      "final_equity": 9722.576847972057
     },
     {
-      "max_drawdown": 0.009899870850513281,
-      "final_equity": 11159.592412727805
+      "max_drawdown": 0.05103798811068606,
+      "final_equity": 9739.776708396115
     },
     {
-      "max_drawdown": 0.01022758798503703,
-      "final_equity": 10749.920261899184
+      "max_drawdown": 0.047874163523550894,
+      "final_equity": 9941.168229422112
     },
     {
-      "max_drawdown": 0.010653791371736224,
-      "final_equity": 10595.068598758187
+      "max_drawdown": 0.034890249913832966,
+      "final_equity": 9871.283476084442
     },
     {
-      "max_drawdown": 0.02856400617626779,
-      "final_equity": 10825.90828415042
+      "max_drawdown": 0.07304635248780407,
+      "final_equity": 9571.573265903362
     },
     {
-      "max_drawdown": 0.01911374059381768,
-      "final_equity": 10820.328725845578
+      "max_drawdown": 0.020499321173409208,
+      "final_equity": 10088.8284120054
     },
     {
-      "max_drawdown": 0.009766398649990701,
-      "final_equity": 11468.538838022267
+      "max_drawdown": 0.012682256452610542,
+      "final_equity": 10244.451115079553
     },
     {
-      "max_drawdown": 0.010022767080155495,
-      "final_equity": 11039.287089741409
+      "max_drawdown": 0.04322668894578181,
+      "final_equity": 9927.509120316938
     },
     {
-      "max_drawdown": 0.024392629025509052,
-      "final_equity": 10768.904298639522
+      "max_drawdown": 0.030800891917523023,
+      "final_equity": 9948.21912685049
     },
     {
-      "max_drawdown": 0.010105992119379945,
-      "final_equity": 11031.866325380795
+      "max_drawdown": 0.05789458993507462,
+      "final_equity": 9540.524974545846
     },
     {
-      "max_drawdown": 0.010183871862666657,
-      "final_equity": 10795.19051808034
+      "max_drawdown": 0.0753080824973055,
+      "final_equity": 9244.200665352739
     },
     {
-      "max_drawdown": 0.020652141031949775,
-      "final_equity": 10733.599610664385
+      "max_drawdown": 0.07315371714724392,
+      "final_equity": 9196.10545234754
     },
     {
-      "max_drawdown": 0.016227007790871613,
-      "final_equity": 10807.823161337546
+      "max_drawdown": 0.06214630907830019,
+      "final_equity": 9389.54430175566
     },
     {
-      "max_drawdown": 0.009767146610492643,
-      "final_equity": 11272.098343791327
+      "max_drawdown": 0.019278364178666477,
+      "final_equity": 10495.012520841827
     },
     {
-      "max_drawdown": 0.01774205095494353,
-      "final_equity": 10576.727429606368
+      "max_drawdown": 0.030423690705251374,
+      "final_equity": 10000.352621520595
     },
     {
-      "max_drawdown": 0.01295330252697475,
-      "final_equity": 11106.710663761914
+      "max_drawdown": 0.031231718556191106,
+      "final_equity": 10110.871073330929
     },
     {
-      "max_drawdown": 0.021785242226485462,
-      "final_equity": 10762.6499315208
+      "max_drawdown": 0.011298308768768353,
+      "final_equity": 10030.150945425448
     },
     {
-      "max_drawdown": 0.0209560220569535,
-      "final_equity": 11104.963993868583
+      "max_drawdown": 0.030801134258679655,
+      "final_equity": 10092.38632884755
     },
     {
-      "max_drawdown": 0.01007089966700191,
-      "final_equity": 10659.884119479659
+      "max_drawdown": 0.04350643096441703,
+      "final_equity": 9697.831092931163
     },
     {
-      "max_drawdown": 0.010128448313925198,
-      "final_equity": 11252.713133142157
+      "max_drawdown": 0.01962122557886275,
+      "final_equity": 10452.40540274566
     },
     {
-      "max_drawdown": 0.010488750685693932,
-      "final_equity": 10711.942912973043
+      "max_drawdown": 0.01892684196587724,
+      "final_equity": 9975.065569150614
     },
     {
-      "max_drawdown": 0.01930170229408305,
-      "final_equity": 11074.64753372308
+      "max_drawdown": 0.010007149734131167,
+      "final_equity": 10544.217290679204
     },
     {
-      "max_drawdown": 0.009180058966381816,
-      "final_equity": 11300.98254382806
+      "max_drawdown": 0.022242475838597797,
+      "final_equity": 10308.40120372165
     },
     {
-      "max_drawdown": 0.0102919085610591,
-      "final_equity": 11018.996009531691
+      "max_drawdown": 0.018147172762395275,
+      "final_equity": 10305.37049059767
     },
     {
-      "max_drawdown": 0.03252440190160759,
-      "final_equity": 10600.330328377539
+      "max_drawdown": 0.048364213254126244,
+      "final_equity": 9657.035765165378
     },
     {
-      "max_drawdown": 0.0194059509994679,
-      "final_equity": 10582.507539085653
+      "max_drawdown": 0.01306066439806075,
+      "final_equity": 10191.793042583715
     },
     {
-      "max_drawdown": 0.019698986892703992,
-      "final_equity": 10599.699796630443
+      "max_drawdown": 0.03605439899719179,
+      "final_equity": 9969.757895494504
     },
     {
-      "max_drawdown": 0.01986793167584965,
-      "final_equity": 10759.078002657616
+      "max_drawdown": 0.02019212264133139,
+      "final_equity": 10508.26981179841
     },
     {
-      "max_drawdown": 0.009733196998523194,
-      "final_equity": 11188.34907857177
+      "max_drawdown": 0.04754665218879891,
+      "final_equity": 9675.374624472915
     },
     {
-      "max_drawdown": 0.01974808939947372,
-      "final_equity": 10620.461851654094
+      "max_drawdown": 0.047572589764547216,
+      "final_equity": 9524.176245597962
     },
     {
-      "max_drawdown": 0.009626811667108645,
-      "final_equity": 11387.191442704046
+      "max_drawdown": 0.029148438457268496,
+      "final_equity": 9829.096878966007
     },
     {
-      "max_drawdown": 0.009646299084004932,
-      "final_equity": 11005.001600713738
+      "max_drawdown": 0.010120258799610288,
+      "final_equity": 10625.870624454066
     },
     {
-      "max_drawdown": 0.01153618935378317,
-      "final_equity": 10824.21991009498
+      "max_drawdown": 0.026823410454023686,
+      "final_equity": 10024.758917268286
     },
     {
-      "max_drawdown": 0.01913423391754287,
-      "final_equity": 10770.82767383521
+      "max_drawdown": 0.02647346412165982,
+      "final_equity": 10114.536895393492
     },
     {
-      "max_drawdown": 0.029264281428306012,
-      "final_equity": 10719.018016201562
+      "max_drawdown": 0.033059074865067754,
+      "final_equity": 9603.646405415213
     },
     {
-      "max_drawdown": 0.010021975148446171,
-      "final_equity": 10942.519699128588
+      "max_drawdown": 0.04781532328851536,
+      "final_equity": 9544.841130287288
     },
     {
-      "max_drawdown": 0.016554002438493594,
-      "final_equity": 10895.912250054615
+      "max_drawdown": 0.05435021963523775,
+      "final_equity": 9872.481803516393
     },
     {
-      "max_drawdown": 0.02851840828381707,
-      "final_equity": 10649.180706995048
+      "max_drawdown": 0.05655341455162791,
+      "final_equity": 9649.214641371233
     },
     {
-      "max_drawdown": 0.015158792392427053,
-      "final_equity": 10623.43321463989
+      "max_drawdown": 0.05932422105379011,
+      "final_equity": 9698.959659906806
     },
     {
-      "max_drawdown": 0.01863269026383194,
-      "final_equity": 10927.72572914505
+      "max_drawdown": 0.04057670535466371,
+      "final_equity": 9717.683416446855
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11523.91645667208
+      "max_drawdown": 0.020881254975267497,
+      "final_equity": 9841.736688151865
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11450.224675464537
+      "max_drawdown": 0.05498404233922502,
+      "final_equity": 9484.487548946283
     },
     {
-      "max_drawdown": 0.010256988113930696,
-      "final_equity": 10682.833357216206
+      "max_drawdown": 0.034518338639349166,
+      "final_equity": 10089.91671780763
     },
     {
-      "max_drawdown": 0.009222581878500447,
-      "final_equity": 11435.943991982927
+      "max_drawdown": 0.03990600587054105,
+      "final_equity": 9769.96525985254
     },
     {
-      "max_drawdown": 0.01877401343639612,
-      "final_equity": 11053.711197747427
+      "max_drawdown": 0.03831381943502337,
+      "final_equity": 9739.179388662627
     },
     {
-      "max_drawdown": 0.01020420905170188,
-      "final_equity": 11017.722661937929
+      "max_drawdown": 0.010847075171223049,
+      "final_equity": 10203.18764913938
     },
     {
-      "max_drawdown": 0.009755216885817018,
-      "final_equity": 11021.372453363567
+      "max_drawdown": 0.009951599325972685,
+      "final_equity": 10574.560663933155
     },
     {
-      "max_drawdown": 0.02158228562027783,
-      "final_equity": 10610.108309158519
+      "max_drawdown": 0.026490400064489328,
+      "final_equity": 9810.261238494077
     },
     {
-      "max_drawdown": 0.020270711842786435,
-      "final_equity": 10743.750976317213
+      "max_drawdown": 0.020105033778711964,
+      "final_equity": 10544.617602783783
     },
     {
-      "max_drawdown": 0.043447077181841987,
-      "final_equity": 10345.891574697329
+      "max_drawdown": 0.020099330478105474,
+      "final_equity": 10526.149576809588
     },
     {
-      "max_drawdown": 0.01984807329782548,
-      "final_equity": 10833.787536523481
+      "max_drawdown": 0.0398536810949735,
+      "final_equity": 9935.395667900311
     },
     {
-      "max_drawdown": 0.009899340641806927,
-      "final_equity": 11174.462663788394
+      "max_drawdown": 0.020179852803020405,
+      "final_equity": 10424.649551216453
     },
     {
-      "max_drawdown": 0.020401013344735295,
-      "final_equity": 11171.560490011694
+      "max_drawdown": 0.030764645428227776,
+      "final_equity": 10328.579463235123
     },
     {
-      "max_drawdown": 0.012436231505024905,
-      "final_equity": 11066.691850267609
+      "max_drawdown": 0.025879921073734897,
+      "final_equity": 10001.49980950348
     },
     {
-      "max_drawdown": 0.01022733903010494,
-      "final_equity": 10892.415649271197
+      "max_drawdown": 0.06947838128982657,
+      "final_equity": 9379.718203751383
     },
     {
-      "max_drawdown": 0.010124759228644581,
-      "final_equity": 10888.102730768078
+      "max_drawdown": 0.02139522739817323,
+      "final_equity": 10061.031240985238
     },
     {
-      "max_drawdown": 0.019798705959558315,
-      "final_equity": 10753.112120326186
+      "max_drawdown": 0.03206827306645213,
+      "final_equity": 9938.919323880878
     },
     {
-      "max_drawdown": 0.027733042092744138,
-      "final_equity": 11027.66599734481
+      "max_drawdown": 0.020569739789096125,
+      "final_equity": 10060.124105612422
     },
     {
-      "max_drawdown": 0.01336748913874859,
-      "final_equity": 10774.996325464848
+      "max_drawdown": 0.025265701703374503,
+      "final_equity": 9932.6095561613
     },
     {
-      "max_drawdown": 0.01671760385274856,
-      "final_equity": 10780.709522147525
+      "max_drawdown": 0.02603273037199966,
+      "final_equity": 9701.655469239307
     },
     {
-      "max_drawdown": 0.010507050336692577,
-      "final_equity": 11041.30731565351
+      "max_drawdown": 0.05245609521824956,
+      "final_equity": 9494.450084785507
     },
     {
-      "max_drawdown": 0.01869549246373876,
-      "final_equity": 10730.127937430952
+      "max_drawdown": 0.03866511441803529,
+      "final_equity": 9740.072876293329
     },
     {
-      "max_drawdown": 0.010374418047198717,
-      "final_equity": 10956.733041450647
+      "max_drawdown": 0.02777533460161376,
+      "final_equity": 10066.875060287144
     },
     {
-      "max_drawdown": 0.017965807658284944,
-      "final_equity": 10913.842047135451
+      "max_drawdown": 0.020482003019126387,
+      "final_equity": 9964.166034274625
     },
     {
-      "max_drawdown": 0.009959494816579973,
-      "final_equity": 11275.06727733292
+      "max_drawdown": 0.03285163005582056,
+      "final_equity": 9869.862830472874
     },
     {
-      "max_drawdown": 0.021657751094213324,
-      "final_equity": 10346.621033110232
+      "max_drawdown": 0.009905917618084228,
+      "final_equity": 10502.938837996448
     },
     {
-      "max_drawdown": 0.01998578532221566,
-      "final_equity": 11056.026730187203
+      "max_drawdown": 0.033019765461050496,
+      "final_equity": 9895.763821501194
     },
     {
-      "max_drawdown": 0.019263412474089588,
-      "final_equity": 10751.459698596029
+      "max_drawdown": 0.05069653377468544,
+      "final_equity": 9709.316246631346
     },
     {
-      "max_drawdown": 0.021587726902604156,
-      "final_equity": 10808.914860725145
+      "max_drawdown": 0.06847355986352638,
+      "final_equity": 9540.40552641709
     },
     {
-      "max_drawdown": 0.009472989387809161,
-      "final_equity": 11127.639413418936
+      "max_drawdown": 0.07838716959471977,
+      "final_equity": 9434.457199358449
     },
     {
-      "max_drawdown": 0.01974308860837637,
-      "final_equity": 11006.30905751432
+      "max_drawdown": 0.046427943709390844,
+      "final_equity": 9552.54584363022
     },
     {
-      "max_drawdown": 0.019524185712933184,
-      "final_equity": 10586.5266429012
+      "max_drawdown": 0.030647260407453174,
+      "final_equity": 9961.587808023163
     },
     {
-      "max_drawdown": 0.010102549273077318,
-      "final_equity": 11369.726120140016
+      "max_drawdown": 0.019599447942031025,
+      "final_equity": 10421.906704174378
     },
     {
-      "max_drawdown": 0.009430127059874093,
-      "final_equity": 11376.800080163472
+      "max_drawdown": 0.01993351579484108,
+      "final_equity": 10246.62569251176
     },
     {
-      "max_drawdown": 0.015495466352547917,
-      "final_equity": 10469.100999405538
+      "max_drawdown": 0.06326013852563572,
+      "final_equity": 9496.244245008991
     },
     {
-      "max_drawdown": 0.009511079363956074,
-      "final_equity": 11188.339580028825
+      "max_drawdown": 0.03633611423547501,
+      "final_equity": 9658.797695010686
     },
     {
-      "max_drawdown": 0.020467709014209308,
-      "final_equity": 10930.827762225794
+      "max_drawdown": 0.020344294391089177,
+      "final_equity": 10360.131588951132
     },
     {
-      "max_drawdown": 0.00951977320185472,
-      "final_equity": 11276.820834249984
+      "max_drawdown": 0.010030807669263838,
+      "final_equity": 10407.542155079422
     },
     {
-      "max_drawdown": 0.01020432397016714,
-      "final_equity": 10718.373745323175
+      "max_drawdown": 0.058400225428620195,
+      "final_equity": 9623.338553206284
     },
     {
-      "max_drawdown": 0.01697986786178075,
-      "final_equity": 10733.118439376361
+      "max_drawdown": 0.02637053357661412,
+      "final_equity": 9649.255365106914
     },
     {
-      "max_drawdown": 0.02222775843053258,
-      "final_equity": 10771.577252731482
+      "max_drawdown": 0.036665479252200636,
+      "final_equity": 10225.18983485834
     },
     {
-      "max_drawdown": 0.02051123214141432,
-      "final_equity": 11027.734093294395
+      "max_drawdown": 0.018361290787512877,
+      "final_equity": 10123.943529564107
     },
     {
-      "max_drawdown": 0.020129730397976994,
-      "final_equity": 10682.596382873815
+      "max_drawdown": 0.02044641935060682,
+      "final_equity": 10090.219316021276
     },
     {
-      "max_drawdown": 0.009700272533128688,
-      "final_equity": 11111.106055579634
+      "max_drawdown": 0.012173239051079041,
+      "final_equity": 10495.83990852944
     },
     {
-      "max_drawdown": 0.04800100134666901,
-      "final_equity": 10465.351607514414
+      "max_drawdown": 0.01974473149998578,
+      "final_equity": 10364.130086688367
     },
     {
-      "max_drawdown": 0.012266391116921052,
-      "final_equity": 10716.759610162357
+      "max_drawdown": 0.03320444540196519,
+      "final_equity": 10026.438328861126
     },
     {
-      "max_drawdown": 0.018273119439050654,
-      "final_equity": 10678.102846418966
+      "max_drawdown": 0.02327744274216806,
+      "final_equity": 10073.430329482231
     },
     {
-      "max_drawdown": 0.019953637628259475,
-      "final_equity": 10773.736921307944
+      "max_drawdown": 0.012422432020258655,
+      "final_equity": 10337.710983712315
     },
     {
-      "max_drawdown": 0.031966165568005994,
-      "final_equity": 10918.032544566951
+      "max_drawdown": 0.022806297005709925,
+      "final_equity": 10086.58765288822
     },
     {
-      "max_drawdown": 0.03744438373027127,
-      "final_equity": 10756.268646052986
+      "max_drawdown": 0.057388493614432226,
+      "final_equity": 9859.459535534694
     },
     {
-      "max_drawdown": 0.010157082773355364,
-      "final_equity": 10837.869520382028
+      "max_drawdown": 0.04973873520313389,
+      "final_equity": 10033.160624517932
     },
     {
-      "max_drawdown": 0.009947887967034066,
-      "final_equity": 11075.358080480572
+      "max_drawdown": 0.04511526275415459,
+      "final_equity": 9935.770285879968
     },
     {
-      "max_drawdown": 0.02913746289543001,
-      "final_equity": 10352.054692346599
+      "max_drawdown": 0.013015030550582252,
+      "final_equity": 10261.787197638534
     },
     {
-      "max_drawdown": 0.020616684343171758,
-      "final_equity": 10751.455597617334
+      "max_drawdown": 0.02536635678435827,
+      "final_equity": 9879.408147991115
     },
     {
-      "max_drawdown": 0.00934344433154305,
-      "final_equity": 11168.87861970458
+      "max_drawdown": 0.011520226600546168,
+      "final_equity": 10006.434696947497
     },
     {
-      "max_drawdown": 0.009894069919421176,
-      "final_equity": 11061.641428774563
+      "max_drawdown": 0.04157322316312765,
+      "final_equity": 10094.182781346048
     },
     {
-      "max_drawdown": 0.010152995501590052,
-      "final_equity": 10695.095443527638
+      "max_drawdown": 0.04440531309082705,
+      "final_equity": 9552.161298562814
     },
     {
-      "max_drawdown": 0.018214766743108058,
-      "final_equity": 11164.763261084765
+      "max_drawdown": 0.03250279180550426,
+      "final_equity": 10139.969021037958
     },
     {
-      "max_drawdown": 0.012806926120501255,
-      "final_equity": 10525.91683014034
+      "max_drawdown": 0.009750026184169577,
+      "final_equity": 10591.994651071982
     },
     {
-      "max_drawdown": 0.016375415963313638,
-      "final_equity": 10939.121828077923
+      "max_drawdown": 0.024024748812841636,
+      "final_equity": 9888.063428699867
     },
     {
-      "max_drawdown": 0.01125031785138744,
-      "final_equity": 11105.202620014019
+      "max_drawdown": 0.08837268023524976,
+      "final_equity": 9264.246971549283
     },
     {
-      "max_drawdown": 0.02006899114014135,
-      "final_equity": 10402.152014201143
+      "max_drawdown": 0.07271808036485083,
+      "final_equity": 9485.459957560723
     },
     {
-      "max_drawdown": 0.009842406544460978,
-      "final_equity": 11365.974156560156
+      "max_drawdown": 0.018462516214747635,
+      "final_equity": 10190.936988002488
     },
     {
-      "max_drawdown": 0.009797276145797505,
-      "final_equity": 11384.249961084226
+      "max_drawdown": 0.03948794082783619,
+      "final_equity": 9725.723049714017
     },
     {
-      "max_drawdown": 0.012722130171902428,
-      "final_equity": 10842.882981597897
+      "max_drawdown": 0.019686749617387474,
+      "final_equity": 10484.203376366328
     },
     {
-      "max_drawdown": 0.01205442640596193,
-      "final_equity": 10826.69847508839
+      "max_drawdown": 0.020385255167800757,
+      "final_equity": 10202.299356370868
     },
     {
-      "max_drawdown": 0.009957823761356182,
-      "final_equity": 10938.760071195062
+      "max_drawdown": 0.04390593168638481,
+      "final_equity": 9679.740396414398
     },
     {
-      "max_drawdown": 0.014956083714439116,
-      "final_equity": 10648.50680512892
+      "max_drawdown": 0.019967044140933768,
+      "final_equity": 10335.296644290896
     },
     {
-      "max_drawdown": 0.017276824194378527,
-      "final_equity": 11026.48273677527
+      "max_drawdown": 0.031004607779271876,
+      "final_equity": 9912.136473087285
     },
     {
-      "max_drawdown": 0.013738462735606864,
-      "final_equity": 11201.838858799858
+      "max_drawdown": 0.02799298257929806,
+      "final_equity": 10210.453844856092
     },
     {
-      "max_drawdown": 0.01975940600868653,
-      "final_equity": 10752.5514657445
+      "max_drawdown": 0.030487755478821547,
+      "final_equity": 9914.456842458325
     },
     {
-      "max_drawdown": 0.009416080794375219,
-      "final_equity": 11448.239311474952
+      "max_drawdown": 0.02683036101282843,
+      "final_equity": 9868.014630253321
     },
     {
-      "max_drawdown": 0.01938254227749163,
-      "final_equity": 10865.249019384491
+      "max_drawdown": 0.052338886981899604,
+      "final_equity": 9722.974250693445
     },
     {
-      "max_drawdown": 0.009820131292900706,
-      "final_equity": 10991.296109829162
+      "max_drawdown": 0.05746235334028249,
+      "final_equity": 9421.160460269568
     },
     {
-      "max_drawdown": 0.019140076782923725,
-      "final_equity": 11245.114900808529
+      "max_drawdown": 0.025320802418788084,
+      "final_equity": 9936.163258316079
     },
     {
-      "max_drawdown": 0.010306973003343657,
-      "final_equity": 10942.370258418507
+      "max_drawdown": 0.020178089120698992,
+      "final_equity": 10009.646721727315
     },
     {
-      "max_drawdown": 0.010032111659078717,
-      "final_equity": 11090.696423456886
+      "max_drawdown": 0.030818412116607623,
+      "final_equity": 9914.247220760937
     },
     {
-      "max_drawdown": 0.009641112310667548,
-      "final_equity": 11140.226084042532
+      "max_drawdown": 0.02268926187515153,
+      "final_equity": 10218.160126440498
     },
     {
-      "max_drawdown": 0.009467555998215691,
-      "final_equity": 11278.536858831356
+      "max_drawdown": 0.012503931603385813,
+      "final_equity": 10379.081312607104
     },
     {
-      "max_drawdown": 0.017251349899016933,
-      "final_equity": 10779.605159827188
+      "max_drawdown": 0.05315592630384528,
+      "final_equity": 9559.594878125752
     },
     {
-      "max_drawdown": 0.03999036571793076,
-      "final_equity": 10223.088490006807
+      "max_drawdown": 0.06175193216213527,
+      "final_equity": 9604.542080998968
     },
     {
-      "max_drawdown": 0.019778169976449468,
-      "final_equity": 10731.972848661382
+      "max_drawdown": 0.029814947732857713,
+      "final_equity": 10203.178174217628
     },
     {
-      "max_drawdown": 0.019438851480711762,
-      "final_equity": 10762.215083194924
+      "max_drawdown": 0.015309612467753881,
+      "final_equity": 10153.707412659716
     },
     {
-      "max_drawdown": 0.02690389960624005,
-      "final_equity": 10863.033418964764
+      "max_drawdown": 0.02248004820084237,
+      "final_equity": 10506.755358242912
     },
     {
-      "max_drawdown": 0.01942855113876,
-      "final_equity": 10866.094947460362
+      "max_drawdown": 0.04703492397488062,
+      "final_equity": 9722.960477774772
     },
     {
-      "max_drawdown": 0.019250924683134916,
-      "final_equity": 10597.948680851934
+      "max_drawdown": 0.020236547802382328,
+      "final_equity": 10297.629444711294
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11458.840270915913
+      "max_drawdown": 0.021975128409337102,
+      "final_equity": 10223.834106701403
     },
     {
-      "max_drawdown": 0.010464615056285471,
-      "final_equity": 10782.09438912355
+      "max_drawdown": 0.04984497869703997,
+      "final_equity": 9806.416251367582
     },
     {
-      "max_drawdown": 0.01158412341929905,
-      "final_equity": 11005.855050914766
+      "max_drawdown": 0.02864933442360092,
+      "final_equity": 9751.280261692798
     },
     {
-      "max_drawdown": 0.00987689493712533,
-      "final_equity": 10708.873490308692
+      "max_drawdown": 0.02207833629191502,
+      "final_equity": 10310.69572279353
     },
     {
-      "max_drawdown": 0.00956704392149371,
-      "final_equity": 11000.8324917508
+      "max_drawdown": 0.021509422138722967,
+      "final_equity": 10036.248855840811
     },
     {
-      "max_drawdown": 0.012129775466768206,
-      "final_equity": 10627.651236260572
+      "max_drawdown": 0.03689470268876946,
+      "final_equity": 9645.963474881299
     },
     {
-      "max_drawdown": 0.032063820920799735,
-      "final_equity": 10826.591380770948
+      "max_drawdown": 0.04455890246683083,
+      "final_equity": 9794.24287908516
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11545.000235408012
+      "max_drawdown": 0.05369676524486062,
+      "final_equity": 9644.374204882337
     },
     {
-      "max_drawdown": 0.009617289697105916,
-      "final_equity": 11623.837350511225
+      "max_drawdown": 0.017651270700826605,
+      "final_equity": 10071.914010348286
     },
     {
-      "max_drawdown": 0.00974967281138391,
-      "final_equity": 11215.444864374485
+      "max_drawdown": 0.05446153368426198,
+      "final_equity": 9492.566018226991
     },
     {
-      "max_drawdown": 0.01950271183878995,
-      "final_equity": 10547.050246376004
+      "max_drawdown": 0.02349853283007693,
+      "final_equity": 10297.793315545852
     },
     {
-      "max_drawdown": 0.012724630388016949,
-      "final_equity": 10920.389975476113
+      "max_drawdown": 0.010293660042689105,
+      "final_equity": 10363.40188737855
     },
     {
-      "max_drawdown": 0.00989930696514102,
-      "final_equity": 11073.253781745936
+      "max_drawdown": 0.019560100674089188,
+      "final_equity": 10415.114896799467
     },
     {
-      "max_drawdown": 0.028777139200645802,
-      "final_equity": 10670.936215531157
+      "max_drawdown": 0.02818766893463134,
+      "final_equity": 10438.168525775483
     },
     {
-      "max_drawdown": 0.014083577295515322,
-      "final_equity": 10495.005656003512
+      "max_drawdown": 0.08009267666976785,
+      "final_equity": 9437.342939467926
     },
     {
-      "max_drawdown": 0.00983668364501767,
-      "final_equity": 11184.364447145133
+      "max_drawdown": 0.02062884944558891,
+      "final_equity": 9770.215397771632
     },
     {
-      "max_drawdown": 0.009114612968207167,
-      "final_equity": 11376.774061086231
+      "max_drawdown": 0.06613909576698959,
+      "final_equity": 9373.612547976143
     },
     {
-      "max_drawdown": 0.009933128429945804,
-      "final_equity": 11271.664521731642
+      "max_drawdown": 0.03339547877273143,
+      "final_equity": 9666.578518494889
     },
     {
-      "max_drawdown": 0.031675321524763385,
-      "final_equity": 10542.003704016364
+      "max_drawdown": 0.05134030308375753,
+      "final_equity": 9675.755518022817
     },
     {
-      "max_drawdown": 0.019221113646989137,
-      "final_equity": 11070.196116284344
+      "max_drawdown": 0.04398445744968158,
+      "final_equity": 9517.878478840572
     },
     {
-      "max_drawdown": 0.023046631796024248,
-      "final_equity": 10690.616078194327
+      "max_drawdown": 0.010548100544044935,
+      "final_equity": 10328.303522837676
     },
     {
-      "max_drawdown": 0.012151276768219171,
-      "final_equity": 10818.160397846568
+      "max_drawdown": 0.02589791537068641,
+      "final_equity": 9851.812749743827
     },
     {
-      "max_drawdown": 0.027074052048631374,
-      "final_equity": 10834.015205675478
+      "max_drawdown": 0.010236772467576703,
+      "final_equity": 10266.936780952215
     },
     {
-      "max_drawdown": 0.014410183507411996,
-      "final_equity": 10776.12942959692
+      "max_drawdown": 0.028787069035938816,
+      "final_equity": 10046.770806078186
     },
     {
-      "max_drawdown": 0.011783658006937616,
-      "final_equity": 11150.332355428915
+      "max_drawdown": 0.030381753251636428,
+      "final_equity": 10095.32125846216
     },
     {
-      "max_drawdown": 0.016694476130015373,
-      "final_equity": 10724.675922057619
+      "max_drawdown": 0.02699985087781865,
+      "final_equity": 10136.419070227514
     },
     {
-      "max_drawdown": 0.019755931881938176,
-      "final_equity": 10595.126848790727
+      "max_drawdown": 0.04154871781746635,
+      "final_equity": 9737.894508495358
     },
     {
-      "max_drawdown": 0.011000216725301479,
-      "final_equity": 10492.610429052007
+      "max_drawdown": 0.03126243907683594,
+      "final_equity": 9930.66475051997
     },
     {
-      "max_drawdown": 0.019168456007717712,
-      "final_equity": 10903.211399548483
+      "max_drawdown": 0.02969217842131797,
+      "final_equity": 10104.817462435061
     },
     {
-      "max_drawdown": 0.018305607936341773,
-      "final_equity": 10674.279248894694
+      "max_drawdown": 0.035640307669677816,
+      "final_equity": 9731.282803584474
     },
     {
-      "max_drawdown": 0.01663318134164632,
-      "final_equity": 10899.715985964307
+      "max_drawdown": 0.01501265547835255,
+      "final_equity": 10413.49391070665
     },
     {
-      "max_drawdown": 0.05046630336364797,
-      "final_equity": 10144.627057094403
+      "max_drawdown": 0.014955045358150194,
+      "final_equity": 10452.401211433567
     },
     {
-      "max_drawdown": 0.018527284520831442,
-      "final_equity": 10887.673121438736
+      "max_drawdown": 0.030048209787045744,
+      "final_equity": 10021.363966422743
     },
     {
-      "max_drawdown": 0.019240357506632912,
-      "final_equity": 10872.706505418011
+      "max_drawdown": 0.036707017319023615,
+      "final_equity": 9776.702866182097
     },
     {
-      "max_drawdown": 0.0312999192604493,
-      "final_equity": 9991.615605323508
+      "max_drawdown": 0.020195698011946088,
+      "final_equity": 10360.91936347251
     },
     {
-      "max_drawdown": 0.020231853877612106,
-      "final_equity": 10370.48385212376
+      "max_drawdown": 0.01575437877363176,
+      "final_equity": 10221.821825110756
     },
     {
-      "max_drawdown": 0.01601506818437658,
-      "final_equity": 10852.024699730793
+      "max_drawdown": 0.016339769555234643,
+      "final_equity": 10293.574933930728
     },
     {
-      "max_drawdown": 0.02202238371824884,
-      "final_equity": 10442.726723832226
+      "max_drawdown": 0.0322203562849037,
+      "final_equity": 10176.985102602348
     },
     {
-      "max_drawdown": 0.020480116313089408,
-      "final_equity": 10825.894943395015
+      "max_drawdown": 0.04679278647968019,
+      "final_equity": 9754.914408167793
     },
     {
-      "max_drawdown": 0.010010286069508607,
-      "final_equity": 11093.440500726761
+      "max_drawdown": 0.060824651216923105,
+      "final_equity": 9681.239696164876
     },
     {
-      "max_drawdown": 0.012295864164210435,
-      "final_equity": 10929.817108379466
+      "max_drawdown": 0.046003528518938325,
+      "final_equity": 9695.849882100434
     },
     {
-      "max_drawdown": 0.012132027172959374,
-      "final_equity": 10952.837584393572
+      "max_drawdown": 0.020214417025861603,
+      "final_equity": 9912.115556566521
     },
     {
-      "max_drawdown": 0.012362433209561522,
-      "final_equity": 10439.857479508439
+      "max_drawdown": 0.010191428058995278,
+      "final_equity": 10367.643577048986
     },
     {
-      "max_drawdown": 0.043898257847246165,
-      "final_equity": 10356.12905611122
+      "max_drawdown": 0.04199350846212432,
+      "final_equity": 10103.606176997288
     },
     {
-      "max_drawdown": 0.01979776476600912,
-      "final_equity": 10738.439149615822
+      "max_drawdown": 0.009978827121012866,
+      "final_equity": 10391.306493141989
     },
     {
-      "max_drawdown": 0.021098027365788117,
-      "final_equity": 11114.705709970543
+      "max_drawdown": 0.03001020098460948,
+      "final_equity": 9963.144375687863
     },
     {
-      "max_drawdown": 0.01229471809802999,
-      "final_equity": 10766.692013707168
+      "max_drawdown": 0.054238040097129264,
+      "final_equity": 9479.366793009394
     },
     {
-      "max_drawdown": 0.015834740889008814,
-      "final_equity": 11018.593409910969
+      "max_drawdown": 0.0295837677662477,
+      "final_equity": 10276.419081116816
     },
     {
-      "max_drawdown": 0.00975283580647685,
-      "final_equity": 11011.461650155135
+      "max_drawdown": 0.047166630185368846,
+      "final_equity": 9707.347245705023
     },
     {
-      "max_drawdown": 0.0381567907619542,
-      "final_equity": 10885.963401655254
+      "max_drawdown": 0.022641533613333993,
+      "final_equity": 10389.624188379428
     },
     {
-      "max_drawdown": 0.009304151603813758,
-      "final_equity": 11230.286505508157
+      "max_drawdown": 0.04484185256744436,
+      "final_equity": 9455.027092689937
     },
     {
-      "max_drawdown": 0.015211191849059814,
-      "final_equity": 10940.338961427837
+      "max_drawdown": 0.04588930016026483,
+      "final_equity": 9608.05028404931
     },
     {
-      "max_drawdown": 0.010274219492164371,
-      "final_equity": 10832.944903500773
+      "max_drawdown": 0.051752433528133385,
+      "final_equity": 9747.577914469
     },
     {
-      "max_drawdown": 0.015778150871353296,
-      "final_equity": 11133.780639949706
+      "max_drawdown": 0.0534650764728644,
+      "final_equity": 9664.73475501819
     },
     {
-      "max_drawdown": 0.013005271084697245,
-      "final_equity": 10697.853153149676
+      "max_drawdown": 0.02077298068699041,
+      "final_equity": 10169.99311633916
     },
     {
-      "max_drawdown": 0.020134177158529,
-      "final_equity": 10741.637814690876
+      "max_drawdown": 0.06935474665009295,
+      "final_equity": 9380.4266536305
     },
     {
-      "max_drawdown": 0.00975570885662295,
-      "final_equity": 11287.293172736769
+      "max_drawdown": 0.03249308859940917,
+      "final_equity": 10207.060591372778
     },
     {
-      "max_drawdown": 0.016691772122909176,
-      "final_equity": 10876.89065381157
+      "max_drawdown": 0.04026086312305719,
+      "final_equity": 10117.294641087861
     },
     {
-      "max_drawdown": 0.012289524420934792,
-      "final_equity": 10444.046342129981
+      "max_drawdown": 0.02664863286760247,
+      "final_equity": 9987.724972881744
     },
     {
-      "max_drawdown": 0.019514550038509264,
-      "final_equity": 10891.291367795504
+      "max_drawdown": 0.023603610505367096,
+      "final_equity": 9874.40487526892
     },
     {
-      "max_drawdown": 0.02068014508023563,
-      "final_equity": 10367.613190215725
+      "max_drawdown": 0.05064751553979772,
+      "final_equity": 9439.464542247191
     },
     {
-      "max_drawdown": 0.010223228041475069,
-      "final_equity": 10842.348072972056
+      "max_drawdown": 0.025626498925212064,
+      "final_equity": 9990.205613688648
     },
     {
-      "max_drawdown": 0.013504884985204437,
-      "final_equity": 10898.796243191418
+      "max_drawdown": 0.03328821434887753,
+      "final_equity": 9922.330426571325
     },
     {
-      "max_drawdown": 0.01756047720553516,
-      "final_equity": 10533.8376664515
+      "max_drawdown": 0.042845754152043385,
+      "final_equity": 10047.855985426033
     },
     {
-      "max_drawdown": 0.03593183940559339,
-      "final_equity": 9998.305449582906
+      "max_drawdown": 0.061731273162484245,
+      "final_equity": 9711.556831882779
     },
     {
-      "max_drawdown": 0.035647631525073054,
-      "final_equity": 10531.104272617125
+      "max_drawdown": 0.04565429111258332,
+      "final_equity": 9747.154974673513
     },
     {
-      "max_drawdown": 0.019645709370892463,
-      "final_equity": 10714.106709228336
+      "max_drawdown": 0.02051910612440824,
+      "final_equity": 10190.590963967701
     },
     {
-      "max_drawdown": 0.010179399227066257,
-      "final_equity": 11258.525529435128
+      "max_drawdown": 0.03133693367987366,
+      "final_equity": 9722.109662570807
     },
     {
-      "max_drawdown": 0.02018968590742327,
-      "final_equity": 11052.535219599526
+      "max_drawdown": 0.02109096880040514,
+      "final_equity": 9962.89144921359
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11538.80217234272
+      "max_drawdown": 0.020411576875109548,
+      "final_equity": 10249.319650445625
     },
     {
-      "max_drawdown": 0.013029523231764161,
-      "final_equity": 10439.297465177146
+      "max_drawdown": 0.040103206605060976,
+      "final_equity": 10177.13008172258
     },
     {
-      "max_drawdown": 0.01724009912148497,
-      "final_equity": 10980.957287096218
+      "max_drawdown": 0.02681125833850395,
+      "final_equity": 9772.206134180853
     },
     {
-      "max_drawdown": 0.019220103841903577,
-      "final_equity": 10873.432807794436
+      "max_drawdown": 0.06513994947731087,
+      "final_equity": 9907.306109283632
     },
     {
-      "max_drawdown": 0.01025347077685594,
-      "final_equity": 11195.530430182815
+      "max_drawdown": 0.013030645363761043,
+      "final_equity": 10125.293245424917
     },
     {
-      "max_drawdown": 0.011756147691586685,
-      "final_equity": 10822.674516495807
+      "max_drawdown": 0.03169073682166728,
+      "final_equity": 9929.716571894498
     },
     {
-      "max_drawdown": 0.018518394127166736,
-      "final_equity": 10896.779278094971
+      "max_drawdown": 0.020191176785390057,
+      "final_equity": 10258.231389928676
     },
     {
-      "max_drawdown": 0.009666542393917952,
-      "final_equity": 11418.007647873146
+      "max_drawdown": 0.057735010512819734,
+      "final_equity": 9780.907797678105
     },
     {
-      "max_drawdown": 0.05311237196464258,
-      "final_equity": 10081.206753667793
+      "max_drawdown": 0.019948506367520744,
+      "final_equity": 10165.971915739414
     },
     {
-      "max_drawdown": 0.018926267442474984,
-      "final_equity": 10832.43938020205
+      "max_drawdown": 0.06596242479678936,
+      "final_equity": 9245.12712109263
     },
     {
-      "max_drawdown": 0.020553122515546408,
-      "final_equity": 10358.50122608054
+      "max_drawdown": 0.009569817995030863,
+      "final_equity": 10628.44108623121
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11707.53067706689
+      "max_drawdown": 0.013839909411115472,
+      "final_equity": 10265.850171803364
     },
     {
-      "max_drawdown": 0.030258534317877395,
-      "final_equity": 10822.49817895226
+      "max_drawdown": 0.01790476522572302,
+      "final_equity": 10121.230808421438
     },
     {
-      "max_drawdown": 0.027950200654637016,
-      "final_equity": 10374.941462892815
+      "max_drawdown": 0.020269529517894357,
+      "final_equity": 10320.118520742964
     },
     {
-      "max_drawdown": 0.020065897808132976,
-      "final_equity": 10492.329570996435
+      "max_drawdown": 0.02019350185377802,
+      "final_equity": 9931.313529286774
     },
     {
-      "max_drawdown": 0.019804543549884954,
-      "final_equity": 10722.96808538234
+      "max_drawdown": 0.08553073211769281,
+      "final_equity": 9252.462350692653
     },
     {
-      "max_drawdown": 0.026247306044826776,
-      "final_equity": 10449.528192474176
+      "max_drawdown": 0.017892143792626148,
+      "final_equity": 10119.079727665054
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11644.20746719184
+      "max_drawdown": 0.03574898437592043,
+      "final_equity": 9544.679310564008
     },
     {
-      "max_drawdown": 0.023256872177918487,
-      "final_equity": 10702.565783339498
+      "max_drawdown": 0.056565071658736504,
+      "final_equity": 9652.985672906896
     },
     {
-      "max_drawdown": 0.010030307678922556,
-      "final_equity": 11311.976651265792
+      "max_drawdown": 0.010426758700695973,
+      "final_equity": 10286.683874713543
     },
     {
-      "max_drawdown": 0.028907661384235988,
-      "final_equity": 10667.304201867219
+      "max_drawdown": 0.02648236452371949,
+      "final_equity": 9922.173863602638
     },
     {
-      "max_drawdown": 0.030372246009189953,
-      "final_equity": 10388.234986800298
+      "max_drawdown": 0.04113046773631029,
+      "final_equity": 9924.204665694255
     },
     {
-      "max_drawdown": 0.01754724241143575,
-      "final_equity": 11019.69948564274
+      "max_drawdown": 0.02607701528831292,
+      "final_equity": 9885.516746291469
     },
     {
-      "max_drawdown": 0.02779163000694865,
-      "final_equity": 10869.571362286782
+      "max_drawdown": 0.04502980450462998,
+      "final_equity": 9663.807380631279
     },
     {
-      "max_drawdown": 0.01714530394980569,
-      "final_equity": 10871.517475645753
+      "max_drawdown": 0.020668469104090422,
+      "final_equity": 10104.077376052011
     },
     {
-      "max_drawdown": 0.01564257715094734,
-      "final_equity": 10354.117444451758
+      "max_drawdown": 0.010236772467576703,
+      "final_equity": 10552.06414886771
     },
     {
-      "max_drawdown": 0.028673248341549176,
-      "final_equity": 10801.066713345588
+      "max_drawdown": 0.051886537144121586,
+      "final_equity": 9589.570138490022
     },
     {
-      "max_drawdown": 0.00994091511365524,
-      "final_equity": 10875.145870981982
+      "max_drawdown": 0.019735245626910987,
+      "final_equity": 10239.84985915633
     },
     {
-      "max_drawdown": 0.01967609326887782,
-      "final_equity": 10791.072495218321
+      "max_drawdown": 0.012863238978765786,
+      "final_equity": 10200.592887586597
     },
     {
-      "max_drawdown": 0.01748319273114175,
-      "final_equity": 11072.278615648496
+      "max_drawdown": 0.0400596299522261,
+      "final_equity": 9992.550306396606
     },
     {
-      "max_drawdown": 0.015964594606074984,
-      "final_equity": 10834.57145323716
+      "max_drawdown": 0.02036812385227445,
+      "final_equity": 10070.193201108863
     },
     {
-      "max_drawdown": 0.017140593051237413,
-      "final_equity": 11278.791153432287
+      "max_drawdown": 0.020121189087093906,
+      "final_equity": 10423.05334178856
     },
     {
-      "max_drawdown": 0.02165740015566644,
-      "final_equity": 10565.709001204243
+      "max_drawdown": 0.027734946027352162,
+      "final_equity": 10191.685097211532
     },
     {
-      "max_drawdown": 0.009980667205516394,
-      "final_equity": 10757.490713912723
+      "max_drawdown": 0.0300705926196502,
+      "final_equity": 9973.512837818509
     },
     {
-      "max_drawdown": 0.027829695653475754,
-      "final_equity": 10416.209007230485
+      "max_drawdown": 0.07688913995018401,
+      "final_equity": 9286.791021465022
     },
     {
-      "max_drawdown": 0.009568638172999046,
-      "final_equity": 11156.932760909769
+      "max_drawdown": 0.022745843060594944,
+      "final_equity": 10112.18367028056
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11620.173953555099
+      "max_drawdown": 0.06485551393443831,
+      "final_equity": 9446.136781968067
     },
     {
-      "max_drawdown": 0.019605030480435597,
-      "final_equity": 10698.321534624141
+      "max_drawdown": 0.02927418933797395,
+      "final_equity": 9984.578132003478
     },
     {
-      "max_drawdown": 0.010277940064832548,
-      "final_equity": 11087.425813682325
+      "max_drawdown": 0.010085584304061984,
+      "final_equity": 10906.482757314903
     },
     {
-      "max_drawdown": 0.02138214984233592,
-      "final_equity": 10617.841563567845
+      "max_drawdown": 0.022491509500294167,
+      "final_equity": 10038.962627272793
     },
     {
-      "max_drawdown": 0.010306051837891362,
-      "final_equity": 11179.510451970647
+      "max_drawdown": 0.02973300119375078,
+      "final_equity": 10014.813643603471
     },
     {
-      "max_drawdown": 0.0221608106648412,
-      "final_equity": 10546.093725524248
+      "max_drawdown": 0.030033966553975777,
+      "final_equity": 9919.159134978347
     },
     {
-      "max_drawdown": 0.01596793874593534,
-      "final_equity": 11078.452485032247
+      "max_drawdown": 0.017736309142575856,
+      "final_equity": 10415.568159362732
     },
     {
-      "max_drawdown": 0.01721151813537788,
-      "final_equity": 10430.223669314015
+      "max_drawdown": 0.030056651899026343,
+      "final_equity": 10116.61438838048
     },
     {
-      "max_drawdown": 0.00996304458898071,
-      "final_equity": 11404.832100926333
+      "max_drawdown": 0.010630161469860467,
+      "final_equity": 10117.705083389208
     },
     {
-      "max_drawdown": 0.0196510538417634,
-      "final_equity": 10598.033332122399
+      "max_drawdown": 0.012649864934539633,
+      "final_equity": 10218.957226047574
     },
     {
-      "max_drawdown": 0.012937755424096479,
-      "final_equity": 10812.987400183509
+      "max_drawdown": 0.020512374629543622,
+      "final_equity": 9967.44929756892
     },
     {
-      "max_drawdown": 0.009730297988882542,
-      "final_equity": 11148.902212207367
+      "max_drawdown": 0.019999762979585247,
+      "final_equity": 10224.606165312338
     },
     {
-      "max_drawdown": 0.01829259845897143,
-      "final_equity": 11036.85037950857
+      "max_drawdown": 0.03519009346868197,
+      "final_equity": 9879.620438434922
     },
     {
-      "max_drawdown": 0.01769670977352178,
-      "final_equity": 10847.329964745475
+      "max_drawdown": 0.020036154787938885,
+      "final_equity": 10048.266766918508
     },
     {
-      "max_drawdown": 0.01775486250585152,
-      "final_equity": 10533.56578610667
+      "max_drawdown": 0.03405106512059597,
+      "final_equity": 9959.23159918631
     },
     {
-      "max_drawdown": 0.014363846939164053,
-      "final_equity": 10903.560260000124
+      "max_drawdown": 0.02830219795029786,
+      "final_equity": 10197.662036560376
     },
     {
-      "max_drawdown": 0.020725643347522867,
-      "final_equity": 9927.65775942171
+      "max_drawdown": 0.06430627794942724,
+      "final_equity": 9501.219715654273
     },
     {
-      "max_drawdown": 0.017008737645544874,
-      "final_equity": 10782.061422290959
+      "max_drawdown": 0.050675816437688675,
+      "final_equity": 9808.371474596132
     },
     {
-      "max_drawdown": 0.0099485128977118,
-      "final_equity": 11230.756120333283
+      "max_drawdown": 0.01791144192536674,
+      "final_equity": 10145.896795112425
     },
     {
-      "max_drawdown": 0.019357115601827977,
-      "final_equity": 10868.82870911326
+      "max_drawdown": 0.010087298400034861,
+      "final_equity": 10506.81572229856
     },
     {
-      "max_drawdown": 0.019945029179053303,
-      "final_equity": 10424.508988717042
+      "max_drawdown": 0.05512315609257344,
+      "final_equity": 9539.733191988762
     },
     {
-      "max_drawdown": 0.010489851544180738,
-      "final_equity": 10637.918640595393
+      "max_drawdown": 0.031033900393676404,
+      "final_equity": 9832.162111992364
     },
     {
-      "max_drawdown": 0.018297263186909666,
-      "final_equity": 10776.51234059756
+      "max_drawdown": 0.01645877404278274,
+      "final_equity": 10234.028166295238
     },
     {
-      "max_drawdown": 0.02410157576330129,
-      "final_equity": 10554.015811159006
+      "max_drawdown": 0.023501438490277603,
+      "final_equity": 9891.038734430353
     },
     {
-      "max_drawdown": 0.009613093177330116,
-      "final_equity": 11283.381536382287
+      "max_drawdown": 0.03964787054322518,
+      "final_equity": 10040.747700839756
     },
     {
-      "max_drawdown": 0.021222258505962044,
-      "final_equity": 10759.928260588254
+      "max_drawdown": 0.03696765759632642,
+      "final_equity": 9927.032843491535
     },
     {
-      "max_drawdown": 0.010176912860891884,
-      "final_equity": 11217.787312806107
+      "max_drawdown": 0.030516115080064594,
+      "final_equity": 9880.507692575224
     },
     {
-      "max_drawdown": 0.009791871291885943,
-      "final_equity": 11046.813106752008
+      "max_drawdown": 0.020670202174569826,
+      "final_equity": 10311.144302049352
     },
     {
-      "max_drawdown": 0.030891067127148144,
-      "final_equity": 10464.640080758452
+      "max_drawdown": 0.044978643467123915,
+      "final_equity": 9671.300715086956
     },
     {
-      "max_drawdown": 0.010066101533304424,
-      "final_equity": 10732.091733110969
+      "max_drawdown": 0.029539088092573596,
+      "final_equity": 9766.924030640575
     },
     {
-      "max_drawdown": 0.01968548263102698,
-      "final_equity": 11017.354129295034
+      "max_drawdown": 0.029565074160115695,
+      "final_equity": 10118.584807852538
     },
     {
-      "max_drawdown": 0.012066326529807037,
-      "final_equity": 10845.615512352035
+      "max_drawdown": 0.010243383746968024,
+      "final_equity": 10390.020088207304
     },
     {
-      "max_drawdown": 0.021680438491632915,
-      "final_equity": 10388.732120726203
+      "max_drawdown": 0.009948195100105885,
+      "final_equity": 10634.24320103076
     },
     {
-      "max_drawdown": 0.03154293375379133,
-      "final_equity": 10352.55715502167
+      "max_drawdown": 0.009954955305854033,
+      "final_equity": 10560.667940070589
     },
     {
-      "max_drawdown": 0.010102620284443961,
-      "final_equity": 11178.426111659397
+      "max_drawdown": 0.030861047142804455,
+      "final_equity": 10087.419614418872
     },
     {
-      "max_drawdown": 0.01764537241508874,
-      "final_equity": 10533.843413547756
+      "max_drawdown": 0.08273874675833731,
+      "final_equity": 9412.846482629242
     },
     {
-      "max_drawdown": 0.009332011097655728,
-      "final_equity": 11117.789595355125
+      "max_drawdown": 0.018415447873993438,
+      "final_equity": 10064.627115088495
     },
     {
-      "max_drawdown": 0.01948431126054466,
-      "final_equity": 10389.46029700348
+      "max_drawdown": 0.058732223380982176,
+      "final_equity": 9546.493991391084
     },
     {
-      "max_drawdown": 0.01889171056615411,
-      "final_equity": 11146.716974633686
+      "max_drawdown": 0.012597108503289017,
+      "final_equity": 10352.31838709605
     },
     {
-      "max_drawdown": 0.021237822981631623,
-      "final_equity": 10733.584917352644
+      "max_drawdown": 0.03768031031446334,
+      "final_equity": 9738.473541607244
     },
     {
-      "max_drawdown": 0.025394483773362713,
-      "final_equity": 10012.402256795673
+      "max_drawdown": 0.02932097529221791,
+      "final_equity": 10008.420924650442
     },
     {
-      "max_drawdown": 0.020097043122447963,
-      "final_equity": 10583.2496371686
+      "max_drawdown": 0.01268409477948542,
+      "final_equity": 10080.89839216727
     },
     {
-      "max_drawdown": 0.01710354128529678,
-      "final_equity": 10840.967130878214
+      "max_drawdown": 0.009773208709787904,
+      "final_equity": 10564.448297729581
     },
     {
-      "max_drawdown": 0.026995608429246983,
-      "final_equity": 10252.973587590834
+      "max_drawdown": 0.022034303017307497,
+      "final_equity": 10287.825881097457
     },
     {
-      "max_drawdown": 0.018796922725090193,
-      "final_equity": 10969.20823655551
+      "max_drawdown": 0.02637595115958044,
+      "final_equity": 9924.883639378408
     },
     {
-      "max_drawdown": 0.01731215309120668,
-      "final_equity": 10742.316604947166
+      "max_drawdown": 0.04297299745629338,
+      "final_equity": 9795.635451971933
     },
     {
-      "max_drawdown": 0.029984815714060982,
-      "final_equity": 10517.858077174707
+      "max_drawdown": 0.059762999083821405,
+      "final_equity": 9677.520299782811
     },
     {
-      "max_drawdown": 0.009951134852557724,
-      "final_equity": 11161.90336690593
+      "max_drawdown": 0.012788141758430864,
+      "final_equity": 10335.463584753174
     },
     {
-      "max_drawdown": 0.01940422856037016,
-      "final_equity": 10728.447297826222
+      "max_drawdown": 0.07259721699877594,
+      "final_equity": 9344.82495135835
     },
     {
-      "max_drawdown": 0.018861821353199037,
-      "final_equity": 11001.734149007576
+      "max_drawdown": 0.0321720656959815,
+      "final_equity": 9578.518319933057
     },
     {
-      "max_drawdown": 0.027884762511501817,
-      "final_equity": 10938.856123160433
+      "max_drawdown": 0.047020199640107625,
+      "final_equity": 9666.948621758735
     },
     {
-      "max_drawdown": 0.00973494968540762,
-      "final_equity": 11605.400868100214
+      "max_drawdown": 0.05008904524073021,
+      "final_equity": 10017.046193705102
     },
     {
-      "max_drawdown": 0.010285316487448131,
-      "final_equity": 11272.893205814404
+      "max_drawdown": 0.020648931315748072,
+      "final_equity": 10279.25644503334
     },
     {
-      "max_drawdown": 0.014496777463263982,
-      "final_equity": 10966.739898999911
+      "max_drawdown": 0.029074412062963288,
+      "final_equity": 9866.278209780148
     },
     {
-      "max_drawdown": 0.01954707541436291,
-      "final_equity": 11157.443838549072
+      "max_drawdown": 0.02764522910423903,
+      "final_equity": 10269.683566564194
     },
     {
-      "max_drawdown": 0.019718781361870184,
-      "final_equity": 10855.707559098732
+      "max_drawdown": 0.025295073065164455,
+      "final_equity": 10010.943714296622
     },
     {
-      "max_drawdown": 0.01222141635375639,
-      "final_equity": 10919.176617215475
+      "max_drawdown": 0.019873958183111575,
+      "final_equity": 10426.38761873235
     },
     {
-      "max_drawdown": 0.009628748704825862,
-      "final_equity": 11009.385784042837
+      "max_drawdown": 0.049841728735188516,
+      "final_equity": 9942.433740786879
     },
     {
-      "max_drawdown": 0.012194480099445567,
-      "final_equity": 10909.926215376232
+      "max_drawdown": 0.046152494051758905,
+      "final_equity": 9661.766831262525
     },
     {
-      "max_drawdown": 0.01872949930995485,
-      "final_equity": 10845.06586431533
+      "max_drawdown": 0.019932032719415106,
+      "final_equity": 10343.56060987979
     },
     {
-      "max_drawdown": 0.02988394582238466,
-      "final_equity": 10331.109554672264
+      "max_drawdown": 0.027514146488244635,
+      "final_equity": 10063.148143382065
     },
     {
-      "max_drawdown": 0.01395903808157729,
-      "final_equity": 10715.3893391225
+      "max_drawdown": 0.023562758705883854,
+      "final_equity": 10111.472720674947
     },
     {
-      "max_drawdown": 0.00999828811533397,
-      "final_equity": 11464.794746351454
+      "max_drawdown": 0.020663531168272676,
+      "final_equity": 10116.532859185616
     },
     {
-      "max_drawdown": 0.03259537463906777,
-      "final_equity": 10443.859489390985
+      "max_drawdown": 0.03806929053348608,
+      "final_equity": 9611.33288706016
     },
     {
-      "max_drawdown": 0.009876282056230735,
-      "final_equity": 10916.39604520912
+      "max_drawdown": 0.030394998721823187,
+      "final_equity": 9954.189014245918
     },
     {
-      "max_drawdown": 0.020083538235727897,
-      "final_equity": 10898.03196953375
+      "max_drawdown": 0.019943340015371524,
+      "final_equity": 10237.75423738079
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11321.746762488652
+      "max_drawdown": 0.01029431648415761,
+      "final_equity": 10202.804526727161
     },
     {
-      "max_drawdown": 0.018999902719410017,
-      "final_equity": 10810.049355394363
+      "max_drawdown": 0.0339403289049856,
+      "final_equity": 10117.526520966918
     },
     {
-      "max_drawdown": 0.01030849726188203,
-      "final_equity": 10980.590027665912
+      "max_drawdown": 0.029304998893281493,
+      "final_equity": 10192.964886148746
     },
     {
-      "max_drawdown": 0.011318267017205733,
-      "final_equity": 10981.493965791724
+      "max_drawdown": 0.03381443997006159,
+      "final_equity": 9797.652644104424
     },
     {
-      "max_drawdown": 0.028542627305861722,
-      "final_equity": 10612.175232736512
+      "max_drawdown": 0.020036521226272235,
+      "final_equity": 10174.835191118878
     },
     {
-      "max_drawdown": 0.012271091215781061,
-      "final_equity": 10621.602172398778
+      "max_drawdown": 0.02978067997762048,
+      "final_equity": 10340.01294130225
     },
     {
-      "max_drawdown": 0.01247893082099992,
-      "final_equity": 10529.4679475013
+      "max_drawdown": 0.051107518074966336,
+      "final_equity": 9660.812829075732
     },
     {
-      "max_drawdown": 0.010274419188445212,
-      "final_equity": 11101.512334634168
+      "max_drawdown": 0.03260127648688196,
+      "final_equity": 10116.70728610205
     },
     {
-      "max_drawdown": 0.016985718780151732,
-      "final_equity": 11105.0609014688
+      "max_drawdown": 0.03208409477902012,
+      "final_equity": 9893.256490007312
     },
     {
-      "max_drawdown": 0.019299485292262834,
-      "final_equity": 10552.97220018322
+      "max_drawdown": 0.038923658651701436,
+      "final_equity": 10003.80019356371
     },
     {
-      "max_drawdown": 0.010260615285532354,
-      "final_equity": 11097.289852576201
+      "max_drawdown": 0.07103675527546797,
+      "final_equity": 9322.414589447952
     },
     {
-      "max_drawdown": 0.0099558099501508,
-      "final_equity": 10859.176964398157
+      "max_drawdown": 0.04323156015176373,
+      "final_equity": 9711.108972575941
     },
     {
-      "max_drawdown": 0.009830572857113567,
-      "final_equity": 11274.73743580775
+      "max_drawdown": 0.015783667673830278,
+      "final_equity": 10391.291524576178
     },
     {
-      "max_drawdown": 0.01015141244620438,
-      "final_equity": 11037.162171725504
+      "max_drawdown": 0.0194491479205367,
+      "final_equity": 10473.377415554885
     },
     {
-      "max_drawdown": 0.012861086979874137,
-      "final_equity": 10489.354822021896
+      "max_drawdown": 0.0441517785287602,
+      "final_equity": 9686.057306239247
     },
     {
-      "max_drawdown": 0.009477608220780111,
-      "final_equity": 11096.94237201034
+      "max_drawdown": 0.04720406758814062,
+      "final_equity": 9792.530052808632
     },
     {
-      "max_drawdown": 0.009295216730762858,
-      "final_equity": 11222.249818528748
+      "max_drawdown": 0.017684071163678837,
+      "final_equity": 10278.472335621806
     },
     {
-      "max_drawdown": 0.030562089794026224,
-      "final_equity": 10436.944519788147
+      "max_drawdown": 0.04029945939886692,
+      "final_equity": 9498.76304529989
     },
     {
-      "max_drawdown": 0.019100497257411947,
-      "final_equity": 10707.662894486435
+      "max_drawdown": 0.018536645255087223,
+      "final_equity": 10121.11633127917
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11467.86331983467
+      "max_drawdown": 0.060095712336104515,
+      "final_equity": 9702.341737246943
     },
     {
-      "max_drawdown": 0.009721795225028218,
-      "final_equity": 11264.252523733661
+      "max_drawdown": 0.049688288350398145,
+      "final_equity": 9806.738553983147
     },
     {
-      "max_drawdown": 0.02042698002146571,
-      "final_equity": 10632.76881175212
+      "max_drawdown": 0.04568185432950212,
+      "final_equity": 9902.119364090118
     },
     {
-      "max_drawdown": 0.009702398906902228,
-      "final_equity": 11204.218056937461
+      "max_drawdown": 0.05662987582554133,
+      "final_equity": 9778.696942987595
     },
     {
-      "max_drawdown": 0.01000071758522675,
-      "final_equity": 11077.088644394302
+      "max_drawdown": 0.05267988132928688,
+      "final_equity": 9725.813241537146
     },
     {
-      "max_drawdown": 0.018220086839515988,
-      "final_equity": 10448.10778399934
+      "max_drawdown": 0.035086131732947105,
+      "final_equity": 9979.464590292408
     },
     {
-      "max_drawdown": 0.009895992033529848,
-      "final_equity": 11110.040922196646
+      "max_drawdown": 0.07972289018210421,
+      "final_equity": 9334.603107953246
     },
     {
-      "max_drawdown": 0.009434283833959662,
-      "final_equity": 11277.289754832475
+      "max_drawdown": 0.02007186475251393,
+      "final_equity": 10026.16197506064
     },
     {
-      "max_drawdown": 0.02224389934391752,
-      "final_equity": 10703.381917522014
+      "max_drawdown": 0.03894684448277687,
+      "final_equity": 9885.370582730262
     },
     {
-      "max_drawdown": 0.010024505680521826,
-      "final_equity": 11171.270815407135
+      "max_drawdown": 0.009956846751196187,
+      "final_equity": 10825.81018261956
     },
     {
-      "max_drawdown": 0.009883407089792667,
-      "final_equity": 11199.007807412094
+      "max_drawdown": 0.05044527175779369,
+      "final_equity": 9504.714855052493
     },
     {
-      "max_drawdown": 0.009629119961281674,
-      "final_equity": 11209.500487188863
+      "max_drawdown": 0.033145252283775926,
+      "final_equity": 9981.199897501494
     },
     {
-      "max_drawdown": 0.019342839857226755,
-      "final_equity": 10969.540111177701
+      "max_drawdown": 0.03695927790139138,
+      "final_equity": 9909.592042436881
     },
     {
-      "max_drawdown": 0.02588276936118613,
-      "final_equity": 10462.477592028834
+      "max_drawdown": 0.023704802226904194,
+      "final_equity": 9881.777441028116
     },
     {
-      "max_drawdown": 0.01906596540251861,
-      "final_equity": 11165.416899380343
+      "max_drawdown": 0.07393746782718842,
+      "final_equity": 9345.958737462535
     },
     {
-      "max_drawdown": 0.01207582260423748,
-      "final_equity": 10818.395487256714
+      "max_drawdown": 0.06882762906341812,
+      "final_equity": 9406.614429744894
     },
     {
-      "max_drawdown": 0.010031471642251278,
-      "final_equity": 11023.057896851155
+      "max_drawdown": 0.031249043844417308,
+      "final_equity": 10084.89161081561
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11366.59172606533
+      "max_drawdown": 0.010208379875580358,
+      "final_equity": 10444.74210464017
     },
     {
-      "max_drawdown": 0.013250117895312654,
-      "final_equity": 10843.219240763001
+      "max_drawdown": 0.019290967623198197,
+      "final_equity": 10481.757559635584
     },
     {
-      "max_drawdown": 0.020669349433893085,
-      "final_equity": 10341.157426388025
+      "max_drawdown": 0.018917719614354372,
+      "final_equity": 10607.912730017964
     },
     {
-      "max_drawdown": 0.029595406559746677,
-      "final_equity": 10807.256228580567
+      "max_drawdown": 0.020247993590690523,
+      "final_equity": 10137.640245238277
     },
     {
-      "max_drawdown": 0.00964785244520282,
-      "final_equity": 10977.317432507896
+      "max_drawdown": 0.06905410708224034,
+      "final_equity": 9671.533322293373
     },
     {
-      "max_drawdown": 0.02043537358099684,
-      "final_equity": 11132.637283543552
+      "max_drawdown": 0.030985432480375646,
+      "final_equity": 9917.727761739714
     },
     {
-      "max_drawdown": 0.01035876793598912,
-      "final_equity": 11012.296002357103
+      "max_drawdown": 0.031603893837895136,
+      "final_equity": 9834.332244981924
     },
     {
-      "max_drawdown": 0.00911824380174144,
-      "final_equity": 11354.809797986434
+      "max_drawdown": 0.020038236936317632,
+      "final_equity": 9993.304996003484
     },
     {
-      "max_drawdown": 0.022264287806110162,
-      "final_equity": 10713.147019720915
+      "max_drawdown": 0.020514823373642077,
+      "final_equity": 10288.879103162119
     },
     {
-      "max_drawdown": 0.012713760981358659,
-      "final_equity": 10861.532713397883
+      "max_drawdown": 0.02093496061689783,
+      "final_equity": 10104.022175063064
     },
     {
-      "max_drawdown": 0.01030123275641466,
-      "final_equity": 10900.615847002748
+      "max_drawdown": 0.054286445343293244,
+      "final_equity": 9521.024177210349
     },
     {
-      "max_drawdown": 0.010126580113780273,
-      "final_equity": 10791.70789536723
+      "max_drawdown": 0.027079782259551318,
+      "final_equity": 10292.628479313122
     },
     {
-      "max_drawdown": 0.030385113458142144,
-      "final_equity": 10441.069202712819
+      "max_drawdown": 0.07070674684205722,
+      "final_equity": 9272.464520157646
     },
     {
-      "max_drawdown": 0.018672060956584198,
-      "final_equity": 10805.409227926584
+      "max_drawdown": 0.06779561769244997,
+      "final_equity": 9340.536978743821
     },
     {
-      "max_drawdown": 0.010386162381674693,
-      "final_equity": 10992.211810538896
+      "max_drawdown": 0.02619666999553953,
+      "final_equity": 10213.338548674712
     },
     {
-      "max_drawdown": 0.009498705627564146,
-      "final_equity": 11265.732244776134
+      "max_drawdown": 0.024009490917832436,
+      "final_equity": 10220.965226010892
     },
     {
-      "max_drawdown": 0.009136027425889438,
-      "final_equity": 11374.589472589803
+      "max_drawdown": 0.04197577612176864,
+      "final_equity": 9724.06097896382
     },
     {
-      "max_drawdown": 0.020504732843887194,
-      "final_equity": 10957.315974665218
+      "max_drawdown": 0.019778727048652186,
+      "final_equity": 10195.405764667235
     },
     {
-      "max_drawdown": 0.01889399216444221,
-      "final_equity": 10839.043128661779
+      "max_drawdown": 0.012787190330772892,
+      "final_equity": 10354.132583782846
     },
     {
-      "max_drawdown": 0.010097106912620835,
-      "final_equity": 11217.105563627953
+      "max_drawdown": 0.019992022617454624,
+      "final_equity": 10236.937961281346
     },
     {
-      "max_drawdown": 0.03429150979065618,
-      "final_equity": 10268.045866906341
+      "max_drawdown": 0.029018290554572758,
+      "final_equity": 10220.007476134335
     },
     {
-      "max_drawdown": 0.020373292338639094,
-      "final_equity": 11032.178058143068
+      "max_drawdown": 0.01614560195869767,
+      "final_equity": 10402.83567720043
     },
     {
-      "max_drawdown": 0.012208129224588188,
-      "final_equity": 10675.021328080045
+      "max_drawdown": 0.020022798646656095,
+      "final_equity": 10375.36636079606
     },
     {
-      "max_drawdown": 0.018357350806535444,
-      "final_equity": 10197.600152351039
+      "max_drawdown": 0.033798898952544086,
+      "final_equity": 9622.836114629103
     },
     {
-      "max_drawdown": 0.010126580113780273,
-      "final_equity": 10777.465391435258
+      "max_drawdown": 0.0199658974628732,
+      "final_equity": 10142.777333902943
     },
     {
-      "max_drawdown": 0.018381701640309056,
-      "final_equity": 11319.795596012049
+      "max_drawdown": 0.025719433151605253,
+      "final_equity": 10071.6483320844
     },
     {
-      "max_drawdown": 0.018890727039007533,
-      "final_equity": 10870.619500401841
+      "max_drawdown": 0.022730567061311588,
+      "final_equity": 10259.18667430045
     },
     {
-      "max_drawdown": 0.012125582761747647,
-      "final_equity": 10788.503703418848
+      "max_drawdown": 0.05059428761667479,
+      "final_equity": 9599.241872336204
     },
     {
-      "max_drawdown": 0.018788908226363303,
-      "final_equity": 10794.12097089797
+      "max_drawdown": 0.06919624788289991,
+      "final_equity": 9459.172716948271
     },
     {
-      "max_drawdown": 0.028692341526413864,
-      "final_equity": 10623.694016253505
+      "max_drawdown": 0.022812678668038152,
+      "final_equity": 9830.696502425075
     },
     {
-      "max_drawdown": 0.02046682106259452,
-      "final_equity": 11195.848510656178
+      "max_drawdown": 0.025957058242218434,
+      "final_equity": 9848.778263734743
     },
     {
-      "max_drawdown": 0.010001970027986657,
-      "final_equity": 11462.13643821658
+      "max_drawdown": 0.053387225742182576,
+      "final_equity": 9370.086435145218
     },
     {
-      "max_drawdown": 0.009754470169827242,
-      "final_equity": 11384.105677840174
+      "max_drawdown": 0.03570236448343923,
+      "final_equity": 9936.361209114395
     },
     {
-      "max_drawdown": 0.010361843687963385,
-      "final_equity": 11131.334140476638
+      "max_drawdown": 0.020885117320922478,
+      "final_equity": 10107.291614073642
     },
     {
-      "max_drawdown": 0.019944662927036134,
-      "final_equity": 11339.358574166788
+      "max_drawdown": 0.035278978550487436,
+      "final_equity": 9891.629671912782
     },
     {
-      "max_drawdown": 0.0195301726523197,
-      "final_equity": 11069.254323664676
+      "max_drawdown": 0.01912611608850911,
+      "final_equity": 10257.8907300809
     },
     {
-      "max_drawdown": 0.023362648081014566,
-      "final_equity": 10912.214028946575
+      "max_drawdown": 0.06974386125476248,
+      "final_equity": 9405.90992633165
     },
     {
-      "max_drawdown": 0.017542194382873876,
-      "final_equity": 11024.821874999643
+      "max_drawdown": 0.027564935579733937,
+      "final_equity": 10080.638980102307
     },
     {
-      "max_drawdown": 0.024957273780804014,
-      "final_equity": 10498.880133319126
+      "max_drawdown": 0.04675270229874697,
+      "final_equity": 9890.237615153912
     },
     {
-      "max_drawdown": 0.02046302182038932,
-      "final_equity": 10765.11294049554
+      "max_drawdown": 0.034556879223152724,
+      "final_equity": 9796.952171636744
     },
     {
-      "max_drawdown": 0.010489851544180738,
-      "final_equity": 10675.377947015468
+      "max_drawdown": 0.022654024169276695,
+      "final_equity": 10118.398751238794
     },
     {
-      "max_drawdown": 0.02070312298108252,
-      "final_equity": 10910.839334659135
+      "max_drawdown": 0.022693401100755402,
+      "final_equity": 10584.2090547716
     },
     {
-      "max_drawdown": 0.023947016621739786,
-      "final_equity": 10430.150976160494
+      "max_drawdown": 0.0277084738815561,
+      "final_equity": 10150.087403854286
     },
     {
-      "max_drawdown": 0.012468574853995034,
-      "final_equity": 10697.932058056698
+      "max_drawdown": 0.05713706524867393,
+      "final_equity": 9574.336597130858
     },
     {
-      "max_drawdown": 0.01929128632097213,
-      "final_equity": 10633.88840238558
+      "max_drawdown": 0.0230925505855022,
+      "final_equity": 9878.224762870192
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11559.678664960275
+      "max_drawdown": 0.03496891046736075,
+      "final_equity": 9793.110187577084
     },
     {
-      "max_drawdown": 0.00981054271366133,
-      "final_equity": 10948.936158020399
+      "max_drawdown": 0.02195199258956831,
+      "final_equity": 9823.231636119877
     },
     {
-      "max_drawdown": 0.009578103606168767,
-      "final_equity": 11543.8432581527
+      "max_drawdown": 0.019896622469354645,
+      "final_equity": 10249.949977197039
     },
     {
-      "max_drawdown": 0.010257016850193588,
-      "final_equity": 11140.39404955855
+      "max_drawdown": 0.054210069080105686,
+      "final_equity": 9629.433582298734
     },
     {
-      "max_drawdown": 0.017169480401351796,
-      "final_equity": 10312.337949085397
+      "max_drawdown": 0.03338912021303474,
+      "final_equity": 9681.954547233045
     },
     {
-      "max_drawdown": 0.019100285291293925,
-      "final_equity": 10645.73147900557
+      "max_drawdown": 0.031057159120193682,
+      "final_equity": 9689.428408798063
     },
     {
-      "max_drawdown": 0.009926632833544717,
-      "final_equity": 10783.48664443802
+      "max_drawdown": 0.030354063723046196,
+      "final_equity": 9939.04018507262
     },
     {
-      "max_drawdown": 0.01974508222824625,
-      "final_equity": 10809.9759403574
+      "max_drawdown": 0.019705644203726835,
+      "final_equity": 10362.285896259606
     },
     {
-      "max_drawdown": 0.023014381050185658,
-      "final_equity": 10737.896647107043
+      "max_drawdown": 0.030671885824176556,
+      "final_equity": 9835.544450009353
     },
     {
-      "max_drawdown": 0.01958368932439383,
-      "final_equity": 10482.180672540895
+      "max_drawdown": 0.03101960220882158,
+      "final_equity": 10035.46903035589
     },
     {
-      "max_drawdown": 0.017024480688813418,
-      "final_equity": 10889.64789269522
+      "max_drawdown": 0.03414761712701233,
+      "final_equity": 9994.18163802958
     },
     {
-      "max_drawdown": 0.01960332394677269,
-      "final_equity": 10829.569245524088
+      "max_drawdown": 0.0382874318492525,
+      "final_equity": 9946.056367752893
     },
     {
-      "max_drawdown": 0.009846597664698191,
-      "final_equity": 10939.613481802302
+      "max_drawdown": 0.03197893532078495,
+      "final_equity": 10366.58306445754
     },
     {
-      "max_drawdown": 0.030800313961144164,
-      "final_equity": 10922.098140474618
+      "max_drawdown": 0.03758526003160536,
+      "final_equity": 10021.007877501317
     },
     {
-      "max_drawdown": 0.009939426082403825,
-      "final_equity": 11112.151775329781
+      "max_drawdown": 0.02812764300715682,
+      "final_equity": 9903.318279388373
     },
     {
-      "max_drawdown": 0.01936705321952901,
-      "final_equity": 11045.73883793931
+      "max_drawdown": 0.030509107623664225,
+      "final_equity": 10147.470592551634
     },
     {
-      "max_drawdown": 0.02261706545335695,
-      "final_equity": 10579.914587217463
+      "max_drawdown": 0.02920308648884071,
+      "final_equity": 10368.173971362012
     },
     {
-      "max_drawdown": 0.02677171109807007,
-      "final_equity": 10547.313273686126
+      "max_drawdown": 0.019905633339590542,
+      "final_equity": 10163.430513593741
     },
     {
-      "max_drawdown": 0.01924737858394409,
-      "final_equity": 10989.465411596175
+      "max_drawdown": 0.0407294211535564,
+      "final_equity": 10013.18325085243
     },
     {
-      "max_drawdown": 0.010108955592087717,
-      "final_equity": 10970.71762286445
+      "max_drawdown": 0.05197046019611256,
+      "final_equity": 9675.600946219442
     },
     {
-      "max_drawdown": 0.012812444595002711,
-      "final_equity": 10739.47258025493
+      "max_drawdown": 0.05057100497710254,
+      "final_equity": 9907.55393044182
     },
     {
-      "max_drawdown": 0.028634691900979264,
-      "final_equity": 10284.950808854439
+      "max_drawdown": 0.04810030075879494,
+      "final_equity": 9674.463941409476
     },
     {
-      "max_drawdown": 0.011728048177423754,
-      "final_equity": 10841.138005474555
+      "max_drawdown": 0.020133503202087052,
+      "final_equity": 10210.52980889887
     },
     {
-      "max_drawdown": 0.01039065504173746,
-      "final_equity": 10853.667053122068
+      "max_drawdown": 0.02195439563397784,
+      "final_equity": 9902.695307695025
     },
     {
-      "max_drawdown": 0.01870342804306672,
-      "final_equity": 10219.090166507607
+      "max_drawdown": 0.00994344079165305,
+      "final_equity": 10409.896443342735
     },
     {
-      "max_drawdown": 0.0199215180535431,
-      "final_equity": 10916.014347691169
+      "max_drawdown": 0.026387787111242407,
+      "final_equity": 10176.722610426197
     },
     {
-      "max_drawdown": 0.009960259589093873,
-      "final_equity": 11248.987095750319
+      "max_drawdown": 0.010119383628387773,
+      "final_equity": 10643.681278257607
     },
     {
-      "max_drawdown": 0.011714289907829536,
-      "final_equity": 10993.162368145002
+      "max_drawdown": 0.04891893012097897,
+      "final_equity": 10039.328394859456
     },
     {
-      "max_drawdown": 0.035153270584595254,
-      "final_equity": 10276.211889949273
+      "max_drawdown": 0.03408114904937302,
+      "final_equity": 9900.925218272077
     },
     {
-      "max_drawdown": 0.02181793867731554,
-      "final_equity": 10593.438753464363
+      "max_drawdown": 0.05565375793437379,
+      "final_equity": 9513.818120105669
     },
     {
-      "max_drawdown": 0.01631270498900807,
-      "final_equity": 10757.291176919145
+      "max_drawdown": 0.0214053305363894,
+      "final_equity": 10336.196385613943
     },
     {
-      "max_drawdown": 0.010132934452102109,
-      "final_equity": 10917.891214384972
+      "max_drawdown": 0.038067391021692175,
+      "final_equity": 9677.500822793436
     },
     {
-      "max_drawdown": 0.027647208593980666,
-      "final_equity": 10852.730196161361
+      "max_drawdown": 0.012330137818773393,
+      "final_equity": 10464.95890411362
     },
     {
-      "max_drawdown": 0.02071418489043624,
-      "final_equity": 10987.285879500243
+      "max_drawdown": 0.020431755990486883,
+      "final_equity": 10293.54961074944
     },
     {
-      "max_drawdown": 0.010051818623607192,
-      "final_equity": 10882.417659399358
+      "max_drawdown": 0.010327136818300452,
+      "final_equity": 10583.147433974058
     },
     {
-      "max_drawdown": 0.010123864736730987,
-      "final_equity": 11169.895799399315
+      "max_drawdown": 0.015107048121247519,
+      "final_equity": 10144.60117480075
     },
     {
-      "max_drawdown": 0.015639029040991848,
-      "final_equity": 10406.287495667206
+      "max_drawdown": 0.03638355251529642,
+      "final_equity": 9752.914353752096
     },
     {
-      "max_drawdown": 0.010582105020302664,
-      "final_equity": 10677.547425147244
+      "max_drawdown": 0.03333986909817978,
+      "final_equity": 9732.387425446932
     },
     {
-      "max_drawdown": 0.011873920042329542,
-      "final_equity": 10801.994258934259
+      "max_drawdown": 0.02799661736087464,
+      "final_equity": 10074.240677603986
     },
     {
-      "max_drawdown": 0.009601461921521254,
-      "final_equity": 11196.11968983564
+      "max_drawdown": 0.0276192226195948,
+      "final_equity": 10305.539511378835
     },
     {
-      "max_drawdown": 0.017071617147821076,
-      "final_equity": 10820.597512501003
+      "max_drawdown": 0.042408674715104754,
+      "final_equity": 9838.810713243938
     },
     {
-      "max_drawdown": 0.020220549640019476,
-      "final_equity": 10569.617116275762
+      "max_drawdown": 0.013636104612515272,
+      "final_equity": 10056.309793037008
     },
     {
-      "max_drawdown": 0.023824010122663566,
-      "final_equity": 10727.290439933146
+      "max_drawdown": 0.02651974933606839,
+      "final_equity": 9912.168458072318
     },
     {
-      "max_drawdown": 0.016735991647936082,
-      "final_equity": 10866.159203670513
+      "max_drawdown": 0.02010074105129923,
+      "final_equity": 10359.752206889336
     },
     {
-      "max_drawdown": 0.020492893639977264,
-      "final_equity": 10490.773205315494
+      "max_drawdown": 0.07163348016983949,
+      "final_equity": 9588.095119506635
     },
     {
-      "max_drawdown": 0.009900111807431637,
-      "final_equity": 11213.899610363704
+      "max_drawdown": 0.046508275738414095,
+      "final_equity": 9615.698085560374
     },
     {
-      "max_drawdown": 0.009845052690653085,
-      "final_equity": 10990.986679782394
+      "max_drawdown": 0.02078449503792673,
+      "final_equity": 9862.925534582924
     },
     {
-      "max_drawdown": 0.019793214953995365,
-      "final_equity": 10856.450900664213
+      "max_drawdown": 0.02034202783938203,
+      "final_equity": 10189.119596445416
     },
     {
-      "max_drawdown": 0.028172496432625656,
-      "final_equity": 10192.281235373186
+      "max_drawdown": 0.04257769884139496,
+      "final_equity": 9836.47986376822
     },
     {
-      "max_drawdown": 0.009897268731572468,
-      "final_equity": 11067.360932825432
+      "max_drawdown": 0.020316863866511797,
+      "final_equity": 10137.361685933418
     },
     {
-      "max_drawdown": 0.010186255241645322,
-      "final_equity": 10861.880480125961
+      "max_drawdown": 0.022348880626483075,
+      "final_equity": 9858.211502989312
     },
     {
-      "max_drawdown": 0.019613343171727967,
-      "final_equity": 10863.862810276538
+      "max_drawdown": 0.01989643126397045,
+      "final_equity": 10147.360300306895
     },
     {
-      "max_drawdown": 0.018895727442701175,
-      "final_equity": 10875.104550363649
+      "max_drawdown": 0.030420490265742887,
+      "final_equity": 10131.049724067469
     },
     {
-      "max_drawdown": 0.009614222858369159,
-      "final_equity": 11261.761914934099
+      "max_drawdown": 0.04748751318613467,
+      "final_equity": 9680.867790111928
     },
     {
-      "max_drawdown": 0.016902119450062227,
-      "final_equity": 10882.64205151676
+      "max_drawdown": 0.024125708283471086,
+      "final_equity": 9927.096188906104
     },
     {
-      "max_drawdown": 0.029659083397838168,
-      "final_equity": 10595.509170132258
+      "max_drawdown": 0.05291474398880632,
+      "final_equity": 9446.66238619606
     },
     {
-      "max_drawdown": 0.010205299489596113,
-      "final_equity": 10907.416065550451
+      "max_drawdown": 0.03691238629613593,
+      "final_equity": 9892.152411374549
     },
     {
-      "max_drawdown": 0.010245494175976245,
-      "final_equity": 10893.277894667832
+      "max_drawdown": 0.06587624359605516,
+      "final_equity": 9700.372855588825
     },
     {
-      "max_drawdown": 0.02580216590436224,
-      "final_equity": 10280.350891205888
+      "max_drawdown": 0.04682046235896074,
+      "final_equity": 9746.354428103661
     },
     {
-      "max_drawdown": 0.009580262175216148,
-      "final_equity": 11177.495996148438
+      "max_drawdown": 0.04283545988342129,
+      "final_equity": 9702.798902372007
     },
     {
-      "max_drawdown": 0.017858798480546174,
-      "final_equity": 10793.335865699124
+      "max_drawdown": 0.018421223989228686,
+      "final_equity": 10119.543497000397
     },
     {
-      "max_drawdown": 0.009907735433215796,
-      "final_equity": 11298.831052869307
+      "max_drawdown": 0.05448585238289804,
+      "final_equity": 9469.911379936
     },
     {
-      "max_drawdown": 0.009809579328508932,
-      "final_equity": 11172.214339140117
+      "max_drawdown": 0.08575597855383019,
+      "final_equity": 9370.874980468572
     },
     {
-      "max_drawdown": 0.018623845424417664,
-      "final_equity": 11073.173438353926
+      "max_drawdown": 0.0200838121859131,
+      "final_equity": 10196.389862394271
     },
     {
-      "max_drawdown": 0.010489786162794864,
-      "final_equity": 10570.508928189318
+      "max_drawdown": 0.05383711376786518,
+      "final_equity": 9381.466870274595
     },
     {
-      "max_drawdown": 0.028230181356913665,
-      "final_equity": 10686.95542954512
+      "max_drawdown": 0.08734339800665243,
+      "final_equity": 9292.541962826364
     },
     {
-      "max_drawdown": 0.01957352226366472,
-      "final_equity": 11041.347412013434
+      "max_drawdown": 0.05352024945216882,
+      "final_equity": 9438.309224822764
     },
     {
-      "max_drawdown": 0.01652758387239321,
-      "final_equity": 10640.477764910269
+      "max_drawdown": 0.02067417094959612,
+      "final_equity": 10089.65842317883
     },
     {
-      "max_drawdown": 0.01021275722729691,
-      "final_equity": 11128.498699364654
+      "max_drawdown": 0.010122510049828679,
+      "final_equity": 10609.411880479547
     },
     {
-      "max_drawdown": 0.009883452592541097,
-      "final_equity": 11078.48447134683
+      "max_drawdown": 0.02605778935960836,
+      "final_equity": 9922.984319950463
     },
     {
-      "max_drawdown": 0.019965185401248746,
-      "final_equity": 10605.019564108761
+      "max_drawdown": 0.04555760193688918,
+      "final_equity": 9919.159321724213
     },
     {
-      "max_drawdown": 0.009413132971122255,
-      "final_equity": 11355.179539830719
+      "max_drawdown": 0.011929283426717287,
+      "final_equity": 10708.910988072199
     },
     {
-      "max_drawdown": 0.019001074549643688,
-      "final_equity": 11064.740341325005
+      "max_drawdown": 0.02006148079729859,
+      "final_equity": 10187.768861356824
     },
     {
-      "max_drawdown": 0.03620753435246123,
-      "final_equity": 10147.210810907112
+      "max_drawdown": 0.010120258799610288,
+      "final_equity": 10688.345830382246
     },
     {
-      "max_drawdown": 0.023119448942516427,
-      "final_equity": 10124.8556041019
+      "max_drawdown": 0.013045718863410632,
+      "final_equity": 10152.895948879925
     },
     {
-      "max_drawdown": 0.010479220893837645,
-      "final_equity": 10524.1746613339
+      "max_drawdown": 0.04128687174376909,
+      "final_equity": 9564.379156293053
     },
     {
-      "max_drawdown": 0.019856155240139062,
-      "final_equity": 10782.107261414378
+      "max_drawdown": 0.010534598993630935,
+      "final_equity": 10375.406116805852
     },
     {
-      "max_drawdown": 0.010648300869347519,
-      "final_equity": 11089.943751250528
+      "max_drawdown": 0.044335257399209814,
+      "final_equity": 9643.145673138788
     },
     {
-      "max_drawdown": 0.00998342781396994,
-      "final_equity": 10987.618003372669
+      "max_drawdown": 0.04063685930938938,
+      "final_equity": 9811.44178299248
     },
     {
-      "max_drawdown": 0.01006366705832313,
-      "final_equity": 10824.140557871551
+      "max_drawdown": 0.04824315158221365,
+      "final_equity": 9724.71836317484
     },
     {
-      "max_drawdown": 0.011987140730174664,
-      "final_equity": 10621.320076174468
+      "max_drawdown": 0.030647628952179706,
+      "final_equity": 9952.136443362808
     },
     {
-      "max_drawdown": 0.009916119205661161,
-      "final_equity": 11090.026033443015
+      "max_drawdown": 0.010533236369024165,
+      "final_equity": 10199.9194498225
     },
     {
-      "max_drawdown": 0.024683848030165306,
-      "final_equity": 10813.376583464707
+      "max_drawdown": 0.020106790448269032,
+      "final_equity": 10067.558068900107
     },
     {
-      "max_drawdown": 0.009673894512104878,
-      "final_equity": 11183.084485026106
+      "max_drawdown": 0.02112599991765062,
+      "final_equity": 9922.590447372328
     },
     {
-      "max_drawdown": 0.009494162197100786,
-      "final_equity": 11374.103689253669
+      "max_drawdown": 0.010846780745272263,
+      "final_equity": 10157.275455689665
     },
     {
-      "max_drawdown": 0.022005469012178504,
-      "final_equity": 10682.960620198597
+      "max_drawdown": 0.045504086460273464,
+      "final_equity": 9567.084745734814
     },
     {
-      "max_drawdown": 0.009985492667029047,
-      "final_equity": 11080.151398790871
+      "max_drawdown": 0.08589000281890316,
+      "final_equity": 9139.472561408304
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11456.653370774377
+      "max_drawdown": 0.03334129000203057,
+      "final_equity": 9996.125998041545
     },
     {
-      "max_drawdown": 0.010495611153270211,
-      "final_equity": 10928.790616980043
+      "max_drawdown": 0.10577578665837784,
+      "final_equity": 8966.339413370286
     },
     {
-      "max_drawdown": 0.016783068231008395,
-      "final_equity": 11258.185061736333
+      "max_drawdown": 0.030117851136153423,
+      "final_equity": 9780.7228304458
     },
     {
-      "max_drawdown": 0.016645881393370855,
-      "final_equity": 11091.535423838435
+      "max_drawdown": 0.04352850703018562,
+      "final_equity": 9648.07971297957
     },
     {
-      "max_drawdown": 0.030001522836797224,
-      "final_equity": 10519.79779199089
+      "max_drawdown": 0.020210363261635375,
+      "final_equity": 10244.585885082659
     },
     {
-      "max_drawdown": 0.010200864192125472,
-      "final_equity": 11024.081963956805
+      "max_drawdown": 0.03256986019388101,
+      "final_equity": 10009.794402900909
     },
     {
-      "max_drawdown": 0.010242043932381003,
-      "final_equity": 10753.925943040764
+      "max_drawdown": 0.046532683424690385,
+      "final_equity": 9639.181209035027
     },
     {
-      "max_drawdown": 0.010262845053218157,
-      "final_equity": 10783.36710260765
+      "max_drawdown": 0.010426758700695973,
+      "final_equity": 10285.295878168998
     },
     {
-      "max_drawdown": 0.019657755480576876,
-      "final_equity": 11059.530457389408
+      "max_drawdown": 0.01019980958774211,
+      "final_equity": 10484.75995194222
     },
     {
-      "max_drawdown": 0.01729652195326627,
-      "final_equity": 10805.217938652411
+      "max_drawdown": 0.0185190628338283,
+      "final_equity": 10119.388024525248
     },
     {
-      "max_drawdown": 0.015009986438308028,
-      "final_equity": 10671.399742492376
+      "max_drawdown": 0.02944577223553341,
+      "final_equity": 9986.846740079582
     },
     {
-      "max_drawdown": 0.026129777463567254,
-      "final_equity": 10488.148647047083
+      "max_drawdown": 0.04006942807715635,
+      "final_equity": 9679.096826113746
     },
     {
-      "max_drawdown": 0.009609188697022384,
-      "final_equity": 11166.885959672296
+      "max_drawdown": 0.03910738021693421,
+      "final_equity": 10121.77221445819
     },
     {
-      "max_drawdown": 0.010246166459401664,
-      "final_equity": 11071.187557351388
+      "max_drawdown": 0.0317709665917209,
+      "final_equity": 9701.498150069543
     },
     {
-      "max_drawdown": 0.012808703152110617,
-      "final_equity": 11073.919554915225
+      "max_drawdown": 0.06371281321618098,
+      "final_equity": 9338.869181397293
     },
     {
-      "max_drawdown": 0.0097697215181267,
-      "final_equity": 11200.823232729914
+      "max_drawdown": 0.03151265147244897,
+      "final_equity": 9857.656968270869
     },
     {
-      "max_drawdown": 0.02572900692576347,
-      "final_equity": 11080.064100091318
+      "max_drawdown": 0.055052608326148514,
+      "final_equity": 9805.109775301942
     },
     {
-      "max_drawdown": 0.009518385146429024,
-      "final_equity": 11162.52616466978
+      "max_drawdown": 0.020506982647441722,
+      "final_equity": 10167.91677574416
     },
     {
-      "max_drawdown": 0.01890962395412855,
-      "final_equity": 10774.825384989994
+      "max_drawdown": 0.02527496107143386,
+      "final_equity": 9901.607297108687
     },
     {
-      "max_drawdown": 0.010058472064755086,
-      "final_equity": 10998.342266834361
+      "max_drawdown": 0.03033551346712055,
+      "final_equity": 9598.264780472091
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11439.20233225851
+      "max_drawdown": 0.022879332525698886,
+      "final_equity": 9910.674074526405
     },
     {
-      "max_drawdown": 0.010061075140670573,
-      "final_equity": 11126.695271472558
+      "max_drawdown": 0.0352087911635463,
+      "final_equity": 10102.02023249729
     },
     {
-      "max_drawdown": 0.022374777691366147,
-      "final_equity": 10494.864119862435
+      "max_drawdown": 0.02983245751628485,
+      "final_equity": 9905.499807245253
     },
     {
-      "max_drawdown": 0.00968401938799921,
-      "final_equity": 11074.057734847864
+      "max_drawdown": 0.018371258009101443,
+      "final_equity": 9896.528544666213
     },
     {
-      "max_drawdown": 0.019973358434046747,
-      "final_equity": 11020.52392415456
+      "max_drawdown": 0.028032069260025615,
+      "final_equity": 10005.371571169455
     },
     {
-      "max_drawdown": 0.01016765491356967,
-      "final_equity": 10971.302332737443
+      "max_drawdown": 0.03276895552319544,
+      "final_equity": 9919.834955491944
     },
     {
-      "max_drawdown": 0.010032387877247825,
-      "final_equity": 11210.662461223257
+      "max_drawdown": 0.028463098168753836,
+      "final_equity": 10012.012959178981
     },
     {
-      "max_drawdown": 0.009842236110797839,
-      "final_equity": 10893.177899109605
+      "max_drawdown": 0.030583439120495437,
+      "final_equity": 9925.187949884952
     },
     {
-      "max_drawdown": 0.009409129424811539,
-      "final_equity": 11373.324803038293
+      "max_drawdown": 0.03337679439773775,
+      "final_equity": 10080.01190161332
     },
     {
-      "max_drawdown": 0.009511006916807375,
-      "final_equity": 11297.250882105132
+      "max_drawdown": 0.029458715549407582,
+      "final_equity": 9871.4287346224
     },
     {
-      "max_drawdown": 0.009916010545921394,
-      "final_equity": 11200.246640062674
+      "max_drawdown": 0.0802745381311393,
+      "final_equity": 9103.465467792694
     },
     {
-      "max_drawdown": 0.010198383630410436,
-      "final_equity": 11036.921522584367
+      "max_drawdown": 0.03051392505258846,
+      "final_equity": 10161.36610922053
     },
     {
-      "max_drawdown": 0.008864266454111838,
-      "final_equity": 11689.276532471504
+      "max_drawdown": 0.02949561633120776,
+      "final_equity": 10254.00046580224
     },
     {
-      "max_drawdown": 0.01905079782529998,
-      "final_equity": 10696.37564799573
+      "max_drawdown": 0.03396487656493997,
+      "final_equity": 9898.460859643641
     },
     {
-      "max_drawdown": 0.038953062921398,
-      "final_equity": 10690.177341609886
+      "max_drawdown": 0.046786727263556205,
+      "final_equity": 9830.521851056246
     },
     {
-      "max_drawdown": 0.010202337177805047,
-      "final_equity": 10869.949202019012
+      "max_drawdown": 0.010323077964906417,
+      "final_equity": 10065.440194223558
     },
     {
-      "max_drawdown": 0.00973812716009777,
-      "final_equity": 11014.09494197436
+      "max_drawdown": 0.03984310355913584,
+      "final_equity": 9695.026557175746
     },
     {
-      "max_drawdown": 0.028360514938997633,
-      "final_equity": 10604.265873850245
+      "max_drawdown": 0.02281118612774614,
+      "final_equity": 9862.092499624063
     },
     {
-      "max_drawdown": 0.027353401094076996,
-      "final_equity": 10468.642525247647
+      "max_drawdown": 0.021178242854880205,
+      "final_equity": 10065.210465747625
     },
     {
-      "max_drawdown": 0.017009239311804893,
-      "final_equity": 11128.03418247531
+      "max_drawdown": 0.05346440985335049,
+      "final_equity": 9389.554617342283
     },
     {
-      "max_drawdown": 0.014111259941244748,
-      "final_equity": 10753.500584992367
+      "max_drawdown": 0.023170318898733187,
+      "final_equity": 9978.334736044533
     },
     {
-      "max_drawdown": 0.019082968155386782,
-      "final_equity": 10801.120880274819
+      "max_drawdown": 0.045570569513087786,
+      "final_equity": 9742.182664888891
     },
     {
-      "max_drawdown": 0.010252595910730498,
-      "final_equity": 11334.466642149846
+      "max_drawdown": 0.05140539991939737,
+      "final_equity": 9458.907827117066
     },
     {
-      "max_drawdown": 0.014890171078372687,
-      "final_equity": 11325.545410873106
+      "max_drawdown": 0.04099460673433882,
+      "final_equity": 9734.322525815262
     },
     {
-      "max_drawdown": 0.010396938322003857,
-      "final_equity": 10686.016967594584
+      "max_drawdown": 0.019051873692762167,
+      "final_equity": 9767.343417052858
     },
     {
-      "max_drawdown": 0.012409119967819675,
-      "final_equity": 10916.788356163119
+      "max_drawdown": 0.023532293954494354,
+      "final_equity": 10130.280369490423
     },
     {
-      "max_drawdown": 0.012267698043216724,
-      "final_equity": 10726.229503270764
+      "max_drawdown": 0.040506042550034024,
+      "final_equity": 9882.29154449768
     },
     {
-      "max_drawdown": 0.025118833625688015,
-      "final_equity": 10511.861104111113
+      "max_drawdown": 0.04038684312664489,
+      "final_equity": 9822.921499524855
     },
     {
-      "max_drawdown": 0.009747988792156381,
-      "final_equity": 11324.680528576691
+      "max_drawdown": 0.02927649377815108,
+      "final_equity": 10257.798068164699
     },
     {
-      "max_drawdown": 0.019078677431379587,
-      "final_equity": 10707.307187668906
+      "max_drawdown": 0.032293550300194394,
+      "final_equity": 9592.932130688132
     },
     {
-      "max_drawdown": 0.010200125270733927,
-      "final_equity": 11035.466369140224
+      "max_drawdown": 0.04080564726289175,
+      "final_equity": 9784.546087924127
     },
     {
-      "max_drawdown": 0.00987868985122938,
-      "final_equity": 11095.270648954172
+      "max_drawdown": 0.03091629739360234,
+      "final_equity": 9927.617886143
     },
     {
-      "max_drawdown": 0.011737728192285503,
-      "final_equity": 11043.090180899555
+      "max_drawdown": 0.04948195311445412,
+      "final_equity": 9720.93350171154
     },
     {
-      "max_drawdown": 0.013650328752714411,
-      "final_equity": 10878.352507003518
+      "max_drawdown": 0.043039867559611804,
+      "final_equity": 9921.614568042914
     },
     {
-      "max_drawdown": 0.019196645347358345,
-      "final_equity": 10905.881087086154
+      "max_drawdown": 0.022842708315087713,
+      "final_equity": 10142.279133677439
     },
     {
-      "max_drawdown": 0.009880463595321786,
-      "final_equity": 10813.196601218291
+      "max_drawdown": 0.025820102109209278,
+      "final_equity": 9960.748046318493
     },
     {
-      "max_drawdown": 0.01219542638871054,
-      "final_equity": 10764.331554327677
+      "max_drawdown": 0.03282502254978956,
+      "final_equity": 9957.574085348817
     },
     {
-      "max_drawdown": 0.0,
-      "final_equity": 11393.506208151442
+      "max_drawdown": 0.04414400716418614,
+      "final_equity": 9582.700393119285
     },
     {
-      "max_drawdown": 0.03126899358124979,
-      "final_equity": 10575.316075203174
+      "max_drawdown": 0.04005022439065574,
+      "final_equity": 9566.265277697692
     },
     {
-      "max_drawdown": 0.010264614338665719,
-      "final_equity": 10981.355477747045
+      "max_drawdown": 0.009894069947793526,
+      "final_equity": 10640.877567352887
     },
     {
-      "max_drawdown": 0.009145508529004455,
-      "final_equity": 11572.947228460622
+      "max_drawdown": 0.02095544906469275,
+      "final_equity": 10080.704103215161
     },
     {
-      "max_drawdown": 0.030757097505435375,
-      "final_equity": 10229.96276101084
+      "max_drawdown": 0.02083566891565181,
+      "final_equity": 9956.460038849535
     },
     {
-      "max_drawdown": 0.009729788406289866,
-      "final_equity": 11370.316587402976
+      "max_drawdown": 0.010197515974531779,
+      "final_equity": 10451.30765863512
     },
     {
-      "max_drawdown": 0.018506567053726632,
-      "final_equity": 11097.16226351245
+      "max_drawdown": 0.05660864673657407,
+      "final_equity": 9432.182670930431
     },
     {
-      "max_drawdown": 0.027099413517636915,
-      "final_equity": 10469.656223318387
+      "max_drawdown": 0.020300454394083817,
+      "final_equity": 10124.089552481979
     },
     {
-      "max_drawdown": 0.00987870667500322,
-      "final_equity": 10940.942612042138
+      "max_drawdown": 0.02914706102526018,
+      "final_equity": 9828.21974954436
     },
     {
-      "max_drawdown": 0.010275442241100548,
-      "final_equity": 11227.450949957
+      "max_drawdown": 0.020344647744759047,
+      "final_equity": 10135.544754975013
     },
     {
-      "max_drawdown": 0.009772126515991103,
-      "final_equity": 11184.708020322734
+      "max_drawdown": 0.02895792762765596,
+      "final_equity": 9699.6553993919
     },
     {
-      "max_drawdown": 0.026985292357764118,
-      "final_equity": 10175.977231161676
+      "max_drawdown": 0.03522089102536889,
+      "final_equity": 9888.082733663538
     },
     {
-      "max_drawdown": 0.010238870826104132,
-      "final_equity": 10629.762488148252
+      "max_drawdown": 0.031971740657079945,
+      "final_equity": 10165.969450835973
     },
     {
-      "max_drawdown": 0.01025347077685594,
-      "final_equity": 11140.123780458207
+      "max_drawdown": 0.038292975748391946,
+      "final_equity": 9837.565355313975
     },
     {
-      "max_drawdown": 0.010062611646941501,
-      "final_equity": 10782.615101120944
+      "max_drawdown": 0.019728840153741257,
+      "final_equity": 10163.081457543516
     },
     {
-      "max_drawdown": 0.018722555367070057,
-      "final_equity": 11175.05308447773
+      "max_drawdown": 0.050039917148716875,
+      "final_equity": 9619.121022050998
     },
     {
-      "max_drawdown": 0.010090062542970488,
-      "final_equity": 11426.520693477272
+      "max_drawdown": 0.03230320127334708,
+      "final_equity": 9863.52709585289
     },
     {
-      "max_drawdown": 0.02275398091504204,
-      "final_equity": 10774.218824723192
+      "max_drawdown": 0.04465459149925916,
+      "final_equity": 9627.21685642233
     },
     {
-      "max_drawdown": 0.017302189808307056,
-      "final_equity": 10976.037221882507
+      "max_drawdown": 0.030992057087673327,
+      "final_equity": 10003.018453367366
     },
     {
-      "max_drawdown": 0.009953532280863675,
-      "final_equity": 10866.937061489098
+      "max_drawdown": 0.029696069529858624,
+      "final_equity": 10080.80511041038
     },
     {
-      "max_drawdown": 0.010255324161514626,
-      "final_equity": 10789.419098441067
+      "max_drawdown": 0.01561503232057129,
+      "final_equity": 10358.780958452751
     },
     {
-      "max_drawdown": 0.009434577408079002,
-      "final_equity": 11510.044584638872
+      "max_drawdown": 0.026547855715549292,
+      "final_equity": 10124.261892787805
     },
     {
-      "max_drawdown": 0.009270444269847543,
-      "final_equity": 11237.325037578921
+      "max_drawdown": 0.05612015847744789,
+      "final_equity": 9670.835304442013
     },
     {
-      "max_drawdown": 0.009992310913522914,
-      "final_equity": 10909.245451032182
+      "max_drawdown": 0.010097661169014078,
+      "final_equity": 10801.829931372698
     },
     {
-      "max_drawdown": 0.02647628766357917,
-      "final_equity": 10408.803254243523
+      "max_drawdown": 0.08533354949834263,
+      "final_equity": 9147.565985583493
     },
     {
-      "max_drawdown": 0.010131083105364987,
-      "final_equity": 11040.660618129692
+      "max_drawdown": 0.07063219071607484,
+      "final_equity": 9358.008027157304
     },
     {
-      "max_drawdown": 0.019903426176011076,
-      "final_equity": 10444.018254942757
+      "max_drawdown": 0.047346218971412016,
+      "final_equity": 9682.752086329492
     },
     {
-      "max_drawdown": 0.012371318280369433,
-      "final_equity": 10578.007584415347
+      "max_drawdown": 0.02290149983358849,
+      "final_equity": 10351.577511114041
     },
     {
-      "max_drawdown": 0.010055040543965468,
-      "final_equity": 10887.445424747782
+      "max_drawdown": 0.04306609602274934,
+      "final_equity": 10206.758935393724
     },
     {
-      "max_drawdown": 0.030309758983900485,
-      "final_equity": 10554.079437803017
+      "max_drawdown": 0.030240638719619017,
+      "final_equity": 9899.858382115683
     },
     {
-      "max_drawdown": 0.020194615560203102,
-      "final_equity": 10879.516225701249
+      "max_drawdown": 0.06623262071554842,
+      "final_equity": 9240.312121380714
     },
     {
-      "max_drawdown": 0.018421654709455226,
-      "final_equity": 10935.217582954738
+      "max_drawdown": 0.03156863852325708,
+      "final_equity": 9797.161998356625
     },
     {
-      "max_drawdown": 0.027302454354478863,
-      "final_equity": 10617.17632522701
+      "max_drawdown": 0.022978373528044903,
+      "final_equity": 10163.243729101074
     }
   ]
 }
