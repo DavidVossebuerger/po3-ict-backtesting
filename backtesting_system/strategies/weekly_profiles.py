@@ -40,6 +40,12 @@ class WeeklyProfileStrategy(Strategy):
         self.cisd_validator = CISDValidator()
         self.stop_hunt_detector = StopHuntDetector()
         self.opening_range = OpeningRangeFramework()
+        self.min_confluence = params.get("min_confluence", 0.25)
+        self.cisd_weight = params.get("cisd_weight", 0.15)
+        self.cisd_mismatch_penalty = params.get("cisd_mismatch_penalty", 0.10)
+        self.stop_hunt_weight = params.get("stop_hunt_weight", 0.10)
+        self.opening_range_weight = params.get("opening_range_weight", 0.10)
+        self.opening_range_penalty = params.get("opening_range_penalty", 0.05)
         self._signal_log: List[Dict[str, object]] = []
         self._signal_log_path: Path | None = None
 
@@ -97,21 +103,15 @@ class WeeklyProfileStrategy(Strategy):
 
         daily_candles = self._aggregate_daily(history)
         cisd = self.cisd_validator.detect_cisd(daily_candles, history[-20:])
-        if not cisd.get("detected"):
-            return {}
-
+        cisd_type = cisd.get("type", "").lower()
         signal_direction = "long" if ctx.profile_type.endswith("long") else "short"
-        cisd_direction = "long" if cisd.get("type", "").lower() == "bullish" else "short"
-        if signal_direction != cisd_direction:
-            return {}
+        cisd_direction = "long" if cisd_type == "bullish" else "short"
 
         if signal_direction == "long":
             swing_level = ctx.mon_tue_low if ctx.mon_tue_low is not None else min(c.low for c in history[-20:])
         else:
             swing_level = ctx.mon_tue_high if ctx.mon_tue_high is not None else max(c.high for c in history[-20:])
         stop_hunt = self.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
-        if not stop_hunt.get("detected"):
-            return {}
 
         day_candles = [c for c in history if c.time.date() == bar.time.date()]
         if day_candles:
@@ -127,11 +127,18 @@ class WeeklyProfileStrategy(Strategy):
         }
 
         confluence_score = ctx.confidence if ctx.confidence else 0.5
+        if cisd.get("detected"):
+            if signal_direction == cisd_direction:
+                confluence_score += self.cisd_weight
+            else:
+                confluence_score -= self.cisd_mismatch_penalty
+        if stop_hunt.get("detected"):
+            confluence_score += self.stop_hunt_weight
         if opening_range and self.opening_range.is_entry_in_zone(bar.close, opening_range):
-            confluence_score += 0.15
+            confluence_score += self.opening_range_weight
         elif opening_range:
-            confluence_score -= 0.10
-        if confluence_score < 0.40:
+            confluence_score -= self.opening_range_penalty
+        if confluence_score < self.min_confluence:
             return {}
 
         direction = signal_direction
@@ -255,9 +262,6 @@ class WeeklyProfileStrategy(Strategy):
         if week > 1:
             return year, week - 1
         return year - 1, 52
-
-    def _is_day_open(self, dt: datetime) -> bool:
-        return dt.hour == 0 and dt.minute == 0
 
     def _record_signal(self, timestamp: datetime, signal: dict, ctx: WeeklyProfileContext) -> None:
         entry = {

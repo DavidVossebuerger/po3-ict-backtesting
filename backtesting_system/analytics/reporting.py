@@ -176,6 +176,92 @@ def write_trades(engine: BacktestEngine, output_path: Path) -> None:
             ])
 
 
+def write_trades_detailed(engine: BacktestEngine, output_path: Path) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    trades = sorted(engine.trades, key=lambda t: t.exit_time)
+    equity_curve = engine.equity_curve
+    equity_points: list[tuple[datetime, float]] = []
+    equity_values: list[float] = []
+    equity_index = 0
+    peak_equity = float("-inf")
+    cumulative_pnl = 0.0
+    gross_profit = 0.0
+    gross_loss = 0.0
+    wins = 0
+
+    with output_path.open("w", newline="", encoding="utf-8") as outfile:
+        writer = csv.writer(outfile)
+        writer.writerow([
+            "trade_id",
+            "symbol",
+            "side",
+            "entry_time",
+            "exit_time",
+            "entry_price",
+            "exit_price",
+            "stop",
+            "target",
+            "size",
+            "pnl",
+            "r_multiple",
+            "confluence",
+            "duration_seconds",
+            "cumulative_pnl",
+            "equity_at_exit",
+            "drawdown",
+            "running_win_rate",
+            "running_profit_factor",
+            "running_sharpe",
+        ])
+
+        for idx, trade in enumerate(trades, start=1):
+            while equity_index < len(equity_curve) and equity_curve[equity_index].time <= trade.exit_time:
+                point = equity_curve[equity_index]
+                equity_points.append((point.time, point.equity))
+                equity_values.append(point.equity)
+                peak_equity = max(peak_equity, point.equity)
+                equity_index += 1
+
+            equity_at_exit = equity_values[-1] if equity_values else engine.initial_capital
+            drawdown = 0.0 if peak_equity <= 0 else (peak_equity - equity_at_exit) / peak_equity
+
+            cumulative_pnl += trade.pnl
+            if trade.pnl > 0:
+                gross_profit += trade.pnl
+                wins += 1
+            elif trade.pnl < 0:
+                gross_loss += trade.pnl
+
+            running_win_rate = wins / idx if idx else 0.0
+            running_pf = profit_factor(gross_profit, gross_loss)
+            running_returns = list(daily_returns(equity_points).values())
+            running_sharpe = sharpe_ratio_annualized(running_returns)
+            duration_seconds = (trade.exit_time - trade.entry_time).total_seconds()
+
+            writer.writerow([
+                idx,
+                trade.symbol,
+                trade.side,
+                trade.entry_time.isoformat(),
+                trade.exit_time.isoformat(),
+                f"{trade.entry_price:.5f}",
+                f"{trade.exit_price:.5f}",
+                "" if trade.stop is None else f"{trade.stop:.5f}",
+                "" if trade.target is None else f"{trade.target:.5f}",
+                f"{trade.size:.4f}",
+                f"{trade.pnl:.5f}",
+                "" if trade.r_multiple is None else f"{trade.r_multiple:.4f}",
+                trade.confluence,
+                f"{duration_seconds:.2f}",
+                f"{cumulative_pnl:.5f}",
+                f"{equity_at_exit:.5f}",
+                f"{drawdown:.6f}",
+                f"{running_win_rate:.6f}",
+                f"{running_pf:.6f}",
+                f"{running_sharpe:.6f}",
+            ])
+
+
 def write_summary_csv(reports: Dict[str, Dict[str, Any]], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     headers = [

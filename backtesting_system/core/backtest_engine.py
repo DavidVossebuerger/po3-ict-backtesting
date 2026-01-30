@@ -163,6 +163,9 @@ class BacktestEngine:
             self.cash -= exit_fee
             position.close_time = bar.time
             position.exit_price = exit_price
+            risk_per_unit = abs(position.entry - position.stop) if position.stop is not None else None
+            risk_amount = (risk_per_unit * (position.remaining_size or position.size)) if risk_per_unit is not None else None
+            r_multiple = (pnl / risk_amount) if risk_amount else None
             self.trades.append(
                 TradeRecord(
                     symbol=position.symbol,
@@ -175,6 +178,7 @@ class BacktestEngine:
                     side=position.side.value,
                     stop=position.stop,
                     target=position.target,
+                    r_multiple=r_multiple,
                     confluence=getattr(position, "confluence", None),
                 )
             )

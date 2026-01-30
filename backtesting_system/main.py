@@ -12,6 +12,7 @@ from backtesting_system.analytics.reporting import (
     write_report,
     write_summary_csv,
     write_trades,
+    write_trades_detailed,
     write_walk_forward_csv,
     write_parameter_sensitivity_csv,
     write_monte_carlo_csv,
@@ -118,6 +119,7 @@ def main() -> None:
             except ImportError as exc:
                 logger.warning("PDF report skipped: %s", exc)
             write_trades(engine, results_dir / f"trades_{label}.csv")
+            write_trades_detailed(engine, results_dir / f"trades_{label}_detailed.csv")
             charts_dir = results_dir / "charts" / label
             equity_values = [p.equity for p in engine.equity_curve]
             drawdowns = []
