@@ -19,6 +19,7 @@ class BacktestEngine:
     risk_manager: RiskManager | None = None
     risk_per_trade: float = 0.01
     partial_exit_enabled: bool = True
+    stop_slippage_pips: float = 0.5
     max_daily_risk: float | None = None
     max_weekly_risk: float | None = None
     event_bus: EventBus = field(default_factory=EventBus)
@@ -185,22 +186,28 @@ class BacktestEngine:
         self.positions = remaining
 
     def _check_exit(self, position: Position, bar) -> Optional[float]:
+        def apply_stop_slippage(stop_price: float, side: OrderSide) -> float:
+            slippage = self.stop_slippage_pips * stop_price / 10000
+            if side == OrderSide.BUY:
+                return stop_price - slippage
+            return stop_price + slippage
+
         if position.side == OrderSide.BUY:
             stop_hit = bar.low <= position.stop
             target_hit = position.target is not None and bar.high >= position.target
             if stop_hit and target_hit:
-                return position.stop
+                return apply_stop_slippage(position.stop, position.side)
             if stop_hit:
-                return position.stop
+                return apply_stop_slippage(position.stop, position.side)
             if target_hit:
                 return position.target
         else:
             stop_hit = bar.high >= position.stop
             target_hit = position.target is not None and bar.low <= position.target
             if stop_hit and target_hit:
-                return position.stop
+                return apply_stop_slippage(position.stop, position.side)
             if stop_hit:
-                return position.stop
+                return apply_stop_slippage(position.stop, position.side)
             if target_hit:
                 return position.target
         return None
