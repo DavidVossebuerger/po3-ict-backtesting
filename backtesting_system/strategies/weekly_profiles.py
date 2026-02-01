@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from typing import Dict, List, Optional
 
+from backtesting_system.adapters.data_sources.economic_calendar import EconomicCalendar
+from backtesting_system.analytics.intermarket import IntermarketAnalyzer
 from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.models.market import Candle
 from backtesting_system.strategies.ict_framework import (
@@ -41,11 +43,17 @@ class WeeklyProfileStrategy(Strategy):
         self.stop_hunt_detector = StopHuntDetector()
         self.opening_range = OpeningRangeFramework()
         self.min_confluence = params.get("min_confluence", 0.25)
+        self.allow_monday = params.get("allow_monday", False)
+        self.require_high_impact_news = params.get("require_high_impact_news", True)
+        calendar_path = params.get("calendar_csv_path")
+        self.news_calendar = EconomicCalendar(Path(calendar_path)) if calendar_path else None
+        self.intermarket = IntermarketAnalyzer()
         self.cisd_weight = params.get("cisd_weight", 0.15)
         self.cisd_mismatch_penalty = params.get("cisd_mismatch_penalty", 0.10)
         self.stop_hunt_weight = params.get("stop_hunt_weight", 0.10)
         self.opening_range_weight = params.get("opening_range_weight", 0.10)
         self.opening_range_penalty = params.get("opening_range_penalty", 0.05)
+        self.news_confluence_boost = params.get("news_confluence_boost", 0.05)
         self._signal_log: List[Dict[str, object]] = []
         self._signal_log_path: Path | None = None
 
@@ -76,6 +84,8 @@ class WeeklyProfileStrategy(Strategy):
             "consolidation_reversal_long": {3, 4},
             "consolidation_reversal_short": {3, 4},
         }
+        if self.allow_monday:
+            allowed_days = {key: days | {0} for key, days in allowed_days.items()}
         if bar.time.weekday() not in allowed_days.get(ctx.profile_type, set()):
             return False
         return ctx.week_key != self._last_signal_week
@@ -90,6 +100,12 @@ class WeeklyProfileStrategy(Strategy):
             return {}
 
         day = bar.time.weekday()
+        daily_candles = self._aggregate_daily(history)
+        tgif_signal = self._maybe_tgif_signal(bar, daily_candles)
+        if tgif_signal:
+            self._last_signal_week = ctx.week_key
+            self._record_signal(bar.time, tgif_signal, ctx)
+            return tgif_signal
         allowed_days = {
             "classic_expansion_long": {2, 3},
             "classic_expansion_short": {2, 3},
@@ -98,10 +114,24 @@ class WeeklyProfileStrategy(Strategy):
             "consolidation_reversal_long": {3, 4},
             "consolidation_reversal_short": {3, 4},
         }
+        if self.allow_monday:
+            allowed_days = {key: days | {0} for key, days in allowed_days.items()}
         if day not in allowed_days.get(ctx.profile_type, set()):
             return {}
 
-        daily_candles = self._aggregate_daily(history)
+        if (
+            self.require_high_impact_news
+            and day == 2
+            and ctx.profile_type in {"midweek_reversal_long", "midweek_reversal_short"}
+        ):
+            if not self.news_calendar:
+                return {}
+            currencies = self._extract_currencies(data.get("symbol", ""))
+            if not self.news_calendar.get_high_impact_events(bar.time, currencies=currencies):
+                return {}
+            if not self.news_calendar.has_relevant_event_near(bar.time, currencies=currencies):
+                return {}
+
         cisd = self.cisd_validator.detect_cisd(daily_candles, history[-20:])
         cisd_type = cisd.get("type", "").lower()
         signal_direction = "long" if ctx.profile_type.endswith("long") else "short"
@@ -138,8 +168,16 @@ class WeeklyProfileStrategy(Strategy):
             confluence_score += self.opening_range_weight
         elif opening_range:
             confluence_score -= self.opening_range_penalty
+        if self.news_confluence_boost and self._has_relevant_news(bar.time, data.get("symbol", "")):
+            confluence_score += self.news_confluence_boost
         if confluence_score < self.min_confluence:
             return {}
+
+        intermarket_boost = self.intermarket.get_confluence_boost(
+            data.get("symbol", ""),
+            data.get("intermarket"),
+        )
+        confluence_score *= intermarket_boost
 
         direction = signal_direction
         entry = bar.close
@@ -164,6 +202,60 @@ class WeeklyProfileStrategy(Strategy):
         }
         self._record_signal(bar.time, signal, ctx)
         return signal
+
+        
+    def _maybe_tgif_signal(self, bar: Candle, daily_candles: List[Candle]) -> dict:
+        if bar.time.weekday() != 4:
+            return {}
+        current_week = self._current_week_key(bar.time)
+        week_candles = [c for c in daily_candles if self._current_week_key(c.time) == current_week]
+        if len(week_candles) < 3:
+            return {}
+        week_high = max(c.high for c in week_candles)
+        week_low = min(c.low for c in week_candles)
+        week_range = week_high - week_low
+        if week_range <= 0:
+            return {}
+
+        level_20_high = week_high - (week_range * 0.20)
+        level_30_high = week_high - (week_range * 0.30)
+        level_20_low = week_low + (week_range * 0.20)
+        level_30_low = week_low + (week_range * 0.30)
+        pip_buffer = 0.0001 * 10
+
+        if level_30_high <= bar.close <= level_20_high:
+            return {
+                "direction": "short",
+                "entry": bar.close,
+                "stop": week_high + pip_buffer,
+                "target": (level_20_high + level_30_high) / 2,
+                "confluence": 0.8,
+                "profile_type": "tgif_return",
+            }
+        if level_20_low <= bar.close <= level_30_low:
+            return {
+                "direction": "long",
+                "entry": bar.close,
+                "stop": week_low - pip_buffer,
+                "target": (level_20_low + level_30_low) / 2,
+                "confluence": 0.8,
+                "profile_type": "tgif_return",
+            }
+        return {}
+
+    def _extract_currencies(self, symbol: str) -> set[str]:
+        if not symbol:
+            return set()
+        cleaned = symbol.replace("/", "").upper()
+        if len(cleaned) >= 6:
+            return {cleaned[:3], cleaned[3:6]}
+        return {cleaned}
+
+    def _has_relevant_news(self, timestamp: datetime, symbol: str) -> bool:
+        if not self.news_calendar:
+            return False
+        currencies = self._extract_currencies(symbol)
+        return self.news_calendar.has_relevant_event_near(timestamp, currencies=currencies)
 
     def validate_pda_array(self, price, h1_pda) -> bool:
         if not h1_pda:

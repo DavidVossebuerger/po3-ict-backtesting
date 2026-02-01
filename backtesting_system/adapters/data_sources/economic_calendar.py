@@ -71,8 +71,13 @@ class EconomicCalendar:
     def is_high_impact_day(self, date: datetime) -> bool:
         return bool(self.get_high_impact_events(date))
 
-    def has_relevant_event_near(self, timestamp: datetime, window_minutes: int = 30) -> bool:
-        events = self.get_high_impact_events(timestamp)
+    def has_relevant_event_near(
+        self,
+        timestamp: datetime,
+        window_minutes: int = 30,
+        currencies: set[str] | None = None,
+    ) -> bool:
+        events = self.get_high_impact_events(timestamp, currencies=currencies)
         if not events:
             return False
         window = timedelta(minutes=window_minutes)
