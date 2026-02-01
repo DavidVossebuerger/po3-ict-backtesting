@@ -1,15 +1,15 @@
 {
-  "report_count": 741,
+  "report_count": 923,
   "unique_checksums": 173,
   "quality_score_avg": 0.95,
   "quality_score_min": 0.95,
   "quality_score_max": 0.95,
-  "rows_avg": 10891.375168690958,
+  "rows_avg": 11169.07908992416,
   "rows_min": 2137,
   "rows_max": 195243,
   "invalid_ohlc_total": 0,
   "large_gaps_total": 0,
-  "spikes_total": 160983,
+  "spikes_total": 205763,
   "latest_report": {
     "symbol": "EURUSD",
     "timeframe": "H1",
@@ -24,6 +24,6 @@
       "Spikes: 443"
     ],
     "report_path": null,
-    "validation_time": "2026-01-29T22:29:38.793701"
+    "validation_time": "2026-02-01T01:40:47.026896"
   }
 }

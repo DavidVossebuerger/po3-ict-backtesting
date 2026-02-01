@@ -1,0 +1,16 @@
+{
+  "symbol": "EURUSD",
+  "timeframe": "H1",
+  "row_count": 8785,
+  "invalid_ohlc": 0,
+  "large_gaps": 0,
+  "spikes": 178,
+  "completeness_pct": 100.0,
+  "quality_score": 0.95,
+  "checksum": "32e200b5e9006b98c42cd1ece798d258",
+  "validation_log": [
+    "Spikes: 178"
+  ],
+  "report_path": null,
+  "validation_time": "2026-02-01T01:20:23.309369"
+}

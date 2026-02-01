@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2023-03-01T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.05682,
+    "stop": 1.06451,
+    "target": 1.0414400000000001,
+    "mon_tue_low": 1.05328,
+    "mon_tue_high": 1.06451,
+    "week_key": [
+      2023,
+      9
+    ]
+  },
+  {
+    "time": "2023-04-06T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.08939,
+    "stop": 1.07882,
+    "target": 1.1105300000000005,
+    "mon_tue_low": 1.07882,
+    "mon_tue_high": 1.09733,
+    "week_key": [
+      2023,
+      14
+    ]
+  }
+]

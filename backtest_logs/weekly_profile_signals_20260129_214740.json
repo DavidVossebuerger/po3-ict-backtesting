@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2005-09-07T07:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.25165,
+    "stop": 1.24422,
+    "target": 1.2665099999999996,
+    "mon_tue_low": 1.24422,
+    "mon_tue_high": 1.2583,
+    "week_key": [
+      2005,
+      36
+    ]
+  }
+]

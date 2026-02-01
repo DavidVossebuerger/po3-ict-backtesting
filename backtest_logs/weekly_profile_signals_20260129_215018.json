@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2006-08-31T15:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.27905,
+    "stop": 1.28371,
+    "target": 1.2697300000000002,
+    "mon_tue_low": 1.27489,
+    "mon_tue_high": 1.28371,
+    "week_key": [
+      2006,
+      35
+    ]
+  },
+  {
+    "time": "2007-07-18T15:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.38062,
+    "stop": 1.3758,
+    "target": 1.39026,
+    "mon_tue_low": 1.3758,
+    "mon_tue_high": 1.38019,
+    "week_key": [
+      2007,
+      29
+    ]
+  }
+]

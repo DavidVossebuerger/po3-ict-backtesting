@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2025-07-10T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.17436,
+    "stop": 1.16825,
+    "target": 1.1865800000000002,
+    "mon_tue_low": 1.16825,
+    "mon_tue_high": 1.17901,
+    "week_key": [
+      2025,
+      28
+    ]
+  }
+]

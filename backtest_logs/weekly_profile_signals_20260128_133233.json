@@ -1,0 +1,92 @@
+[
+  {
+    "time": "2009-02-18T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.258,
+    "stop": 1.27995,
+    "target": 1.2141000000000002,
+    "mon_tue_low": 1.25575,
+    "mon_tue_high": 1.27995,
+    "week_key": [
+      2009,
+      8
+    ]
+  },
+  {
+    "time": "2009-03-11T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.2727,
+    "stop": 1.26105,
+    "target": 1.2959999999999998,
+    "mon_tue_low": 1.26105,
+    "mon_tue_high": 1.28215,
+    "week_key": [
+      2009,
+      11
+    ]
+  },
+  {
+    "time": "2009-03-18T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.30115,
+    "stop": 1.293,
+    "target": 1.3174500000000002,
+    "mon_tue_low": 1.293,
+    "mon_tue_high": 1.3041,
+    "week_key": [
+      2009,
+      12
+    ]
+  },
+  {
+    "time": "2009-04-15T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.3243,
+    "stop": 1.3377,
+    "target": 1.2975000000000003,
+    "mon_tue_low": 1.3226,
+    "mon_tue_high": 1.3377,
+    "week_key": [
+      2009,
+      16
+    ]
+  },
+  {
+    "time": "2009-04-22T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.2921,
+    "stop": 1.29935,
+    "target": 1.2776,
+    "mon_tue_low": 1.28965,
+    "mon_tue_high": 1.29935,
+    "week_key": [
+      2009,
+      17
+    ]
+  },
+  {
+    "time": "2009-04-29T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.31535,
+    "stop": 1.29635,
+    "target": 1.3533500000000003,
+    "mon_tue_low": 1.29635,
+    "mon_tue_high": 1.3166,
+    "week_key": [
+      2009,
+      18
+    ]
+  }
+]

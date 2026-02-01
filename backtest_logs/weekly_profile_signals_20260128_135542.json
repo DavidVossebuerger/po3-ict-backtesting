@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2020-08-13T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.18065,
+    "stop": 1.17219,
+    "target": 1.1975699999999998,
+    "mon_tue_low": 1.17219,
+    "mon_tue_high": 1.1808,
+    "week_key": [
+      2020,
+      33
+    ]
+  },
+  {
+    "time": "2020-08-19T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.19475,
+    "stop": 1.18742,
+    "target": 1.20941,
+    "mon_tue_low": 1.18742,
+    "mon_tue_high": 1.19656,
+    "week_key": [
+      2020,
+      34
+    ]
+  },
+  {
+    "time": "2020-09-02T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.19073,
+    "stop": 1.19013,
+    "target": 1.1919300000000004,
+    "mon_tue_low": 1.19013,
+    "mon_tue_high": 1.20113,
+    "week_key": [
+      2020,
+      36
+    ]
+  },
+  {
+    "time": "2020-09-09T00:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.17756,
+    "stop": 1.18273,
+    "target": 1.1672199999999997,
+    "mon_tue_low": 1.1757,
+    "mon_tue_high": 1.18273,
+    "week_key": [
+      2020,
+      37
+    ]
+  },
+  {
+    "time": "2020-09-16T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.18342,
+    "stop": 1.18395,
+    "target": 1.1844800000000002,
+    "mon_tue_low": 1.18395,
+    "mon_tue_high": 1.19005,
+    "week_key": [
+      2020,
+      38
+    ]
+  },
+  {
+    "time": "2020-09-30T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.17379,
+    "stop": 1.17457,
+    "target": 1.1722299999999999,
+    "mon_tue_low": 1.16652,
+    "mon_tue_high": 1.17457,
+    "week_key": [
+      2020,
+      40
+    ]
+  },
+  {
+    "time": "2020-11-04T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.17458,
+    "stop": 1.17639,
+    "target": 1.1709599999999998,
+    "mon_tue_low": 1.16372,
+    "mon_tue_high": 1.17639,
+    "week_key": [
+      2020,
+      45
+    ]
+  }
+]

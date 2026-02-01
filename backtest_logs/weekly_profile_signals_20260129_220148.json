@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2014-04-02T16:00:00+00:00",
+    "profile_type": "classic_expansion_short",
+    "confidence": 0.85,
+    "direction": "short",
+    "entry": 1.37664,
+    "stop": 1.38155,
+    "target": 1.3668200000000001,
+    "mon_tue_low": 1.37216,
+    "mon_tue_high": 1.38155,
+    "week_key": [
+      2014,
+      14
+    ]
+  }
+]

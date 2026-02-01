@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2025-02-19T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.04456,
+    "stop": 1.0435,
+    "target": 1.0466799999999996,
+    "mon_tue_low": 1.0435,
+    "mon_tue_high": 1.05062,
+    "week_key": [
+      2025,
+      8
+    ]
+  },
+  {
+    "time": "2025-04-09T00:00:00+00:00",
+    "profile_type": "midweek_reversal_long",
+    "confidence": 0.75,
+    "direction": "long",
+    "entry": 1.10147,
+    "stop": 1.08886,
+    "target": 1.12669,
+    "mon_tue_low": 1.08886,
+    "mon_tue_high": 1.10498,
+    "week_key": [
+      2025,
+      15
+    ]
+  }
+]

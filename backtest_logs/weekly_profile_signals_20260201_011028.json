@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2013-02-21T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.32842,
+    "stop": 1.3321,
+    "target": 1.3357800000000002,
+    "mon_tue_low": 1.3321,
+    "mon_tue_high": 1.33958,
+    "week_key": [
+      2013,
+      8
+    ]
+  }
+]

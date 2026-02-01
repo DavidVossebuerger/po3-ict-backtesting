@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2004-12-08T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.34176,
+    "stop": 1.33891,
+    "target": 1.34746,
+    "mon_tue_low": 1.33891,
+    "mon_tue_high": 1.34681,
+    "week_key": [
+      2004,
+      50
+    ]
+  },
+  {
+    "time": "2005-01-12T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.31029,
+    "stop": 1.3169,
+    "target": 1.29707,
+    "mon_tue_low": 1.30971,
+    "mon_tue_high": 1.3169,
+    "week_key": [
+      2005,
+      2
+    ]
+  }
+]

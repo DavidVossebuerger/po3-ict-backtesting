@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2018-03-15T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.23815,
+    "stop": 1.22903,
+    "target": 1.2563900000000001,
+    "mon_tue_low": 1.22903,
+    "mon_tue_high": 1.24074,
+    "week_key": [
+      2018,
+      11
+    ]
+  },
+  {
+    "time": "2018-04-19T00:00:00+00:00",
+    "profile_type": "consolidation_reversal_long",
+    "confidence": 0.7,
+    "direction": "long",
+    "entry": 1.23722,
+    "stop": 1.23242,
+    "target": 1.2468199999999998,
+    "mon_tue_low": 1.23242,
+    "mon_tue_high": 1.24136,
+    "week_key": [
+      2018,
+      16
+    ]
+  }
+]

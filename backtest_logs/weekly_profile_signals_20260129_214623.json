@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2004-08-12T09:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.22622,
+    "stop": 1.22191,
+    "target": 1.2348400000000002,
+    "mon_tue_low": 1.22191,
+    "mon_tue_high": 1.23179,
+    "week_key": [
+      2004,
+      33
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "time": "2016-07-06T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.10498,
+    "stop": 1.10581,
+    "target": 1.1066399999999998,
+    "mon_tue_low": 1.10581,
+    "mon_tue_high": 1.11863,
+    "week_key": [
+      2016,
+      27
+    ]
+  }
+]

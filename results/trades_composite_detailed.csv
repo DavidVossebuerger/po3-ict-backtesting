@@ -1,0 +1,1 @@
+trade_id,symbol,side,entry_time,exit_time,entry_price,exit_price,stop,target,size,pnl,r_multiple,confluence,duration_seconds,cumulative_pnl,equity_at_exit,drawdown,running_win_rate,running_profit_factor,running_sharpe

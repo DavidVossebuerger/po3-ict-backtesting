@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2012-11-21T00:00:00+00:00",
+    "profile_type": "classic_expansion_long",
+    "confidence": 0.85,
+    "direction": "long",
+    "entry": 1.28128,
+    "stop": 1.27643,
+    "target": 1.29098,
+    "mon_tue_low": 1.27643,
+    "mon_tue_high": 1.28283,
+    "week_key": [
+      2012,
+      47
+    ]
+  },
+  {
+    "time": "2013-01-09T00:00:00+00:00",
+    "profile_type": "midweek_reversal_short",
+    "confidence": 0.75,
+    "direction": "short",
+    "entry": 1.30718,
+    "stop": 1.31393,
+    "target": 1.29368,
+    "mon_tue_low": 1.30566,
+    "mon_tue_high": 1.31393,
+    "week_key": [
+      2013,
+      2
+    ]
+  }
+]
