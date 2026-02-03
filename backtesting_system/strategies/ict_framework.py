@@ -166,7 +166,7 @@ class OpeningRangeFramework:
         distance_to_low = opening_price - day_low_so_far
         distance_to_high = day_high_so_far - opening_price
         if distance_to_low > distance_to_high:
-            expected_high = day_high_so_far + distance_to_low
+            expected_high = opening_price + distance_to_low
             return {
                 "opening_price": opening_price,
                 "current_low": day_low_so_far,
@@ -174,11 +174,11 @@ class OpeningRangeFramework:
                 "initial_direction": "down",
                 "expected_reversal": "up",
                 "expected_target": expected_high,
-                "range_size": expected_high - day_low_so_far,
+                "range_size": distance_to_low * 2,
                 "entry_zone": (day_low_so_far, opening_price),
                 "stop_zone": (opening_price, expected_high),
             }
-        expected_low = day_low_so_far - distance_to_high
+        expected_low = opening_price - distance_to_high
         return {
             "opening_price": opening_price,
             "current_low": day_low_so_far,
@@ -186,7 +186,7 @@ class OpeningRangeFramework:
             "initial_direction": "up",
             "expected_reversal": "down",
             "expected_target": expected_low,
-            "range_size": day_high_so_far - expected_low,
+            "range_size": distance_to_high * 2,
             "entry_zone": (opening_price, day_high_so_far),
             "stop_zone": (expected_low, opening_price),
         }
@@ -280,9 +280,21 @@ class ICTFramework(Strategy):
                 nearest_brk = max(breakers, key=lambda x: x.get("level", entry))
                 return float(nearest_brk["level"]) - buffer
 
+            if len(daily_candles) >= 3:
+                recent_lows = [c.low for c in daily_candles[-5:]]
+                swing_low = min(recent_lows)
+                if swing_low < daily_candles[-1].low:
+                    return swing_low - (buffer * 2.5)
+
+            if len(daily_candles) >= 5:
+                week_low = min(c.low for c in daily_candles[-5:])
+                return week_low - (buffer * 3.0)
+
             if len(daily_candles) >= 2:
-                return daily_candles[-2].low - (buffer * 2.5)
-            return entry * 0.995
+                avg_range = sum(c.high - c.low for c in daily_candles[-5:]) / 5
+                return entry - (avg_range * 1.5)
+
+            return entry - (entry * 0.01)
 
         obs = [
             ob for ob in h1_arrays.get("order_blocks", [])
@@ -308,9 +320,21 @@ class ICTFramework(Strategy):
             nearest_brk = min(breakers, key=lambda x: x.get("level", entry))
             return float(nearest_brk["level"]) + buffer
 
+        if len(daily_candles) >= 3:
+            recent_highs = [c.high for c in daily_candles[-5:]]
+            swing_high = max(recent_highs)
+            if swing_high > daily_candles[-1].high:
+                return swing_high + (buffer * 2.5)
+
+        if len(daily_candles) >= 5:
+            week_high = max(c.high for c in daily_candles[-5:])
+            return week_high + (buffer * 3.0)
+
         if len(daily_candles) >= 2:
-            return daily_candles[-2].high + (buffer * 2.5)
-        return entry * 1.005
+            avg_range = sum(c.high - c.low for c in daily_candles[-5:]) / 5
+            return entry + (avg_range * 1.5)
+
+        return entry + (entry * 0.01)
 
     def analyze_asia_session(self, hourly_data) -> dict:
         if not hourly_data:

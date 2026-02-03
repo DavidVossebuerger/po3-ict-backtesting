@@ -27,6 +27,7 @@ DEFAULT_PARAMS = {
     "news_confluence_boost": 0.05,
     "calendar_csv_path": "data/news_calendar/forex_calendar_2007_2025.csv",
     "tgif_tolerance_pips": 10.0,
+    "tgif_conservative_target": False,
     "random_seed": 42,
     "random_trade_probability": 0.02,
     "random_stop_pct": 0.002,

@@ -265,11 +265,13 @@ class WeeklyProfileStrategy(Strategy):
             )
             if not entry_ok:
                 return {}
+            use_conservative_target = bool(self.params.get("tgif_conservative_target", False))
+            fib_50 = week_high - (week_range * 0.50)
             return {
                 "direction": "short",
                 "entry": bar.close,
                 "stop": week_high + pip_buffer,
-                "target": (level_20_high + level_30_high) / 2,
+                "target": fib_50 if use_conservative_target else week_low,
                 "confluence": 0.8,
                 "profile_type": "tgif_return",
             }
@@ -281,11 +283,13 @@ class WeeklyProfileStrategy(Strategy):
             )
             if not entry_ok:
                 return {}
+            use_conservative_target = bool(self.params.get("tgif_conservative_target", False))
+            fib_50 = week_high - (week_range * 0.50)
             return {
                 "direction": "long",
                 "entry": bar.close,
                 "stop": week_low - pip_buffer,
-                "target": (level_20_low + level_30_low) / 2,
+                "target": fib_50 if use_conservative_target else week_high,
                 "confluence": 0.8,
                 "profile_type": "tgif_return",
             }
