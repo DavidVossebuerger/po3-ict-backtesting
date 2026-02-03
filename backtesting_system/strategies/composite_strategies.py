@@ -4,7 +4,6 @@ from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.strategies.weekly_profiles import WeeklyProfileStrategy
 from backtesting_system.strategies.confluence import ConfluenceScorer
 from backtesting_system.strategies.ict_framework import ICTFramework
-from backtesting_system.strategies.price_action import PriceActionStrategy
 
 
 class CompositeStrategy(Strategy):
@@ -12,16 +11,16 @@ class CompositeStrategy(Strategy):
         super().__init__(params)
         self.weekly_profile_strategy = WeeklyProfileStrategy(params)
         self.ict_strategy = ICTFramework(params)
-        self.pa_strategy = PriceActionStrategy(params)
-        self.min_confluence_level = 4.0
+        self.min_confluence_level = float(params.get("min_confluence", 0.50))
         self.scorer = ConfluenceScorer()
 
     def calculate_confluence_score(self, data, context) -> float:
-        profile_type = context.get("profile_type", 0)
+        profile_type = context.get("profile_type", "")
         profile_confidence = context.get("profile_confidence", 0.0)
-        pda_alignment = context.get("pda_alignment", False)
+        pda_type = context.get("pda_type", "")
+        pda_at_entry = context.get("pda_at_entry", False)
         session_quality = context.get("session_quality", "neutral")
-        rhrl_active = context.get("rhrl_active", False)
+        opening_range_aligned = context.get("opening_range_aligned", False)
         stop_hunt_confirmed = context.get("stop_hunt_confirmed", False)
         news_impact = context.get("news_impact", "none")
         adr_remaining_pct = context.get("adr_remaining_pct", 0.0)
@@ -29,9 +28,10 @@ class CompositeStrategy(Strategy):
         return self.scorer.calculate_score(
             profile_type=profile_type,
             profile_confidence=profile_confidence,
-            pda_alignment=pda_alignment,
+            pda_type=pda_type,
+            pda_at_entry=pda_at_entry,
             session_quality=session_quality,
-            rhrl_active=rhrl_active,
+            opening_range_aligned=opening_range_aligned,
             stop_hunt_confirmed=stop_hunt_confirmed,
             news_impact=news_impact,
             adr_remaining_pct=adr_remaining_pct,
@@ -40,7 +40,6 @@ class CompositeStrategy(Strategy):
     def generate_signals(self, data) -> dict:
         weekly_signal = self.weekly_profile_strategy.generate_signals(data)
         ict_signal = self.ict_strategy.generate_signals(data)
-        pa_signal = self.pa_strategy.generate_signals(data)
 
         profile_type_map = {
             "classic_expansion_long": 1,
@@ -56,38 +55,88 @@ class CompositeStrategy(Strategy):
             profile_type = profile_type_map.get(weekly_signal.get("profile_type", ""), 1)
             profile_confidence = float(weekly_signal.get("confluence", 0.0))
 
-        session_quality = "NY_reversal" if self.ict_strategy.identify_ny_reversal(data) else "neutral"
-        rhrl_active = bool(self.ict_strategy.rhrl_protocol(self._daily_from_history(data.get("history", []))))
-        adr_remaining_pct = self._adr_remaining_pct(data.get("history", []))
-
-        context = {
-            "weekly_profile": bool(weekly_signal),
-            "ict_signal": bool(ict_signal),
-            "pa_signal": bool(pa_signal),
-            "profile_type": profile_type,
-            "profile_confidence": profile_confidence,
-            "session_quality": session_quality,
-            "rhrl_active": rhrl_active,
-            "adr_remaining_pct": adr_remaining_pct,
-        }
-        score = self.calculate_confluence_score(data, context)
-        if score < self.min_confluence_level:
-            return {}
-
         if weekly_signal:
             weekly_signal.setdefault("profile_type", "classic_expansion_long")
-            weekly_signal["confluence"] = score
-            return weekly_signal
+            if weekly_signal.get("confluence", 0.0) >= self.min_confluence_level:
+                return weekly_signal
+            return {}
         if ict_signal:
-            ict_signal["confluence"] = score
-            return ict_signal
-        if pa_signal:
-            pa_signal["confluence"] = score
-            return pa_signal
+            context = self._build_context(data, ict_signal)
+            score = self.calculate_confluence_score(data, context)
+            if score >= self.min_confluence_level:
+                ict_signal["confluence"] = score
+                return ict_signal
         return {}
 
     def identify_setup(self, data) -> bool:
         return True
+
+    def _build_context(self, data, signal) -> dict:
+        history = data.get("history", [])
+        daily_candles = self._daily_from_history(history)
+        bar = data.get("bar")
+
+        h1_arrays = {
+            "fvgs": self.ict_strategy.pda_detector.identify_fair_value_gaps(history[-50:]),
+            "order_blocks": self.ict_strategy.pda_detector.identify_order_blocks(history[-50:]),
+            "breakers": self.ict_strategy.identify_breaker_blocks(history[-50:]),
+        }
+        entry_price = signal.get("entry") or (bar.close if bar else None)
+        pda_at_entry = False
+        pda_type = ""
+        if entry_price is not None:
+            pda_at_entry, pda_type = self.ict_strategy.pda_detector.validate_entry_at_pda(
+                float(entry_price),
+                h1_arrays,
+            )
+
+        opening_range_aligned = False
+        if bar is not None:
+            day_candles = [c for c in history if c.time.date() == bar.time.date()]
+            if day_candles:
+                day_low = min(c.low for c in day_candles)
+                day_high = max(c.high for c in day_candles)
+                opening_range = self.ict_strategy.opening_range.calculate_opening_range(
+                    day_candles[0],
+                    day_low,
+                    day_high,
+                )
+                opening_range_aligned = self.ict_strategy.opening_range.is_entry_in_zone(
+                    float(entry_price) if entry_price is not None else bar.close,
+                    opening_range,
+                )
+
+        stop_hunt_confirmed = False
+        if bar is not None and daily_candles:
+            direction = signal.get("direction")
+            if direction == "long":
+                swing_level = daily_candles[-2].low if len(daily_candles) >= 2 else daily_candles[-1].low
+            else:
+                swing_level = daily_candles[-2].high if len(daily_candles) >= 2 else daily_candles[-1].high
+            stop_hunt = self.ict_strategy.stop_hunt_detector.detect_stop_hunt(history[-20:], swing_level)
+            stop_hunt_confirmed = bool(stop_hunt.get("detected"))
+
+        return {
+            "profile_type": signal.get("profile_type", ""),
+            "profile_confidence": float(signal.get("confidence", 0.0)),
+            "pda_type": pda_type,
+            "pda_at_entry": pda_at_entry,
+            "session_quality": "NY_reversal" if self.ict_strategy.identify_ny_reversal(data) else "neutral",
+            "opening_range_aligned": opening_range_aligned,
+            "stop_hunt_confirmed": stop_hunt_confirmed,
+            "news_impact": self._identify_news_impact(bar, data.get("symbol", "")),
+            "adr_remaining_pct": self._adr_remaining_pct(history),
+        }
+
+    def _identify_news_impact(self, bar, symbol: str) -> str:
+        if bar is None:
+            return "none"
+        if not self.weekly_profile_strategy.news_calendar:
+            return "none"
+        currencies = self.weekly_profile_strategy._extract_currencies(symbol)
+        if self.weekly_profile_strategy.news_calendar.get_high_impact_events(bar.time, currencies=currencies):
+            return "high_impact"
+        return "none"
 
     def _daily_from_history(self, history):
         if not history:

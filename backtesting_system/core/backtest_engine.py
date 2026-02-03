@@ -156,6 +156,7 @@ class BacktestEngine:
             if exit_price is None:
                 remaining.append(position)
                 continue
+            exit_price = self._apply_exit_costs(exit_price, position)
             pnl = self._calculate_pnl(position, exit_price, position.remaining_size or position.size)
             self.cash += pnl
             self._daily_pnl += pnl
@@ -217,6 +218,17 @@ class BacktestEngine:
             return (exit_price - position.entry) * size
         return (position.entry - exit_price) * size
 
+    def _apply_exit_costs(self, exit_price: float, position: Position) -> float:
+        slippage_bps = float(getattr(self.broker, "slippage_bps", 0.0) or 0.0)
+        spread_bps = float(getattr(self.broker, "spread_bps", 0.0) or 0.0)
+        total_bps = slippage_bps + spread_bps
+        if total_bps <= 0:
+            return exit_price
+        adjustment = exit_price * (total_bps / 10000.0)
+        if position.side == OrderSide.BUY:
+            return exit_price - adjustment
+        return exit_price + adjustment
+
     def _mark_to_market(self, bar) -> float:
         unrealized = 0.0
         for position in self.positions:
@@ -276,7 +288,8 @@ class BacktestEngine:
         if partial_size <= 0:
             return
 
-        pnl = self._calculate_pnl(position, one_r_target, partial_size)
+        exit_price = self._apply_exit_costs(one_r_target, position)
+        pnl = self._calculate_pnl(position, exit_price, partial_size)
         self.cash += pnl
         self._daily_pnl += pnl
         self._weekly_pnl += pnl
@@ -288,7 +301,7 @@ class BacktestEngine:
                 entry_time=position.open_time,
                 exit_time=bar.time,
                 entry_price=position.entry,
-                exit_price=one_r_target,
+                exit_price=exit_price,
                 size=partial_size,
                 pnl=pnl,
                 side=position.side.value,

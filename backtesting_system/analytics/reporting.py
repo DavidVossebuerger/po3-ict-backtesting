@@ -15,6 +15,7 @@ from backtesting_system.analytics.performance_metrics import (
     sortino_ratio_annualized,
     ulcer_index,
 )
+from backtesting_system.analytics.statistics import binomial_test
 from backtesting_system.analytics.portfolio_analysis import (
     calculate_drawdown,
     daily_returns,
@@ -51,6 +52,7 @@ def build_report(engine: BacktestEngine) -> Dict[str, Any]:
             "final_equity": engine.initial_capital,
             "trades": 0,
             "win_rate": 0.0,
+            "win_rate_p_value": 1.0,
             "gross_profit": 0.0,
             "gross_loss": 0.0,
             "profit_factor": 0.0,
@@ -80,6 +82,12 @@ def build_report(engine: BacktestEngine) -> Dict[str, Any]:
     wins = sum(1 for trade in engine.trades if trade.pnl > 0)
     total = len(engine.trades)
     win_rate = wins / total if total else 0.0
+    win_rate_p_value = None
+    if total:
+        try:
+            win_rate_p_value = binomial_test(wins, total, 0.5)
+        except ImportError:
+            win_rate_p_value = None
     month_returns = monthly_returns(equity_points)
     week_returns = weekly_returns(equity_points)
     day_returns = daily_returns(equity_points)
@@ -113,6 +121,7 @@ def build_report(engine: BacktestEngine) -> Dict[str, Any]:
         "final_equity": equity_curve[-1] if equity_curve else engine.initial_capital,
         "trades": total,
         "win_rate": win_rate,
+        "win_rate_p_value": win_rate_p_value,
         "gross_profit": gross_profit,
         "gross_loss": gross_loss,
         "profit_factor": profit_factor(gross_profit, gross_loss),
@@ -270,6 +279,7 @@ def write_summary_csv(reports: Dict[str, Dict[str, Any]], output_path: Path) -> 
         "final_equity",
         "trades",
         "win_rate",
+        "win_rate_p_value",
         "profit_factor",
         "max_drawdown",
         "sharpe",
@@ -300,6 +310,7 @@ def write_summary_csv(reports: Dict[str, Dict[str, Any]], output_path: Path) -> 
                 report.get("final_equity"),
                 report.get("trades"),
                 report.get("win_rate"),
+                report.get("win_rate_p_value"),
                 report.get("profit_factor"),
                 report.get("max_drawdown"),
                 report.get("sharpe"),

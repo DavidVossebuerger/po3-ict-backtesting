@@ -12,6 +12,7 @@ from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.models.market import Candle
 from backtesting_system.strategies.ict_framework import (
     CISDValidator,
+    ICTFramework,
     OpeningRangeFramework,
     PDAArrayDetector,
     StopHuntDetector,
@@ -42,6 +43,7 @@ class WeeklyProfileStrategy(Strategy):
         self.cisd_validator = CISDValidator()
         self.stop_hunt_detector = StopHuntDetector()
         self.opening_range = OpeningRangeFramework()
+        self._stop_helper = ICTFramework(params)
         self.min_confluence = params.get("min_confluence", 0.25)
         self.allow_monday = params.get("allow_monday", False)
         self.require_high_impact_news = params.get("require_high_impact_news", True)
@@ -51,9 +53,11 @@ class WeeklyProfileStrategy(Strategy):
         self.cisd_weight = params.get("cisd_weight", 0.15)
         self.cisd_mismatch_penalty = params.get("cisd_mismatch_penalty", 0.10)
         self.stop_hunt_weight = params.get("stop_hunt_weight", 0.10)
+        self.stop_hunt_strong_bonus = params.get("stop_hunt_strong_bonus", 0.05)
         self.opening_range_weight = params.get("opening_range_weight", 0.10)
         self.opening_range_penalty = params.get("opening_range_penalty", 0.05)
         self.news_confluence_boost = params.get("news_confluence_boost", 0.05)
+        self.tgif_tolerance_pips = float(params.get("tgif_tolerance_pips", 10.0))
         self._signal_log: List[Dict[str, object]] = []
         self._signal_log_path: Path | None = None
 
@@ -101,7 +105,12 @@ class WeeklyProfileStrategy(Strategy):
 
         day = bar.time.weekday()
         daily_candles = self._aggregate_daily(history)
-        tgif_signal = self._maybe_tgif_signal(bar, daily_candles)
+        h1_arrays = {
+            "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
+            "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
+            "breakers": self._stop_helper.identify_breaker_blocks(history[-50:]),
+        }
+        tgif_signal = self._maybe_tgif_signal(bar, daily_candles, h1_arrays)
         if tgif_signal:
             self._last_signal_week = ctx.week_key
             self._record_signal(bar.time, tgif_signal, ctx)
@@ -151,12 +160,11 @@ class WeeklyProfileStrategy(Strategy):
         else:
             opening_range = {}
 
-        h1_arrays = {
-            "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
-            "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
-        }
-
-        confluence_score = ctx.confidence if ctx.confidence else 0.5
+        confluence_score = 0.0
+        if ctx.profile_type and ctx.confidence is not None:
+            confluence_score += max(min(ctx.confidence, 1.0), 0.0) * 0.30
+        else:
+            confluence_score += 0.20
         if cisd.get("detected"):
             if signal_direction == cisd_direction:
                 confluence_score += self.cisd_weight
@@ -164,6 +172,8 @@ class WeeklyProfileStrategy(Strategy):
                 confluence_score -= self.cisd_mismatch_penalty
         if stop_hunt.get("detected"):
             confluence_score += self.stop_hunt_weight
+            if stop_hunt.get("strength") == "strong":
+                confluence_score += self.stop_hunt_strong_bonus
         if opening_range and self.opening_range.is_entry_in_zone(bar.close, opening_range):
             confluence_score += self.opening_range_weight
         elif opening_range:
@@ -181,12 +191,36 @@ class WeeklyProfileStrategy(Strategy):
 
         direction = signal_direction
         entry = bar.close
+        current_week = self._current_week_key(bar.time)
+        week_candles = [c for c in daily_candles if self._current_week_key(c.time) == current_week]
+        weekly_high = max(c.high for c in week_candles) if week_candles else entry * 1.01
+        weekly_low = min(c.low for c in week_candles) if week_candles else entry * 0.99
         if direction == "long":
-            stop = ctx.mon_tue_low if ctx.mon_tue_low is not None else bar.close * 0.99
-            target = self.project_target(entry, stop, direction)
+            stop = self._stop_helper.calculate_stop_loss(direction, entry, h1_arrays, daily_candles)
+            target = self.calculate_take_profit(
+                direction=direction,
+                entry=entry,
+                profile_type=ctx.profile_type or "",
+                mon_tue_low=ctx.mon_tue_low,
+                mon_tue_high=ctx.mon_tue_high,
+                weekly_high=weekly_high,
+                weekly_low=weekly_low,
+                opening_range=opening_range,
+                stop=stop,
+            )
         else:
-            stop = ctx.mon_tue_high if ctx.mon_tue_high is not None else bar.close * 1.01
-            target = self.project_target(entry, stop, direction)
+            stop = self._stop_helper.calculate_stop_loss(direction, entry, h1_arrays, daily_candles)
+            target = self.calculate_take_profit(
+                direction=direction,
+                entry=entry,
+                profile_type=ctx.profile_type or "",
+                mon_tue_low=ctx.mon_tue_low,
+                mon_tue_high=ctx.mon_tue_high,
+                weekly_high=weekly_high,
+                weekly_low=weekly_low,
+                opening_range=opening_range,
+                stop=stop,
+            )
 
         if not self.validate_pda_array(entry, h1_arrays):
             return {}
@@ -204,7 +238,7 @@ class WeeklyProfileStrategy(Strategy):
         return signal
 
         
-    def _maybe_tgif_signal(self, bar: Candle, daily_candles: List[Candle]) -> dict:
+    def _maybe_tgif_signal(self, bar: Candle, daily_candles: List[Candle], h1_arrays: dict) -> dict:
         if bar.time.weekday() != 4:
             return {}
         current_week = self._current_week_key(bar.time)
@@ -224,6 +258,13 @@ class WeeklyProfileStrategy(Strategy):
         pip_buffer = 0.0001 * 10
 
         if level_30_high <= bar.close <= level_20_high:
+            entry_ok, _source = self.pda_detector.validate_entry_at_pda(
+                bar.close,
+                h1_arrays,
+                tolerance_pips=self.tgif_tolerance_pips,
+            )
+            if not entry_ok:
+                return {}
             return {
                 "direction": "short",
                 "entry": bar.close,
@@ -233,6 +274,13 @@ class WeeklyProfileStrategy(Strategy):
                 "profile_type": "tgif_return",
             }
         if level_20_low <= bar.close <= level_30_low:
+            entry_ok, _source = self.pda_detector.validate_entry_at_pda(
+                bar.close,
+                h1_arrays,
+                tolerance_pips=self.tgif_tolerance_pips,
+            )
+            if not entry_ok:
+                return {}
             return {
                 "direction": "long",
                 "entry": bar.close,
@@ -262,6 +310,55 @@ class WeeklyProfileStrategy(Strategy):
             return True
         entry_ok, _source = self.pda_detector.validate_entry_at_pda(price, h1_pda)
         return entry_ok
+
+    def calculate_take_profit(
+        self,
+        direction: str,
+        entry: float,
+        profile_type: str,
+        mon_tue_low: float | None,
+        mon_tue_high: float | None,
+        weekly_high: float,
+        weekly_low: float,
+        opening_range: dict,
+        stop: float,
+    ) -> float:
+        profile = profile_type.lower()
+        if "tgif" in profile:
+            weekly_range = weekly_high - weekly_low
+            if weekly_range <= 0:
+                risk = abs(entry - stop)
+                return entry + (risk * 1.5) if direction == "long" else entry - (risk * 1.5)
+            if direction == "long":
+                fib_20 = weekly_low + (weekly_range * 0.20)
+                fib_30 = weekly_low + (weekly_range * 0.30)
+                return (fib_20 + fib_30) / 2
+            fib_70 = weekly_low + (weekly_range * 0.70)
+            fib_80 = weekly_low + (weekly_range * 0.80)
+            return (fib_70 + fib_80) / 2
+
+        if "classic_expansion" in profile:
+            or_target = opening_range.get("expected_target")
+            if or_target is not None:
+                return float(or_target)
+            if direction == "long":
+                return mon_tue_high if mon_tue_high is not None else weekly_high
+            return mon_tue_low if mon_tue_low is not None else weekly_low
+
+        if "midweek_reversal" in profile:
+            if direction == "long":
+                return mon_tue_high if mon_tue_high is not None else weekly_high
+            return mon_tue_low if mon_tue_low is not None else weekly_low
+
+        if "consolidation_reversal" in profile:
+            consolidation_high = mon_tue_high if mon_tue_high is not None else weekly_high
+            consolidation_low = mon_tue_low if mon_tue_low is not None else weekly_low
+            return (consolidation_high + consolidation_low) / 2
+
+        risk = abs(entry - stop)
+        if direction == "long":
+            return entry + (risk * 1.5)
+        return entry - (risk * 1.5)
 
     def validate_context(self, data) -> bool:
         return True

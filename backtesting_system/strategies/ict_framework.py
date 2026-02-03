@@ -166,7 +166,7 @@ class OpeningRangeFramework:
         distance_to_low = opening_price - day_low_so_far
         distance_to_high = day_high_so_far - opening_price
         if distance_to_low > distance_to_high:
-            expected_high = opening_price + distance_to_low
+            expected_high = day_high_so_far + distance_to_low
             return {
                 "opening_price": opening_price,
                 "current_low": day_low_so_far,
@@ -174,11 +174,11 @@ class OpeningRangeFramework:
                 "initial_direction": "down",
                 "expected_reversal": "up",
                 "expected_target": expected_high,
-                "range_size": distance_to_low * 2,
+                "range_size": expected_high - day_low_so_far,
                 "entry_zone": (day_low_so_far, opening_price),
                 "stop_zone": (opening_price, expected_high),
             }
-        expected_low = opening_price - distance_to_high
+        expected_low = day_low_so_far - distance_to_high
         return {
             "opening_price": opening_price,
             "current_low": day_low_so_far,
@@ -186,7 +186,7 @@ class OpeningRangeFramework:
             "initial_direction": "up",
             "expected_reversal": "down",
             "expected_target": expected_low,
-            "range_size": distance_to_high * 2,
+            "range_size": day_high_so_far - expected_low,
             "entry_zone": (opening_price, day_high_so_far),
             "stop_zone": (expected_low, opening_price),
         }
@@ -245,6 +245,72 @@ class ICTFramework(Strategy):
             if curr.low < prev.low and curr.close > curr.open:
                 breakers.append({"type": "bullish", "level": curr.low, "index": i})
         return breakers
+
+    def calculate_stop_loss(
+        self,
+        direction: str,
+        entry: float,
+        h1_arrays: dict,
+        daily_candles: List[Candle],
+        buffer_pips: float = 2.0,
+    ) -> float:
+        buffer = buffer_pips / 10000
+        if direction == "long":
+            obs = [
+                ob for ob in h1_arrays.get("order_blocks", [])
+                if ob.get("type") == "bullish" and ob.get("low", entry) < entry
+            ]
+            if obs:
+                nearest_ob = max(obs, key=lambda x: x.get("low", entry))
+                return float(nearest_ob["low"]) - buffer
+
+            fvgs = [
+                fvg for fvg in h1_arrays.get("fvgs", [])
+                if fvg.get("type") == "bullish" and fvg.get("low", entry) < entry
+            ]
+            if fvgs:
+                nearest_fvg = max(fvgs, key=lambda x: x.get("low", entry))
+                return float(nearest_fvg["low"]) - buffer
+
+            breakers = [
+                brk for brk in h1_arrays.get("breakers", [])
+                if brk.get("type") == "bullish" and brk.get("level", entry) < entry
+            ]
+            if breakers:
+                nearest_brk = max(breakers, key=lambda x: x.get("level", entry))
+                return float(nearest_brk["level"]) - buffer
+
+            if len(daily_candles) >= 2:
+                return daily_candles[-2].low - (buffer * 2.5)
+            return entry * 0.995
+
+        obs = [
+            ob for ob in h1_arrays.get("order_blocks", [])
+            if ob.get("type") == "bearish" and ob.get("high", entry) > entry
+        ]
+        if obs:
+            nearest_ob = min(obs, key=lambda x: x.get("high", entry))
+            return float(nearest_ob["high"]) + buffer
+
+        fvgs = [
+            fvg for fvg in h1_arrays.get("fvgs", [])
+            if fvg.get("type") == "bearish" and fvg.get("high", entry) > entry
+        ]
+        if fvgs:
+            nearest_fvg = min(fvgs, key=lambda x: x.get("high", entry))
+            return float(nearest_fvg["high"]) + buffer
+
+        breakers = [
+            brk for brk in h1_arrays.get("breakers", [])
+            if brk.get("type") == "bearish" and brk.get("level", entry) > entry
+        ]
+        if breakers:
+            nearest_brk = min(breakers, key=lambda x: x.get("level", entry))
+            return float(nearest_brk["level"]) + buffer
+
+        if len(daily_candles) >= 2:
+            return daily_candles[-2].high + (buffer * 2.5)
+        return entry * 1.005
 
     def analyze_asia_session(self, hourly_data) -> dict:
         if not hourly_data:
@@ -345,6 +411,7 @@ class ICTFramework(Strategy):
         h1_arrays = {
             "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
             "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
+            "breakers": self.identify_breaker_blocks(history[-50:]),
         }
 
         fvg_list = self.identify_fvg(history[-50:])
@@ -354,7 +421,7 @@ class ICTFramework(Strategy):
                 return {}
             direction = ny_rev["direction"]
             if direction == "long":
-                stop = min(c.low for c in history[-10:])
+                stop = self.calculate_stop_loss("long", bar.close, h1_arrays, daily)
                 target = self.project_target(bar.close, stop, "long")
                 entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
                 if not entry_ok:
@@ -366,7 +433,7 @@ class ICTFramework(Strategy):
                 if not stop_hunt.get("detected"):
                     return {}
                 return {"direction": "long", "entry": bar.close, "stop": stop, "target": target}
-            stop = max(c.high for c in history[-10:])
+            stop = self.calculate_stop_loss("short", bar.close, h1_arrays, daily)
             target = self.project_target(bar.close, stop, "short")
             entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
             if not entry_ok:
@@ -381,7 +448,7 @@ class ICTFramework(Strategy):
 
         last_fvg = fvg_list[-1]
         if last_fvg["type"] == "bullish" and bar.close > bar.open:
-            stop = min(c.low for c in history[-10:])
+            stop = self.calculate_stop_loss("long", bar.close, h1_arrays, daily)
             target = self.project_target(bar.close, stop, "long")
             entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
             if not entry_ok:
@@ -394,7 +461,7 @@ class ICTFramework(Strategy):
                 return {}
             return {"direction": "long", "entry": bar.close, "stop": stop, "target": target}
         if last_fvg["type"] == "bearish" and bar.close < bar.open:
-            stop = max(c.high for c in history[-10:])
+            stop = self.calculate_stop_loss("short", bar.close, h1_arrays, daily)
             target = self.project_target(bar.close, stop, "short")
             entry_ok, _source = self.pda_detector.validate_entry_at_pda(bar.close, h1_arrays)
             if not entry_ok:
