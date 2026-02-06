@@ -117,6 +117,7 @@ class WeeklyProfileStrategy(Strategy):
             "fvgs": self.pda_detector.identify_fair_value_gaps(history[-50:]),
             "order_blocks": self.pda_detector.identify_order_blocks(history[-50:]),
             "breakers": self._stop_helper.identify_breaker_blocks(history[-50:]),
+            "rejection_blocks": self.pda_detector.identify_rejection_blocks(history[-50:]),
         }
         tgif_signal = self._maybe_tgif_signal(bar, daily_candles, h1_arrays)
         if tgif_signal:
@@ -278,13 +279,15 @@ class WeeklyProfileStrategy(Strategy):
             )
             if not entry_ok:
                 return {}
-            use_conservative_target = bool(self.params.get("tgif_conservative_target", False))
-            fib_50 = week_high - (week_range * 0.50)
+            # Literaturgetreues Target: 20-30% Retracement (Weekly Profile Guide S.17)
+            fib_20 = week_high - (week_range * 0.20)
+            fib_30 = week_high - (week_range * 0.30)
+            target = (fib_20 + fib_30) / 2  # Midpoint der 20-30% Zone
             return {
                 "direction": "short",
                 "entry": bar.close,
                 "stop": week_high + pip_buffer,
-                "target": fib_50 if use_conservative_target else week_low,
+                "target": target,
                 "confluence": 0.8,
                 "profile_type": "tgif_return",
             }
@@ -296,13 +299,15 @@ class WeeklyProfileStrategy(Strategy):
             )
             if not entry_ok:
                 return {}
-            use_conservative_target = bool(self.params.get("tgif_conservative_target", False))
-            fib_50 = week_high - (week_range * 0.50)
+            # Literaturgetreues Target: 20-30% Retracement (Weekly Profile Guide S.17)
+            fib_20 = week_low + (week_range * 0.20)
+            fib_30 = week_low + (week_range * 0.30)
+            target = (fib_20 + fib_30) / 2  # Midpoint der 20-30% Zone
             return {
                 "direction": "long",
                 "entry": bar.close,
                 "stop": week_low - pip_buffer,
-                "target": fib_50 if use_conservative_target else week_high,
+                "target": target,
                 "confluence": 0.8,
                 "profile_type": "tgif_return",
             }
@@ -501,6 +506,98 @@ class WeeklyProfileDetector:
             5: "Consolidation Reversal",
         }
 
+    def _check_negative_condition_midweek(self, mon_tue_candles: List[Candle], direction: str) -> bool:
+        """
+        Prüft Negative Condition für Midweek Reversal.
+        Laut Literatur (Weekly Profile Guide S.48):
+        "Two consecutive up-close daily candles = no profile"
+        
+        Returns:
+            True wenn INVALID (Negative Condition erfüllt)
+            False wenn VALID
+        """
+        if len(mon_tue_candles) < 2:
+            return False
+        
+        mon, tue = mon_tue_candles[0], mon_tue_candles[1]
+        
+        if direction == "bullish":
+            # Zwei consecutive bullish closes = INVALID
+            if mon.close > mon.open and tue.close > tue.open:
+                return True  # Invalid!
+        
+        elif direction == "bearish":
+            # Zwei consecutive bearish closes = INVALID
+            if mon.close < mon.open and tue.close < tue.open:
+                return True  # Invalid!
+        
+        return False  # Valid
+
+    def _validate_htf_pda_engagement(
+        self, 
+        mon_tue_candles: List[Candle],
+        h1_arrays: dict,
+        direction: str
+    ) -> tuple[bool, str]:
+        """
+        Validiert, ob Mon-Tue ein HTF PDA (≥H1) engaged hat.
+        Laut Literatur (Weekly Profile Guide S.7) ist dies Prerequisite für Classic Expansion.
+        
+        Returns:
+            (is_valid, pda_type) - z.B. (True, "fvg") oder (False, "none")
+        """
+        mon_tue_low = min(c.low for c in mon_tue_candles)
+        mon_tue_high = max(c.high for c in mon_tue_candles)
+        
+        tolerance_pips = 5.0
+        tolerance = tolerance_pips / 10000
+        
+        if direction == "bullish":
+            # Prüfe Discount Arrays (FVG, OB, Breaker, RB)
+            for fvg in h1_arrays.get("fvgs", []):
+                if fvg["type"] == "bullish":
+                    if fvg["low"] - tolerance <= mon_tue_low <= fvg["high"] + tolerance:
+                        return True, "fvg"
+            
+            for ob in h1_arrays.get("order_blocks", []):
+                if ob["type"] == "bullish":
+                    if ob["low"] - tolerance <= mon_tue_low <= ob["high"] + tolerance:
+                        return True, "order_block"
+                        
+            for brk in h1_arrays.get("breakers", []):
+                if brk["type"] == "bullish":
+                    if abs(brk["level"] - mon_tue_low) <= tolerance:
+                        return True, "breaker"
+            
+            for rb in h1_arrays.get("rejection_blocks", []):
+                if rb["type"] == "bullish":
+                    if rb["low"] - tolerance <= mon_tue_low <= rb["high"] + tolerance:
+                        return True, "rejection_block"
+        
+        else:  # bearish
+            # Prüfe Premium Arrays
+            for fvg in h1_arrays.get("fvgs", []):
+                if fvg["type"] == "bearish":
+                    if fvg["low"] - tolerance <= mon_tue_high <= fvg["high"] + tolerance:
+                        return True, "fvg"
+            
+            for ob in h1_arrays.get("order_blocks", []):
+                if ob["type"] == "bearish":
+                    if ob["low"] - tolerance <= mon_tue_high <= ob["high"] + tolerance:
+                        return True, "order_block"
+                        
+            for brk in h1_arrays.get("breakers", []):
+                if brk["type"] == "bearish":
+                    if abs(brk["level"] - mon_tue_high) <= tolerance:
+                        return True, "breaker"
+            
+            for rb in h1_arrays.get("rejection_blocks", []):
+                if rb["type"] == "bearish":
+                    if rb["low"] - tolerance <= mon_tue_high <= rb["high"] + tolerance:
+                        return True, "rejection_block"
+        
+        return False, "none"
+
     def detect_profile(self, daily_candles: list[Candle], weekly_ohlc: dict, htf_array: dict) -> tuple[str | None, float, dict]:
         if len(daily_candles) < 3:
             return None, 0.0, {}
@@ -509,7 +606,7 @@ class WeeklyProfileDetector:
         wed = daily_candles[2]
         thu_fri = daily_candles[3:5] if len(daily_candles) >= 5 else []
 
-        mon_tue_engagement = self._analyze_engagement(mon_tue) if len(mon_tue) == 2 else {"type": "insufficient"}
+        mon_tue_engagement = self._analyze_engagement(mon_tue, htf_array) if len(mon_tue) == 2 else {"type": "insufficient"}
         wed_behavior = self._analyze_wednesday(wed)
         if len(thu_fri) == 2:
             thu_fri_expected = self._analyze_expectation(thu_fri, weekly_ohlc)
@@ -530,24 +627,40 @@ class WeeklyProfileDetector:
             and wed_behavior["direction"] == "higher"
             and thu_fri_expected["expected_move"] == "expansion_higher"
         ):
+            # HTF PDA Engagement Validierung (Literatur: Weekly Profile Guide S.7)
+            htf_valid, pda_type = self._validate_htf_pda_engagement(mon_tue, htf_array, "bullish")
+            if not htf_valid:
+                # Downgrade: Kein HTF PDA Engagement
+                return None, 0.0, {"reason": "no_htf_pda_engagement", "details": self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)}
             return "classic_expansion_long", 0.85, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
             mon_tue_engagement["type"] == "premium_engagement"
             and wed_behavior["direction"] == "lower"
             and thu_fri_expected["expected_move"] == "expansion_lower"
         ):
+            # HTF PDA Engagement Validierung (Literatur: Weekly Profile Guide S.7)
+            htf_valid, pda_type = self._validate_htf_pda_engagement(mon_tue, htf_array, "bearish")
+            if not htf_valid:
+                # Downgrade: Kein HTF PDA Engagement
+                return None, 0.0, {"reason": "no_htf_pda_engagement", "details": self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)}
             return "classic_expansion_short", 0.85, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
             mon_tue_engagement["type"] in {"consolidation", "retracement"}
             and wed_behavior["direction"] == "higher"
             and thu_fri_expected["expected_move"] == "expansion_higher"
         ):
+            # Negative Condition Check für Midweek Reversal
+            if self._check_negative_condition_midweek(mon_tue, "bullish"):
+                return None, 0.0, {"reason": "negative_condition_midweek", "details": self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)}
             return "midweek_reversal_long", 0.75, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
             mon_tue_engagement["type"] in {"consolidation", "retracement"}
             and wed_behavior["direction"] == "lower"
             and thu_fri_expected["expected_move"] == "expansion_lower"
         ):
+            # Negative Condition Check für Midweek Reversal
+            if self._check_negative_condition_midweek(mon_tue, "bearish"):
+                return None, 0.0, {"reason": "negative_condition_midweek", "details": self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)}
             return "midweek_reversal_short", 0.75, self._details(mon_tue_engagement, wed_behavior, thu_fri_expected)
         if (
             mon_tue_engagement["type"] in {"consolidation", "choppy"}
@@ -560,14 +673,88 @@ class WeeklyProfileDetector:
     def _details(self, engagement: dict, wed: dict, expectation: dict) -> dict:
         return {"engagement": engagement, "wednesday": wed, "expectation": expectation}
 
-    def _analyze_engagement(self, mon_tue_candles: list[Candle]) -> dict:
+    def _analyze_engagement(self, mon_tue_candles: list[Candle], h1_arrays: dict = None) -> dict:
+        """
+        Analysiert Mon-Tue Engagement mit optionaler PDA-Validierung.
+        Laut Literatur sollte Engagement über PDA-Interaktion definiert werden,
+        nicht nur über Candlestick-Patterns.
+        """
         mon, tue = mon_tue_candles
         avg_price = (mon.close + tue.close) / 2
         price_range = max(mon.high, tue.high) - min(mon.low, tue.low)
 
+        # Consolidation Check (unverändert)
         if avg_price and price_range < avg_price * 0.005:
-            engagement_type = "consolidation"
-        elif mon.close < mon.open and tue.close > tue.open:
+            return {
+                "type": "consolidation",
+                "range_pips": price_range * 10000,
+                "avg_price": avg_price,
+                "pda_engaged": False,
+            }
+
+        # PDA-basierte Engagement-Analyse (wenn h1_arrays verfügbar)
+        if h1_arrays:
+            mon_tue_low = min(mon.low, tue.low)
+            mon_tue_high = max(mon.high, tue.high)
+            tolerance = 5.0 / 10000  # 5 pips tolerance
+            
+            # Discount Engagement: Interaktion mit bullish PDA
+            discount_engaged = False
+            for fvg in h1_arrays.get("fvgs", []):
+                if fvg["type"] == "bullish" and fvg["low"] - tolerance <= mon_tue_low <= fvg["high"] + tolerance:
+                    discount_engaged = True
+                    break
+            
+            if not discount_engaged:
+                for ob in h1_arrays.get("order_blocks", []):
+                    if ob["type"] == "bullish" and ob["low"] - tolerance <= mon_tue_low <= ob["high"] + tolerance:
+                        discount_engaged = True
+                        break
+            
+            if not discount_engaged:
+                for rb in h1_arrays.get("rejection_blocks", []):
+                    if rb["type"] == "bullish" and rb["low"] - tolerance <= mon_tue_low <= rb["high"] + tolerance:
+                        discount_engaged = True
+                        break
+            
+            # Premium Engagement: Interaktion mit bearish PDA
+            premium_engaged = False
+            for fvg in h1_arrays.get("fvgs", []):
+                if fvg["type"] == "bearish" and fvg["low"] - tolerance <= mon_tue_high <= fvg["high"] + tolerance:
+                    premium_engaged = True
+                    break
+            
+            if not premium_engaged:
+                for ob in h1_arrays.get("order_blocks", []):
+                    if ob["type"] == "bearish" and ob["low"] - tolerance <= mon_tue_high <= ob["high"] + tolerance:
+                        premium_engaged = True
+                        break
+            
+            if not premium_engaged:
+                for rb in h1_arrays.get("rejection_blocks", []):
+                    if rb["type"] == "bearish" and rb["low"] - tolerance <= mon_tue_high <= rb["high"] + tolerance:
+                        premium_engaged = True
+                        break
+            
+            # Klassifizierung basierend auf PDA-Engagement
+            if discount_engaged and tue.close > tue.open:
+                return {
+                    "type": "discount_engagement",
+                    "range_pips": price_range * 10000,
+                    "avg_price": avg_price,
+                    "pda_engaged": True,
+                }
+            
+            if premium_engaged and tue.close < tue.open:
+                return {
+                    "type": "premium_engagement",
+                    "range_pips": price_range * 10000,
+                    "avg_price": avg_price,
+                    "pda_engaged": True,
+                }
+
+        # Fallback: Candlestick-basiert (wenn keine h1_arrays oder kein PDA-Engagement)
+        if mon.close < mon.open and tue.close > tue.open:
             engagement_type = "discount_engagement"
         elif mon.close > mon.open and tue.close < tue.open:
             engagement_type = "premium_engagement"
@@ -580,6 +767,7 @@ class WeeklyProfileDetector:
             "type": engagement_type,
             "range_pips": price_range * 10000,
             "avg_price": avg_price,
+            "pda_engaged": False,  # Fallback hat kein PDA-Engagement
         }
 
     def _analyze_wednesday(self, wed_candle: Candle) -> dict:

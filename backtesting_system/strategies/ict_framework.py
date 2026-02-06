@@ -83,6 +83,63 @@ class PDAArrayDetector:
                 })
         return obs
 
+    def identify_rejection_blocks(self, candles: List[Candle], lookback: int = 20) -> List[dict]:
+        """
+        Identifiziert Rejection Blocks basierend auf Wick-Rejection an Key Levels.
+        
+        Rejection Block Kriterien:
+        - Lange Wick (≥2x Body)
+        - Close zurück in Body-Richtung
+        - Kein Follow-Through in Wick-Richtung (nächste 2-3 Candles)
+        """
+        rejection_blocks: List[dict] = []
+        
+        if len(candles) < lookback + 3:
+            return rejection_blocks
+        
+        recent = candles[-lookback:]
+        
+        for i in range(len(recent) - 3):
+            candle = recent[i]
+            next_candles = recent[i+1:i+4]
+            
+            body = abs(candle.close - candle.open)
+            upper_wick = candle.high - max(candle.open, candle.close)
+            lower_wick = min(candle.open, candle.close) - candle.low
+            
+            # Bullish Rejection Block (+RB)
+            if lower_wick >= body * 2.0 and candle.close > candle.open:
+                # Prüfe: Kein Follow-Through nach unten
+                follow_through = any(c.close < candle.low for c in next_candles)
+                if not follow_through:
+                    rejection_blocks.append({
+                        "type": "bullish",
+                        "level": candle.low,
+                        "high": min(candle.open, candle.close),
+                        "low": candle.low,
+                        "wick_size": lower_wick,
+                        "body_size": body,
+                        "wick_ratio": lower_wick / body if body > 0 else 0,
+                        "index": i,
+                    })
+            
+            # Bearish Rejection Block (-RB)
+            if upper_wick >= body * 2.0 and candle.close < candle.open:
+                follow_through = any(c.close > candle.high for c in next_candles)
+                if not follow_through:
+                    rejection_blocks.append({
+                        "type": "bearish",
+                        "level": candle.high,
+                        "low": max(candle.open, candle.close),
+                        "high": candle.high,
+                        "wick_size": upper_wick,
+                        "body_size": body,
+                        "wick_ratio": upper_wick / body if body > 0 else 0,
+                        "index": i,
+                    })
+        
+        return rejection_blocks
+
     def validate_entry_at_pda(self, entry_price: float, arrays: dict, tolerance_pips: float = 5.0) -> tuple[bool, str | None]:
         tolerance = tolerance_pips / 10000
         for fvg in arrays.get("fvgs", []):
@@ -91,6 +148,9 @@ class PDAArrayDetector:
         for ob in arrays.get("order_blocks", []):
             if ob["low"] - tolerance <= entry_price <= ob["high"] + tolerance:
                 return True, "order_block"
+        for rb in arrays.get("rejection_blocks", []):
+            if rb["low"] - tolerance <= entry_price <= rb["high"] + tolerance:
+                return True, "rejection_block"
         return False, None
 
 
