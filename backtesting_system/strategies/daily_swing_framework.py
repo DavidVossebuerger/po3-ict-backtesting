@@ -6,7 +6,7 @@ from typing import Dict, List
 
 from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.models.market import Candle
-from backtesting_system.strategies.ict_framework import ICTFramework, PDAArrayDetector
+from backtesting_system.strategies.ict_framework import ICTFramework, KillzoneValidator, PDAArrayDetector
 
 
 @dataclass
@@ -22,6 +22,8 @@ class DailySwingFrameworkStrategy(Strategy):
         super().__init__(params)
         self.pda_detector = PDAArrayDetector()
         self._stop_helper = ICTFramework(params)
+        self.killzone_validator = KillzoneValidator()
+        self.enforce_killzones = params.get("enforce_killzones", True)
         self._daily_cache: Dict[datetime, List[Candle]] = {}
         self._daily_series: List[Candle] = []
         self._last_hist_len: int = 0
@@ -81,6 +83,8 @@ class DailySwingFrameworkStrategy(Strategy):
             return {}
 
         bar = data["bar"]
+        if self.enforce_killzones and not self.killzone_validator.is_valid_killzone(bar.time):
+            return {}
         daily_candles = self._aggregate_daily(history)
         framework = self.identify_daily_swing_framework(daily_candles)
         if framework.get("type") == "neutral":

@@ -13,6 +13,7 @@ from backtesting_system.models.market import Candle
 from backtesting_system.strategies.ict_framework import (
     CISDValidator,
     ICTFramework,
+    KillzoneValidator,
     OpeningRangeFramework,
     PDAArrayDetector,
     StopHuntDetector,
@@ -44,6 +45,8 @@ class WeeklyProfileStrategy(Strategy):
         self.stop_hunt_detector = StopHuntDetector()
         self.opening_range = OpeningRangeFramework()
         self._stop_helper = ICTFramework(params)
+        self.killzone_validator = KillzoneValidator()
+        self.enforce_killzones = params.get("enforce_killzones", True)
         self.min_confluence = params.get("min_confluence", 0.25)
         self.allow_monday = params.get("allow_monday", False)
         self.require_high_impact_news = params.get("require_high_impact_news", True)
@@ -97,6 +100,11 @@ class WeeklyProfileStrategy(Strategy):
     def generate_signals(self, data) -> dict:
         bar = data["bar"]
         history = data.get("history", [])
+        if self.enforce_killzones and not self.killzone_validator.is_valid_killzone(
+            bar.time,
+            allow_monday=self.allow_monday,
+        ):
+            return {}
         ctx = self._build_context(history)
         if ctx.profile_type is None:
             return {}
@@ -239,6 +247,11 @@ class WeeklyProfileStrategy(Strategy):
 
         
     def _maybe_tgif_signal(self, bar: Candle, daily_candles: List[Candle], h1_arrays: dict) -> dict:
+        if self.enforce_killzones and not self.killzone_validator.is_valid_killzone(
+            bar.time,
+            allow_monday=self.allow_monday,
+        ):
+            return {}
         if bar.time.weekday() != 4:
             return {}
         current_week = self._current_week_key(bar.time)

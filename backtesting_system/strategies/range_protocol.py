@@ -6,12 +6,15 @@ from typing import Dict, List
 
 from backtesting_system.core.strategy_base import Strategy
 from backtesting_system.models.market import Candle
+from backtesting_system.strategies.ict_framework import KillzoneValidator
 
 
 @dataclass
 class RangeHighRangeLowStrategy(Strategy):
     def __init__(self, params: dict):
         super().__init__(params)
+        self.killzone_validator = KillzoneValidator()
+        self.enforce_killzones = params.get("enforce_killzones", True)
         self._daily_cache: Dict[datetime, List[Candle]] = {}
         self._daily_series: List[Candle] = []
         self._last_hist_len: int = 0
@@ -25,6 +28,8 @@ class RangeHighRangeLowStrategy(Strategy):
         bar = data["bar"]
         history: List[Candle] = data.get("history", [])
         if not history:
+            return {}
+        if self.enforce_killzones and not self.killzone_validator.is_valid_killzone(bar.time):
             return {}
 
         daily = self._aggregate_daily(history)

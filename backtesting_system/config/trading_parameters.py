@@ -23,6 +23,7 @@ DEFAULT_PARAMS = {
     "fee_per_trade": 0.0,
     "stop_slippage_pips": 0.5,
     "min_confluence": 0.50,
+    "enforce_killzones": True,
     "require_high_impact_news": True,
     "news_confluence_boost": 0.05,
     "calendar_csv_path": "data/news_calendar/forex_calendar_2007_2025.csv",

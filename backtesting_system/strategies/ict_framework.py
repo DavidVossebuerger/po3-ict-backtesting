@@ -15,9 +15,14 @@ class KillzoneValidator:
         "ny_pm": (13, 16),
     }
 
-    def is_valid_killzone(self, dt: datetime, timezone_offset: int = -5) -> bool:
+    def is_valid_killzone(
+        self,
+        dt: datetime,
+        timezone_offset: int = -5,
+        allow_monday: bool = False,
+    ) -> bool:
         est_hour = (dt.hour + timezone_offset) % 24
-        if dt.weekday() == 0:
+        if dt.weekday() == 0 and not allow_monday:
             return False
         for _zone, (start, end) in self.KILLZONES.items():
             if start <= est_hour < end:
@@ -160,6 +165,81 @@ class StopHuntDetector:
         return {"detected": False}
 
 
+class SMTDetector:
+    """
+    Smart Money Techniques (SMT) divergence detector.
+
+    Compares correlated pairs to identify divergence at key levels.
+    """
+
+    CORRELATED_PAIRS = {
+        "EURUSD": ["GBPUSD", "AUDUSD", "NZDUSD"],
+        "GBPUSD": ["EURUSD", "AUDUSD"],
+        "USDJPY": ["USDCHF", "USDCAD"],
+        "AUDUSD": ["NZDUSD", "EURUSD"],
+    }
+
+    def detect_smt_divergence(
+        self,
+        symbol: str,
+        current_data: List[Candle],
+        correlated_data: dict[str, List[Candle]],
+        lookback: int = 10,
+    ) -> dict:
+        if len(current_data) < lookback:
+            return {"detected": False, "reason": "insufficient_data"}
+
+        base_symbol = symbol[:6]
+        correlated_symbols = self.CORRELATED_PAIRS.get(base_symbol, [])
+        if not correlated_symbols:
+            return {"detected": False, "reason": "no_correlated_pairs"}
+
+        recent = current_data[-lookback:]
+        current_high = max(c.high for c in recent)
+        current_low = min(c.low for c in recent)
+        current_making_higher_high = recent[-1].high >= current_high
+        current_making_lower_low = recent[-1].low <= current_low
+
+        divergences: List[dict] = []
+        for corr_symbol in correlated_symbols:
+            corr_recent = correlated_data.get(corr_symbol, [])[-lookback:]
+            if len(corr_recent) < lookback:
+                continue
+
+            corr_high = max(c.high for c in corr_recent)
+            corr_low = min(c.low for c in corr_recent)
+            corr_making_higher_high = corr_recent[-1].high >= corr_high
+            corr_making_lower_low = corr_recent[-1].low <= corr_low
+
+            if current_making_higher_high and not corr_making_higher_high:
+                divergences.append({
+                    "type": "bearish",
+                    "symbol": symbol,
+                    "correlated": corr_symbol,
+                    "current_high": current_high,
+                    "corr_high": corr_high,
+                })
+
+            if current_making_lower_low and not corr_making_lower_low:
+                divergences.append({
+                    "type": "bullish",
+                    "symbol": symbol,
+                    "correlated": corr_symbol,
+                    "current_low": current_low,
+                    "corr_low": corr_low,
+                })
+
+        if divergences:
+            return {
+                "detected": True,
+                "divergences": divergences,
+                "count": len(divergences),
+                "strength": "strong" if len(divergences) >= 2 else "weak",
+            }
+
+        return {"detected": False, "reason": "no_divergence"}
+
+
 class OpeningRangeFramework:
     def calculate_opening_range(self, daily_candle: Candle, day_low_so_far: float, day_high_so_far: float) -> dict:
         opening_price = daily_candle.open
@@ -204,6 +284,7 @@ class ICTFramework(Strategy):
         self.cisd_validator = CISDValidator()
         self.stop_hunt_detector = StopHuntDetector()
         self.opening_range = OpeningRangeFramework()
+        self.smt_detector = SMTDetector()
 
     def identify_fvg(self, candles: List[Candle]) -> List[dict]:
         gaps: List[dict] = []
