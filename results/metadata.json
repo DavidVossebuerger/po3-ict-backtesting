@@ -1,0 +1,28 @@
+{
+  "dataset": "data\\processed\\eurusd_m30_bid_formatted.csv",
+  "dataset_md5": "0bc9dcb23d464880a5edf5d646333460",
+  "timeframe_base": "M30",
+  "resampled_timeframes": [
+    "H1",
+    "H4",
+    "D"
+  ],
+  "symbol": "EURUSD",
+  "volume_included": false,
+  "backtest_window": {
+    "start": "2007-01-01T00:00:00+00:00",
+    "end": "2025-04-07T00:00:00+00:00"
+  },
+  "calibration_window": {
+    "start": "2007-01-01T00:00:00+00:00",
+    "end": "2020-12-31T00:00:00+00:00"
+  },
+  "oos_validation_window": {
+    "start": "2021-01-01T00:00:00+00:00",
+    "end": "2023-12-31T00:00:00+00:00"
+  },
+  "forward_window": {
+    "start": "2024-01-01T00:00:00+00:00",
+    "end": "2025-04-07T00:00:00+00:00"
+  }
+}

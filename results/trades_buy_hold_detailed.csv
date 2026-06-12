@@ -1,0 +1,3 @@
+trade_id,symbol,side,entry_time,exit_time,entry_price,exit_price,stop,target,size,pnl,r_multiple,confluence,duration_seconds,cumulative_pnl,equity_at_exit,drawdown,running_win_rate,running_profit_factor,running_sharpe
+1,EURUSD,buy,2007-01-01T00:00:00+00:00,2007-09-12T05:00:00+00:00,1.31955,1.38548,1.25319,,0.7500,0.04945,,,21963600.00,0.04945,10000.06618,0.000000,1.000000,0.000000,1.463432
+2,EURUSD,buy,2007-01-01T00:00:00+00:00,2007-09-12T06:00:00+00:00,1.31955,1.38499,1.38546,,0.2500,0.01636,0.9929,,21967200.00,0.06582,10000.06582,0.000000,1.000000,0.000000,1.458027

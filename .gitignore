@@ -1,0 +1,46 @@
+# === IDE ===
+.vscode/
+.idea/
+
+# === Charts → separates Repo ===
+results/charts/
+
+# === Paper (urheberrechtlich geschützt) ===
+Paper/
+
+# === Python ===
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Backtest Logs ===
+backtest_logs/
+*.log
+
+# === Archives ===
+*.zip
+snapshot/
+
+# === Data (generiert) ===
+data/processed/
+
+# === Urheberrecht / nicht ins Repo ===
+*.pdf
+blueprint_text.txt
+weekly_profile_text.txt
+temp_pdf_extract.py
+notebook2.ipynb
+docs/
+
+# === LaTeX ===
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+*.synctex.gz

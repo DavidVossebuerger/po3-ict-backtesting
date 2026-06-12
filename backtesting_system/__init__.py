@@ -1,0 +1,1 @@
+"""Modulares quantitatives Backtesting-System."""
