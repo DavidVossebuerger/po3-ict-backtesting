@@ -1,5 +1,6 @@
 # PO3 ICT Backtesting Framework
-
+[![SSRN](https://img.shields.io/badge/SSRN-German-blue?logo=ssrn&logoColor=white)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6410578)
+[![SSRN](https://img.shields.io/badge/SSRN-English-blue?logo=ssrn&logoColor=white)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6700099)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Overview
